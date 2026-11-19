@@ -5,3 +5,7 @@ coverage/
 *.log
 .env
 .env.*
+vectors/mainnet/.fetched/
+__pycache__/
+.ruff_cache/
+.work/
