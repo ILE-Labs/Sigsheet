@@ -1,0 +1,8 @@
+# SHA-256 of the fetched files the mainnet fetch checks; the files themselves are not in this repository.
+# fiber-scripts-pr34/mainnet.json: deployment/mainnet/mainnet.json at fiber-scripts 026027f54f6a90cb48d8cc184b230e2018bb8611.
+# fiber-scripts-pr34/comment-<n>.txt: the body of PR #34 signature comment n, CRLF line ends as LF.
+b398a62a7e414eb21526fb1abd5d2b08df6f1e2c86e02457f1b970350a4d642a  fiber-scripts-pr34/comment-1.txt
+b3b0ddf2e02a5377d73000f2ab6624d598dd70dbceae3c4b0209ddaf165bf033  fiber-scripts-pr34/comment-2.txt
+1d865a8e1f93c33d7498e299a633f8ef553b052e867bea95c4f75d2ce3997834  fiber-scripts-pr34/comment-3.txt
+028f1f6aa94af77c37dae55dce24149cdf6b9d022bc1cfca948807c914f4dd69  fiber-scripts-pr34/comment-4.txt
+8563ba8dcd0d051822dd0cc21db995dc8e6a2984e900d3500068f0185a07b51e  fiber-scripts-pr34/mainnet.json
