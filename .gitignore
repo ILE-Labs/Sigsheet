@@ -1,0 +1,36 @@
+# Local folders the experiments use, never committed (experiments/README.md)
+/keys
+/keys/
+/refs/
+/devnet/
+
+# The mainnet inputs, fetched by ./bench/fetch-mainnet.sh (experiments/mainnet-inputs.md)
+/experiments/X1/data/mainnet/
+/experiments/X1/data/fiber-scripts-34/
+/experiments/X1/cases/R1-fiber-scripts-pr34.json
+/experiments/X1/cases/R2-dao-payout.json
+/experiments/X2/cases/R1-fiber-scripts-pr34.json
+/experiments/X2/cases/R2-dao-payout.json
+/experiments/X3a/results/partials.json
+/experiments/X6/interop/a-check/R1-*
+/experiments/X6/interop/a-check/R2-*
+
+# Working copies of the upstream wallets, with the diffs applied (experiments/X6/README.md)
+/experiments/X6/ckb-cli/src-copy/
+/experiments/X6/ccc/core/
+/experiments/X6/neuron/packages/
+/experiments/X6/neuron/node_modules
+/experiments/X6/neuron/package.json
+/experiments/X6/neuron/tsconfig.json
+/experiments/X6/neuron/jest.config.js
+/experiments/XRT/ckb-cli-src/
+/experiments/X1/rust/src/ckb_cli_tx_helper.rs
+
+# Build output, dependencies and caches
+target/
+node_modules/
+dist/
+__pycache__/
+*.pyc
+/experiments/XQ14/bin/*.elf
+/bench/out/
