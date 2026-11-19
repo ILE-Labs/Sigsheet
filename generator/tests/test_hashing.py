@@ -1,0 +1,37 @@
+"""ckbhash and blake160 against the node's own documented example."""
+
+import unittest
+
+from sigsheet_vectors.ckb.hashing import blake160, ckbhash, hasher
+
+# The CellWithStatus example in ckb v0.210.0's RPC docs: cell data and the hash the node gives it
+# (https://github.com/nervosnetwork/ckb/blob/2592ddf0502cd4adfe886db893cccc866db3c60f/rpc/README.md#L5786-L5790).
+ELF = bytes.fromhex(
+    "7f454c460201010000000000000000000200f300010000007800010000000000400000000000000098000000000000000500"
+    "0000400038000100400003000200010000000500000000000000000000000000010000000000000001000000000082000000"
+    "000000008200000000000000001000000000000001459308d00573000000002e7368737472746162002e7465787400000000"
+    "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    "000000000000000000000000000000000b000000010000000600000000000000780001000000000078000000000000000a00"
+    "0000000000000000000000000000020000000000000000000000000000000100000003000000000000000000000000000000"
+    "0000000082000000000000001100000000000000000000000000000001000000000000000000000000000000"
+)
+ELF_HASH = "28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5"
+
+
+class HashingTest(unittest.TestCase):
+    def test_documented_example(self):
+        self.assertEqual(len(ELF), 344)
+        self.assertEqual(ckbhash(ELF).hex(), ELF_HASH)
+
+    def test_incremental_equals_one_shot(self):
+        h = hasher()
+        h.update(ELF[:100])
+        h.update(ELF[100:])
+        self.assertEqual(h.digest(), ckbhash(ELF))
+
+    def test_blake160_is_the_first_20_bytes(self):
+        self.assertEqual(blake160(ELF), ckbhash(ELF)[:20])
+
+
+if __name__ == "__main__":
+    unittest.main()
