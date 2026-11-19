@@ -1,0 +1,14 @@
+{
+  "name": "sigsheet-check-ccc",
+  "private": true,
+  "type": "module",
+  "description": "Checks every vector's messages and signatures with CCC's own code",
+  "dependencies": {
+    "@ckb-ccc/core": "1.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.7.5",
+    "prettier": "3.9.10",
+    "typescript": "7.0.2"
+  }
+}

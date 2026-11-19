@@ -1,0 +1,15 @@
+[package]
+name = "check-ckb-sdk"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Checks every vector's messages with ckb-cli's and ckb-sdk's own code"
+
+# ckb-sdk and the ckb crates at the versions ckb-cli v2.0.0 builds with; Cargo.lock is ckb-cli v2.0.0's lockfile,
+# trimmed by cargo to the packages this crate uses. No TLS feature: the check never opens a connection.
+[dependencies]
+ckb-sdk = { version = "=5.0.0", default-features = false }
+ckb-types = "=1.0.0"
+ckb-jsonrpc-types = "=1.0.0"
+ckb-hash = "=1.0.0"
+serde_json = "1"
