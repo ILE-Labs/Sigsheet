@@ -1,0 +1,1 @@
+{"base":"S1-genesis-2of3","change":{"configs":{"0x0ea784af1b97dc632e9c3f17ffd036d413adceba":{"public_key_hashes":["0x78093f699e8f87c5f0828476e1e9f502eeeb91b3","0xfee7a94cdf741c5569a55522f0f740b20722d691","0x58aaba7171495b0bdc0bfef69675cf25dae4238c"],"require_first_n":0,"threshold":2}},"kind":"add-configs"},"from":"merged","source":"XRT-2 F03"}

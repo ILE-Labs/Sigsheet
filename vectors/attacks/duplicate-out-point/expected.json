@@ -1,0 +1,1 @@
+{"base":"S1-genesis-2of3","check":"transaction.duplicate-input","files":{"attack.json":"c174fcae6fd6371c0b0dde3953d97012b2fcfb036bc9d9f23bac06e6081a78e9","input.json":"0193e1a90e5028f405b1be8d83b53d79c62bcb234c4f674ba6ab0f057d5c223f"},"id":"duplicate-out-point","merge_with_base":{"check":"transaction.duplicate-input","outcome":"refused"},"outcome":"refused","source":"XRT-2 L3"}

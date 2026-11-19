@@ -1,0 +1,1 @@
+{"base":"S1-genesis-2of3","check":"context.hash","files":{"attack.json":"37548e5931ae033c0cadad67ce5cbfd32d9eae2e9ef7b90f9830a5f4f1610e68","input.json":"a64e4820ac20b3cd423a9d58ee5d59ef5311f3c2431c1b634d12a55b6bcdbd86"},"id":"falsified-input-cell","merge_with_base":{"check":"context.hash","outcome":"refused"},"outcome":"refused","source":"X4 attack 1"}

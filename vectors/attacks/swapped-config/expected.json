@@ -1,0 +1,1 @@
+{"base":"S1-genesis-2of3","check":"multisig-configs.hash","files":{"attack.json":"0509cd6a73c9cf9e64d41422339101bde809a7f6d09ce9a0f6e8c4c786d532e5","input.json":"6058a4693ef3ebb464556cfc333eb991c6fdcd6976826a672b86da1491772ed0"},"id":"swapped-config","merge_with_base":{"check":"multisig-configs.hash","outcome":"refused"},"outcome":"refused","source":"X4 attack 7"}

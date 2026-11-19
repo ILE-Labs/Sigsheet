@@ -1,0 +1,1 @@
+{"base":"S1-genesis-2of3","check":"template.form","files":{"attack.json":"766f253adcb5b14415c4f6ec3ade5279a009c40871c642a36813f6c13af6b3f3","input.json":"c11867b5caba095f9ed7b1d6eab644b148a4ba46dbab4d532e4c9341c8e27e5a"},"id":"template-fourth-field","merge_with_base":{"check":"template.form","outcome":"refused"},"outcome":"refused","source":"XRT-2 L2"}

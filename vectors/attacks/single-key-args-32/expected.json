@@ -1,0 +1,1 @@
+{"base":null,"check":"lock.single-key-args","files":{"attack.json":"5a5a9b96f2de6508a2d4f35ffe84f60d4e85f7ff3f76724fec810b8cec2a579c","input.json":"59f74ec49c415fca69ed7ed6ec833f8a4a066791d026508e4376e45391d682c3"},"id":"single-key-args-32","outcome":"refused","source":"XRTb-2 F11; synthetic; signatures and key hashes authored once with keys made in memory and dropped"}

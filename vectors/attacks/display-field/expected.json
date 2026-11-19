@@ -1,0 +1,1 @@
+{"base":"S1-genesis-2of3","check":"schema.fields","files":{"attack.json":"4a9f44122ca31317af34ae051567b5ab967ab96544d68123751cf0f690288d65","input.json":"edaa9fd243f08d3697c294ccc5bf3459174d665dce7abba2abf9010813bab0c7"},"id":"display-field","merge_with_base":{"check":"schema.fields","outcome":"refused"},"outcome":"refused","source":"X4 attack 9"}

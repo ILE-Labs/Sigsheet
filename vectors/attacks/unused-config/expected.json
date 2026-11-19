@@ -1,0 +1,1 @@
+{"base":"S1-genesis-2of3","check":"multisig-configs.unused","files":{"attack.json":"2dc585fb323d82c2b8c84a0fabc9d37985e6e5c7e3b904016c417e518c05a650","input.json":"4e9fa540f14ac286acd004be328125790133043417d5113a28ba4b5cff21f07a"},"id":"unused-config","merge_with_base":{"check":"multisig-configs.unused","outcome":"refused"},"outcome":"refused","source":"XRT-2 F03"}
