@@ -1,0 +1,137 @@
+# The repository's checks: on every pull request and every push to main.
+# Each job runs the same commands as a local run (generator/README.md, check/README.md) and fails on a formatting
+# difference, a lint warning or a failed test. Read-only: no secret, and nothing is published, released or tagged.
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  generator:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: generator
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14.4"
+      - name: ruff 0.17.4
+        run: python -m pip install ruff==0.17.4
+      - name: Format
+        run: ruff format --check --config generator/ruff.toml generator check/locks
+      - name: Lint
+        run: ruff check --config generator/ruff.toml generator check/locks
+      - name: Unit tests
+        run: python -m unittest discover -s generator/tests
+      - name: Every vector rebuilds byte for byte
+        run: python -m sigsheet_vectors check
+
+  independent-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14.4"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22.22.1"
+          cache: npm
+          cache-dependency-path: check/ccc/package-lock.json
+      - name: Rust 1.100.0 with rustfmt and clippy
+        run: rustup toolchain install 1.100.0 --profile minimal --component rustfmt,clippy && rustup default 1.100.0
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            check/ckb-sdk/target
+          key: cargo-1.100.0-${{ hashFiles('check/ckb-sdk/Cargo.lock') }}
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: check/locks/.work/binaries
+          key: code-cells-${{ hashFiles('check/locks/code-cells.json') }}
+      - name: ckb-debugger v1.1.1
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/ckb-debugger.tar.gz" https://github.com/nervosnetwork/ckb-standalone-debugger/releases/download/v1.1.1/ckb-debugger_v1.1.1_x86_64-unknown-linux-gnu.tar.gz
+          echo "0dee02804af46386527c8bb94c2ee63592594ca1ec952ea42ffa9df07a9f005e  $RUNNER_TEMP/ckb-debugger.tar.gz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/ckb-debugger" && tar -xzf "$RUNNER_TEMP/ckb-debugger.tar.gz" -C "$RUNNER_TEMP/ckb-debugger"
+      - name: CCC check, built
+        working-directory: check/ccc
+        run: |
+          npm ci --ignore-scripts
+          npx tsc --strict --types node --target es2022 --module nodenext --moduleResolution nodenext --outDir dist messages.ts
+          npx prettier --check messages.ts package.json
+      - name: CCC check
+        run: node check/ccc/dist/messages.js vectors
+      - name: ckb-sdk check, built
+        working-directory: check/ckb-sdk
+        run: |
+          cargo fmt --check
+          cargo clippy --locked -- -D warnings
+          cargo build --locked --release
+      - name: ckb-sdk check
+        run: check/ckb-sdk/target/release/check-ckb-sdk vectors
+      - name: Lock binaries check
+        run: python check/locks/run.py --debugger "$RUNNER_TEMP/ckb-debugger/ckb-debugger" vectors
+
+  mainnet:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      PYTHONPATH: generator
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14.4"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22.22.1"
+          cache: npm
+          cache-dependency-path: check/ccc/package-lock.json
+      - name: Rust 1.100.0
+        run: rustup toolchain install 1.100.0 --profile minimal && rustup default 1.100.0
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: vectors/mainnet/.fetched/inputs
+          key: mainnet-${{ hashFiles('vectors/mainnet/inputs.sha256') }}
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            check/ckb-sdk/target
+          key: cargo-1.100.0-${{ hashFiles('check/ckb-sdk/Cargo.lock') }}
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: check/locks/.work/binaries
+          key: code-cells-${{ hashFiles('check/locks/code-cells.json') }}
+      - name: Fetch R1 and R2 read-only, rebuild them and check every rebuilt file
+        run: python -m sigsheet_vectors fetch-mainnet
+      - name: ckb-debugger v1.1.1
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/ckb-debugger.tar.gz" https://github.com/nervosnetwork/ckb-standalone-debugger/releases/download/v1.1.1/ckb-debugger_v1.1.1_x86_64-unknown-linux-gnu.tar.gz
+          echo "0dee02804af46386527c8bb94c2ee63592594ca1ec952ea42ffa9df07a9f005e  $RUNNER_TEMP/ckb-debugger.tar.gz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/ckb-debugger" && tar -xzf "$RUNNER_TEMP/ckb-debugger.tar.gz" -C "$RUNNER_TEMP/ckb-debugger"
+      - name: The independent check on R1 and R2
+        run: |
+          (cd check/ccc && npm ci --ignore-scripts && npx tsc --strict --types node --target es2022 --module nodenext --moduleResolution nodenext --outDir dist messages.ts)
+          node check/ccc/dist/messages.js vectors/mainnet/.fetched
+          (cd check/ckb-sdk && cargo build --locked --release)
+          check/ckb-sdk/target/release/check-ckb-sdk vectors/mainnet/.fetched
+          python check/locks/run.py --debugger "$RUNNER_TEMP/ckb-debugger/ckb-debugger" vectors/mainnet/.fetched
