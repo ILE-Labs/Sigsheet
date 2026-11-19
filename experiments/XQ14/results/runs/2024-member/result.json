@@ -1,0 +1,35 @@
+{
+ "run": "2024-member",
+ "expectation": "refused: the 2024 lock isn't one the app knows",
+ "date": "2026-11-18 21:30:41 UTC",
+ "same_device_job_from_C_Bw_A": true,
+ "file_bytes": {
+  "C": 5872,
+  "B+w": 6045,
+  "A": 3946
+ },
+ "device": {
+  "result": "error",
+  "error": "DisconnectedDeviceDuringOperation",
+  "status_code": null,
+  "presses": {
+   "right": 0,
+   "both": 0
+  },
+  "seconds": 0.283,
+  "annotated_bytes": 3091,
+  "annotated_sha256": "e5feaabe110da651fd59024fb0318583705efc2b74ba4373dd53602ac5c077bf",
+  "apdus": 14
+ },
+ "screens": [],
+ "node_stdout": "{\"result\":\"error\",\"error\":\"DisconnectedDeviceDuringOperation\",\"screens\":0,\"presses\":{\"right\":0,\"both\":0},\"seconds\":0.283,\"annotated_bytes\":3091}",
+ "node_stderr": "",
+ "emulator": {
+  "app_exited": true,
+  "exit_line": [
+   "[*] exit called (255)"
+  ],
+  "still_listening": false
+ },
+ "speculos_log": "results/speculos/2024-member.log"
+}

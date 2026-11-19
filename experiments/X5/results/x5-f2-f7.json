@@ -1,0 +1,527 @@
+{
+ "date": "2026-11-18 21:57 UTC",
+ "flows": {
+  "F2-parallel-3of5-v2-four-signers": [
+   {
+    "step": 1,
+    "tool": "python prototype",
+    "action": "create",
+    "file": "results/F2-parallel-3of5-v2-four-signers/01-unsigned.json",
+    "sha256": "809429ba862de92a2813202028d3562440d6b037db4451dc460b020c9a1b7be5",
+    "signed_members": {
+     "0x9823da43": []
+    }
+   },
+   {
+    "step": 2,
+    "tool": "ckb-cli (patched)",
+    "action": "sign with s5",
+    "file": "results/F2-parallel-3of5-v2-four-signers/02-ckb-cli-s5.json",
+    "sha256": "e96a8c1f2cb82aea3f27e4b71804a2f7a47552762cb5b27b1ad86b172fb2fb9b",
+    "signed_members": {
+     "0x9823da43": [
+      4
+     ]
+    },
+    "stdout": "signatures_added: 1",
+    "stderr": "",
+    "seconds": 0.04
+   },
+   {
+    "step": 3,
+    "tool": "CCC (patched)",
+    "action": "sign with s1",
+    "file": "results/F2-parallel-3of5-v2-four-signers/03-ccc-s1.json",
+    "sha256": "465a4ed2edc1c977d5c978a139b15b149e43f3e7af34df09ecd60ae77d289353",
+    "signed_members": {
+     "0x9823da43": [
+      0
+     ]
+    },
+    "stdout": "{\"cmd\":\"sign\",\"added\":1,\"ms\":131}",
+    "seconds": 2.08
+   },
+   {
+    "step": 4,
+    "tool": "Neuron (patched)",
+    "action": "sign with s3",
+    "file": "results/F2-parallel-3of5-v2-four-signers/04-neuron-s3.json",
+    "sha256": "a6c5cc548a6c5189555f418c73fc90ac925c8cdcaa3f9886cff1297f1b78841d",
+    "signed_members": {
+     "0x9823da43": [
+      2
+     ]
+    },
+    "jest_passed": true,
+    "seconds": 12.24,
+    "stderr_tail": ""
+   },
+   {
+    "step": 5,
+    "tool": "python prototype",
+    "action": "sign with s4",
+    "file": "results/F2-parallel-3of5-v2-four-signers/05-python-s4.json",
+    "sha256": "6ca0cab313c6c2a4d0410561c08f13bbdeb29736463014cfe91126e68626894f",
+    "signed_members": {
+     "0x9823da43": [
+      3
+     ]
+    }
+   },
+   {
+    "step": 6,
+    "tool": "ckb-cli (patched)",
+    "action": "merge 4 files",
+    "file": "results/F2-parallel-3of5-v2-four-signers/06-ckb-cli-merge.json",
+    "sha256": "f79eff0bf0c109728735ddef5541937c7d94ecc02f963a788940bca91179aa2c",
+    "signed_members": {
+     "0x9823da43": [
+      0,
+      2,
+      3,
+      4
+     ]
+    },
+    "stderr": ""
+   },
+   {
+    "step": 7,
+    "tool": "CCC (patched)",
+    "action": "merge 4 files",
+    "file": "results/F2-parallel-3of5-v2-four-signers/07-ccc-merge.json",
+    "sha256": "f79eff0bf0c109728735ddef5541937c7d94ecc02f963a788940bca91179aa2c",
+    "signed_members": {
+     "0x9823da43": [
+      0,
+      2,
+      3,
+      4
+     ]
+    },
+    "stdout": "{\"cmd\":\"merge\",\"inputs\":4,\"ms\":85}"
+   },
+   {
+    "step": 8,
+    "tool": "python prototype",
+    "action": "merge 4 files",
+    "file": "results/F2-parallel-3of5-v2-four-signers/08-python-merge.json",
+    "sha256": "f79eff0bf0c109728735ddef5541937c7d94ecc02f963a788940bca91179aa2c",
+    "signed_members": {
+     "0x9823da43": [
+      0,
+      2,
+      3,
+      4
+     ]
+    }
+   },
+   {
+    "merges_identical": true
+   },
+   {
+    "step": 9,
+    "tool": "ckb-cli",
+    "action": "finalize and send",
+    "file": "results/F2-parallel-3of5-v2-four-signers/09-ckb-cli-final-tx.json",
+    "sha256": "dd78537b9ffd277e3788896f193285d8b6c12518389c41ab20acd2293df57a27",
+    "decode_error": "top-level fields must be exactly ['context', 'multisig_configs', 'signatures', 'transaction', 'version']",
+    "lock_rules_python": true,
+    "send": {
+     "ok": true,
+     "result": "0x0f44c2b254d3cb01abd9189820db0ae8efc202d7c7b11fa2482c87e692a928d2"
+    },
+    "committed_tx": "0x0f44c2b254d3cb01abd9189820db0ae8efc202d7c7b11fa2482c87e692a928d2",
+    "block": 17335
+   }
+  ],
+  "F3-genesis-2of3-neuron-then-ckb-cli": [
+   {
+    "step": 1,
+    "tool": "python prototype",
+    "action": "create",
+    "file": "results/F3-genesis-2of3-neuron-then-ckb-cli/01-unsigned.json",
+    "sha256": "c9f4518a62eb91fd381d1b5330627b6fb6a8fb81e037449cb60acd3ed00a4f75",
+    "signed_members": {
+     "0xaad18248": []
+    }
+   },
+   {
+    "step": 2,
+    "tool": "Neuron (patched)",
+    "action": "sign with s2",
+    "file": "results/F3-genesis-2of3-neuron-then-ckb-cli/02-neuron-s2.json",
+    "sha256": "59f0abdba8724f253991e8e156b17679e2bd486aa41416fba4584f78d0bf0a4a",
+    "signed_members": {
+     "0xaad18248": [
+      1
+     ]
+    },
+    "jest_passed": true,
+    "seconds": 9.69,
+    "stderr_tail": ""
+   },
+   {
+    "step": 3,
+    "tool": "ckb-cli (patched)",
+    "action": "sign with s3",
+    "file": "results/F3-genesis-2of3-neuron-then-ckb-cli/03-ckb-cli-s3.json",
+    "sha256": "70d3d49906d409d01bdc6632630d3d45dcbd2032eba1cef88fa3d86be831c16a",
+    "signed_members": {
+     "0xaad18248": [
+      1,
+      2
+     ]
+    },
+    "stdout": "signatures_added: 1",
+    "stderr": "",
+    "seconds": 0.04
+   },
+   {
+    "step": 4,
+    "tool": "ckb-cli",
+    "action": "finalize and send",
+    "file": "results/F3-genesis-2of3-neuron-then-ckb-cli/04-ckb-cli-final-tx.json",
+    "sha256": "bfe6f8ee85989904c4767b3462cae90ee1664c5ed71c98fac7c779e2dbabe2c0",
+    "decode_error": "top-level fields must be exactly ['context', 'multisig_configs', 'signatures', 'transaction', 'version']",
+    "lock_rules_python": true,
+    "send": {
+     "ok": true,
+     "result": "0x5f7c2bd61d81fa45d11cdd45497cf317b2fe2fc0eb063171b3aff771919db483"
+    },
+    "committed_tx": "0x5f7c2bd61d81fa45d11cdd45497cf317b2fe2fc0eb063171b3aff771919db483",
+    "block": 17348
+   }
+  ],
+  "F4-extra-witness-v2-neuron-and-ccc": [
+   {
+    "step": 1,
+    "tool": "python prototype",
+    "action": "create",
+    "file": "results/F4-extra-witness-v2-neuron-and-ccc/01-unsigned.json",
+    "sha256": "f60a3fe16229b6c09153a72cd84f8ef03f856fba6cabe698a0d77206c75b83d4",
+    "signed_members": {
+     "0x648a0721": []
+    }
+   },
+   {
+    "step": 2,
+    "tool": "Neuron (patched)",
+    "action": "sign with s3",
+    "file": "results/F4-extra-witness-v2-neuron-and-ccc/02-neuron-s3.json",
+    "sha256": "46dea065fbe4ad7059e45e49449f6109501a52a29bb0d192f7b13d73865276b6",
+    "signed_members": {
+     "0x648a0721": [
+      2
+     ]
+    },
+    "jest_passed": true,
+    "seconds": 9.53,
+    "stderr_tail": ""
+   },
+   {
+    "step": 3,
+    "tool": "CCC (patched)",
+    "action": "sign with s1",
+    "file": "results/F4-extra-witness-v2-neuron-and-ccc/03-ccc-s1.json",
+    "sha256": "d2740a5b1ae608f06c22738f925711c72deb045a28f83a2ce8e586988d421730",
+    "signed_members": {
+     "0x648a0721": [
+      0,
+      2
+     ]
+    },
+    "stdout": "{\"cmd\":\"sign\",\"added\":1,\"ms\":130}",
+    "seconds": 2.27
+   },
+   {
+    "step": 4,
+    "tool": "ccc",
+    "action": "finalize and send",
+    "file": "results/F4-extra-witness-v2-neuron-and-ccc/04-ccc-final-tx.json",
+    "sha256": "a1a551516bb72b0120ffdd659eee69c3753d5aff8814cd1ffaf2aa46e4713abb",
+    "decode_error": "top-level fields must be exactly ['context', 'multisig_configs', 'signatures', 'transaction', 'version']",
+    "lock_rules_python": true,
+    "send": {
+     "ok": true,
+     "result": "0xf8fb2235c5a9ad0bf767cc60519e31967c4c5994842a6d66191e5dcd5b0b79af"
+    },
+    "committed_tx": "0xf8fb2235c5a9ad0bf767cc60519e31967c4c5994842a6d66191e5dcd5b0b79af",
+    "block": 17366
+   }
+  ],
+  "F5-multisig-plus-single-key": [
+   {
+    "step": 1,
+    "tool": "python prototype",
+    "action": "create",
+    "file": "results/F5-multisig-plus-single-key/01-unsigned.json",
+    "sha256": "8c77020f60f051998766221de57d4ad474fe0451625b6160783485ee29884de2",
+    "signed_members": {
+     "0x648a0721": [],
+     "0x89602825": []
+    }
+   },
+   {
+    "step": 2,
+    "tool": "ckb-cli (patched)",
+    "action": "sign with s4",
+    "file": "results/F5-multisig-plus-single-key/02-ckb-cli-s4.json",
+    "sha256": "7c44de4e41436a987d42bd461370a0efc608d29df33185398d4a652104b1049e",
+    "signed_members": {
+     "0x648a0721": [],
+     "0x89602825": [
+      "0x55008b44f3f683331d44985c9c1eca46b40028aa"
+     ]
+    },
+    "stdout": "signatures_added: 1",
+    "stderr": "",
+    "seconds": 0.04
+   },
+   {
+    "step": 3,
+    "tool": "CCC (patched)",
+    "action": "sign with s1",
+    "file": "results/F5-multisig-plus-single-key/03-ccc-s1.json",
+    "sha256": "9122e540b95c90add443abe38bd58b22a561088124cf468930f9b151e477fe09",
+    "signed_members": {
+     "0x648a0721": [
+      0
+     ],
+     "0x89602825": []
+    },
+    "stdout": "{\"cmd\":\"sign\",\"added\":1,\"ms\":138}",
+    "seconds": 2.09
+   },
+   {
+    "step": 4,
+    "tool": "Neuron (patched)",
+    "action": "sign with s2",
+    "file": "results/F5-multisig-plus-single-key/04-neuron-s2.json",
+    "sha256": "8b5da1067a85100a87de1cf8444bc854fc656f3225b404615754fc167ef8ea68",
+    "signed_members": {
+     "0x648a0721": [
+      1
+     ],
+     "0x89602825": []
+    },
+    "jest_passed": true,
+    "seconds": 9.79,
+    "stderr_tail": ""
+   },
+   {
+    "step": 5,
+    "tool": "python prototype",
+    "action": "merge 3 files",
+    "file": "results/F5-multisig-plus-single-key/05-python-merge.json",
+    "sha256": "a511942cd4cf385a547dcc8c836990e431587e7cf958227d8831704d57abfa34",
+    "signed_members": {
+     "0x648a0721": [
+      0,
+      1
+     ],
+     "0x89602825": [
+      "0x55008b44f3f683331d44985c9c1eca46b40028aa"
+     ]
+    }
+   },
+   {
+    "step": 6,
+    "tool": "ccc",
+    "action": "finalize and send",
+    "file": "results/F5-multisig-plus-single-key/06-ccc-final-tx.json",
+    "sha256": "bece60d5297214e5378d56b6f2bc020fd5efc1c41bd1559709db5fd568f3c0d2",
+    "decode_error": "top-level fields must be exactly ['context', 'multisig_configs', 'signatures', 'transaction', 'version']",
+    "lock_rules_python": true,
+    "send": {
+     "ok": true,
+     "result": "0x66c2a43afe5df63dbe44cf75db99ae32db615eb24caefa9c7cb2b6efffc1a9a1"
+    },
+    "committed_tx": "0x66c2a43afe5df63dbe44cf75db99ae32db615eb24caefa9c7cb2b6efffc1a9a1",
+    "block": 17384
+   }
+  ],
+  "F6-3of5-first-member-required": [
+   {
+    "step": 1,
+    "tool": "python prototype",
+    "action": "create",
+    "file": "results/F6-3of5-first-member-required/01-unsigned.json",
+    "sha256": "7764ebc345212a6030c3bd71501a1c4fe9fb0053e8eb83a88fdba73fafbc5768",
+    "signed_members": {
+     "0xc22c4f82": []
+    }
+   },
+   {
+    "step": 2,
+    "tool": "CCC (patched)",
+    "action": "sign with s2",
+    "file": "results/F6-3of5-first-member-required/02-ccc-s2.json",
+    "sha256": "9d0a2ff7d73cc7a597f2ce29f2253c71e029e74bc42e182abf7ef0a6254e5ef8",
+    "signed_members": {
+     "0xc22c4f82": [
+      1
+     ]
+    },
+    "stdout": "{\"cmd\":\"sign\",\"added\":1,\"ms\":122}",
+    "seconds": 2.02
+   },
+   {
+    "step": 3,
+    "tool": "ckb-cli (patched)",
+    "action": "sign with s3",
+    "file": "results/F6-3of5-first-member-required/03-ckb-cli-s3.json",
+    "sha256": "5d0acd7e62976ba4b0c1aa32d2d34daf915daebb87d4cb8623882fb2e648c361",
+    "signed_members": {
+     "0xc22c4f82": [
+      2
+     ]
+    },
+    "stdout": "signatures_added: 1",
+    "stderr": "",
+    "seconds": 0.04
+   },
+   {
+    "step": 4,
+    "tool": "Neuron (patched)",
+    "action": "sign with s4",
+    "file": "results/F6-3of5-first-member-required/04-neuron-s4.json",
+    "sha256": "dcf8fc06a2cbc7a55168606663821944a1711f77ceffd0625c9c13df1d7e7b62",
+    "signed_members": {
+     "0xc22c4f82": [
+      3
+     ]
+    },
+    "jest_passed": true,
+    "seconds": 9.49,
+    "stderr_tail": ""
+   },
+   {
+    "step": 5,
+    "tool": "ckb-cli (patched)",
+    "action": "merge 3 files",
+    "file": "results/F6-3of5-first-member-required/05-ckb-cli-merge.json",
+    "sha256": "2f810a003010d083deabfbf5860eea68e7bd8d834e8b0d625eb849bc84775fa3",
+    "signed_members": {
+     "0xc22c4f82": [
+      1,
+      2,
+      3
+     ]
+    },
+    "stderr": ""
+   },
+   {
+    "step": 6,
+    "tool": "ckb-cli",
+    "action": "finalize",
+    "file": "results/F6-3of5-first-member-required/06-ckb-cli-final-tx.json",
+    "sha256": null,
+    "error": "group 0xc22c4f82e6331d049e527f1f5d4978112afc93b14be3031c25b65abe520acdb2 isn't ready"
+   },
+   {
+    "step": 7,
+    "tool": "ckb-cli (patched)",
+    "action": "sign with s1",
+    "file": "results/F6-3of5-first-member-required/07-ckb-cli-s1.json",
+    "sha256": "7eb81e956e28e61a202752b480941c0a656be0776570d6c0ce6ef84e29b727e2",
+    "signed_members": {
+     "0xc22c4f82": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "stdout": "signatures_added: 1",
+    "stderr": "",
+    "seconds": 0.04
+   },
+   {
+    "step": 8,
+    "tool": "ckb-cli",
+    "action": "finalize and send",
+    "file": "results/F6-3of5-first-member-required/08-ckb-cli-final-tx.json",
+    "sha256": "45f213272659ac7b39fa334484d2d17d0df9a6461a54b6ac6b1d446c33c7ccf6",
+    "decode_error": "top-level fields must be exactly ['context', 'multisig_configs', 'signatures', 'transaction', 'version']",
+    "lock_rules_python": true,
+    "send": {
+     "ok": true,
+     "result": "0x2c2b590166d81b65cb376b37a95923f7fd92aca02b9df5cd406071e4642421c8"
+    },
+    "committed_tx": "0x2c2b590166d81b65cb376b37a95923f7fd92aca02b9df5cd406071e4642421c8",
+    "block": 17400
+   }
+  ],
+  "F7-2024-deployment-ccc": [
+   {
+    "step": 1,
+    "tool": "python prototype",
+    "action": "create",
+    "file": "results/F7-2024-deployment-ccc/01-unsigned.json",
+    "sha256": "d45090efe125aeadd6e67ed4557e84f7ebbc24e7f73db74bda6e7caba65652cf",
+    "signed_members": {
+     "0x3d898922": []
+    }
+   },
+   {
+    "step": 2,
+    "tool": "CCC (patched)",
+    "action": "sign with s1",
+    "file": "results/F7-2024-deployment-ccc/02-ccc-s1.json",
+    "sha256": "5c323084145dc3fcfbc8a64bf1aa96fa00c20fb343f627628bd18a2374265fde",
+    "signed_members": {
+     "0x3d898922": [
+      0
+     ]
+    },
+    "stdout": "{\"cmd\":\"sign\",\"added\":1,\"ms\":133}",
+    "seconds": 2.16
+   },
+   {
+    "step": 3,
+    "tool": "ckb-cli (patched)",
+    "action": "sign with s2",
+    "file": "results/F7-2024-deployment-ccc/03-ckb-cli-s2.json",
+    "sha256": "5c323084145dc3fcfbc8a64bf1aa96fa00c20fb343f627628bd18a2374265fde",
+    "signed_members": {
+     "0x3d898922": [
+      0
+     ]
+    },
+    "stdout": "signatures_added: 0",
+    "stderr": "",
+    "seconds": 0.04
+   },
+   {
+    "step": 4,
+    "tool": "CCC (patched)",
+    "action": "sign with s3",
+    "file": "results/F7-2024-deployment-ccc/04-ccc-s3.json",
+    "sha256": "70708415cf56d7ac792f3d1366194626a55329074c07de7c65b3eaee783deada",
+    "signed_members": {
+     "0x3d898922": [
+      0,
+      2
+     ]
+    },
+    "stdout": "{\"cmd\":\"sign\",\"added\":1,\"ms\":129}",
+    "seconds": 2.04
+   },
+   {
+    "step": 5,
+    "tool": "ccc",
+    "action": "finalize and send",
+    "file": "results/F7-2024-deployment-ccc/05-ccc-final-tx.json",
+    "sha256": "011322ec97985b980005a26489854166ed390c2853cc01d54200bf8ea4026897",
+    "decode_error": "top-level fields must be exactly ['context', 'multisig_configs', 'signatures', 'transaction', 'version']",
+    "lock_rules_python": true,
+    "send": {
+     "ok": true,
+     "result": "0x9963afdf2e8305541e2fcafc034d94de7ff97e8881ef93df8931b71c24d196ae"
+    },
+    "committed_tx": "0x9963afdf2e8305541e2fcafc034d94de7ff97e8881ef93df8931b71c24d196ae",
+    "block": 17410
+   }
+  ]
+ }
+}

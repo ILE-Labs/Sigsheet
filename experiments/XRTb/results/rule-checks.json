@@ -1,0 +1,179 @@
+{
+ "conditions": "offline; the design-stage prototype unchanged; ephemeral keys",
+ "previous_tx": "0x5879d28b0b37ce35eadd89e716960e34ee03f6d4cce1aeb2f0db4de5a666ef5a",
+ "conflict_in_unsigned_group": {
+  "v2_rule_7": {
+   "entry_kept": "65 zero bytes",
+   "same_in_both_orders": true,
+   "later_reader_that_signs_the_kind": {
+    "status": {
+     "0x3f329ca8990f9fb0a8772bbf4d5f645ff5c52c80819f8c437f870ef73841098f": {
+      "kind": "multisig",
+      "signed": [
+       0,
+       1
+      ],
+      "m": 2,
+      "r": 0,
+      "ready": true
+     },
+     "0xbe06d646afc846abbd5210e99e049a6cac91bb7aad900adb17136abf65fdf32a": {
+      "kind": "sighash",
+      "signed": [],
+      "ready": false
+     }
+    },
+    "finalized": false,
+    "why": "single-key group 0xbe06d646af... has no signature"
+   }
+  },
+  "candidate_rule": {
+   "merge_honest_and_junk": {
+    "ok": false,
+    "refused": "conflicting unverified entries for signer 0x0cbbcadd1d... in group 0xbe06d646af..."
+   },
+   "reverse_order": {
+    "ok": false,
+    "refused": "conflicting unverified entries for signer 0x0cbbcadd1d... in group 0xbe06d646af..."
+   },
+   "merge_honest_alone_then_later_reader": {
+    "status": {
+     "0x3f329ca8990f9fb0a8772bbf4d5f645ff5c52c80819f8c437f870ef73841098f": {
+      "kind": "multisig",
+      "signed": [
+       0,
+       1
+      ],
+      "m": 2,
+      "r": 0,
+      "ready": true
+     },
+     "0xbe06d646afc846abbd5210e99e049a6cac91bb7aad900adb17136abf65fdf32a": {
+      "kind": "sighash",
+      "signed": [
+       "0x0cbbcadd1d3e583192652e494247b28a7ed78b1f"
+      ],
+      "ready": true
+     }
+    },
+    "finalized": true,
+    "lock_rules": {
+     "0x3f329ca8990f9fb0a8772bbf4d5f645ff5c52c80819f8c437f870ef73841098f": true,
+     "0xbe06d646afc846abbd5210e99e049a6cac91bb7aad900adb17136abf65fdf32a": true
+    }
+   },
+   "a_reader_that_signs_the_kind_merges_both": {
+    "status": {
+     "0x3f329ca8990f9fb0a8772bbf4d5f645ff5c52c80819f8c437f870ef73841098f": {
+      "kind": "multisig",
+      "signed": [
+       0,
+       1
+      ],
+      "m": 2,
+      "r": 0,
+      "ready": true
+     },
+     "0xbe06d646afc846abbd5210e99e049a6cac91bb7aad900adb17136abf65fdf32a": {
+      "kind": "sighash",
+      "signed": [
+       "0x0cbbcadd1d3e583192652e494247b28a7ed78b1f"
+      ],
+      "ready": true
+     }
+    },
+    "finalized": true,
+    "lock_rules": {
+     "0x3f329ca8990f9fb0a8772bbf4d5f645ff5c52c80819f8c437f870ef73841098f": true,
+     "0xbe06d646afc846abbd5210e99e049a6cac91bb7aad900adb17136abf65fdf32a": true
+    }
+   }
+  }
+ },
+ "configs_for_no_input": {
+  "configs_in_file": 52,
+  "file_bytes_without_junk": 2685,
+  "file_bytes_with_50_junk_configs": 14585,
+  "unsigned_id_unchanged": true,
+  "v2_kept": 52,
+  "candidate_kept": 2,
+  "candidate_keeps_the_omnilock_config": true,
+  "candidate_keeps_the_multisig_config": true,
+  "today_prototype_reader": {
+   "ok": false,
+   "refused": "a multisig config that no input uses"
+  }
+ },
+ "omnilock_group_carried": {
+  "omnilock_args_bytes": 22,
+  "auth_flag": 6,
+  "key_at_bytes_1_to_20": true,
+  "args_0_to_20_would_find_it": false,
+  "today_prototype_reader": {
+   "ok": false,
+   "refused": "a multisig config that no input uses"
+  },
+  "v2_check_7": {
+   "ok": true,
+   "result": [
+    "multisig: config found",
+    "unknown: not a multisig group the reader signs; carried"
+   ]
+  },
+  "v2_config_rule_keeps_it": true,
+  "candidate_config_rule_keeps_it": true,
+  "partial_finalize": {
+   "multisig_witness_written": true,
+   "omnilock_witness_left_as_template": true,
+   "multisig_lock_rules": true
+  }
+ },
+ "single_key_args_length": {
+  "args_bytes": 32,
+  "today_prototype_reader": {
+   "ok": true,
+   "result": [
+    "dropped signature 0x7c7699f608... in group 0xea847beab2...: doesn't verify against the group's message, or not a member"
+   ]
+  },
+  "signature_by_the_key": "dropped",
+  "drop_reason": "doesn't verify against the group's message, or not a member",
+  "candidate_check_7": "refused: a single-key group's args must be 20 bytes (secp256k1_blake160_sighash_all.c L106-L107)"
+ },
+ "token_display": {
+  "token_spent_with_no_token_output": {
+   "v2": [
+    "input 0: 1000.0 CKB, lock 0xa11f80d83a4d..., type None",
+    "input 1: 200.0 CKB, lock 0xa11f80d83a4d..., type 0x50bd8d6680...",
+    "output 0: 1199.999 CKB, lock 0xa11f80d83a4d..., type None, data 0 bytes: change",
+    "fee: 0.001 CKB"
+   ],
+   "candidate": [
+    "input 0: 1000.0 CKB, lock 0xa11f80d83a4d..., type None, data 0 bytes, data hash 0x44f4c69744d5...",
+    "input 1: 200.0 CKB, lock 0xa11f80d83a4d..., type 0x50bd8d6680..., data 16 bytes, data hash 0x5c18f35d50ba..., xUDT amount 1,000,000",
+    "output 0: 1199.999 CKB, lock 0xa11f80d83a4d..., type None, data 0 bytes: back to the lock of input 0",
+    "warning: input 1's type script 0x50bd8d6680... appears on no output: its cell is consumed (xUDT amount 1,000,000 leaves)",
+    "fee: 0.001 CKB"
+   ],
+   "token_data_bytes": 16
+  },
+  "single_key_change_in_a_mixed_transaction": {
+   "v2": [
+    "input 0: 1000.0 CKB, lock 0xa11f80d83a4d..., type None",
+    "input 1: 500.0 CKB, lock 0x0cbbcadd1d3e..., type None",
+    "output 0: 100.0 CKB, lock 0x222222222222..., type None, data 0 bytes: payment",
+    "output 1: 399.999 CKB, lock 0x0cbbcadd1d3e..., type None, data 0 bytes: payment",
+    "output 2: 1000.0 CKB, lock 0xa11f80d83a4d..., type None, data 0 bytes: change",
+    "fee: 0.001 CKB"
+   ],
+   "candidate": [
+    "input 0: 1000.0 CKB, lock 0xa11f80d83a4d..., type None, data 0 bytes, data hash 0x44f4c69744d5...",
+    "input 1: 500.0 CKB, lock 0x0cbbcadd1d3e..., type None, data 0 bytes, data hash 0x44f4c69744d5...",
+    "output 0: 100.0 CKB, lock 0x222222222222..., type None, data 0 bytes: payment",
+    "output 1: 399.999 CKB, lock 0x0cbbcadd1d3e..., type None, data 0 bytes: back to the lock of input 1",
+    "output 2: 1000.0 CKB, lock 0xa11f80d83a4d..., type None, data 0 bytes: back to the lock of input 0",
+    "fee: 0.001 CKB"
+   ]
+  }
+ }
+}

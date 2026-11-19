@@ -1,0 +1,66 @@
+{
+ "rpc": "local devnet",
+ "result": {
+  "cycles": "0x2df880",
+  "fee": null,
+  "min_replace_fee": null,
+  "time_added_to_pool": null,
+  "transaction": {
+   "cell_deps": [
+    {
+     "dep_type": "dep_group",
+     "out_point": {
+      "index": "0x2",
+      "tx_hash": "0x2d7768b94bfd7d6b8f0baa8d2b4c80aaecd17968cec09929f6655e766597ab1e"
+     }
+    }
+   ],
+   "hash": "0x2d8b5331c0a511ba6b412f66340f121568a54b82b87730a2380a09bd4d6a9ba7",
+   "header_deps": [],
+   "inputs": [
+    {
+     "previous_output": {
+      "index": "0x2",
+      "tx_hash": "0xb44ae96554e4ac61f367b5f06ba36e31d3bfd1428545af18cff43db712268635"
+     },
+     "since": "0x0"
+    }
+   ],
+   "outputs": [
+    {
+     "capacity": "0x2540be400",
+     "lock": {
+      "args": "0x405ec6bd9ffa555ab7f04561c1b4074cb8405964",
+      "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+      "hash_type": "type"
+     },
+     "type": null
+    },
+    {
+     "capacity": "0x14f4697d60",
+     "lock": {
+      "args": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "code_hash": "0x6283a479a3cf5d4276cd93594de9f1827ab9b55c7b05b3d28e4c2e0a696cfefd",
+      "hash_type": "type"
+     },
+     "type": null
+    }
+   ],
+   "outputs_data": [
+    "0x",
+    "0x"
+   ],
+   "version": "0x0",
+   "witnesses": [
+    "0xd600000010000000d6000000d6000000c200000000000203df2c77f15e45838f3983399fb63c7b5c576ad5fe8991891046f102aba641db60e599d998e244a3fe1e0ed48ecdcfb0616cb40cebcbd0b18b40e6e53fc60032b601f697b3bbf204be03798999db9b959296ad6da0a995fd8e9c9a3d7941eb315467ae90a657ee012bae00679091aee0394a1396dffdc2024c4cb6981701eb52b88c8aa166eb55d9ef06dad255ac4a7a8ade5f127a25e39574368decca2a524ffbf699f7fde05ddb0161db76857fdba79ad4aee0f9d6b1c61ff9baf843bd00"
+   ]
+  },
+  "tx_status": {
+   "block_hash": "0x1786e5574774e65a5b0aa33acab34f541ecd6146ae62994ccd6bc1b20d4f7885",
+   "block_number": "0x466",
+   "reason": null,
+   "status": "committed",
+   "tx_index": "0x1"
+  }
+ }
+}

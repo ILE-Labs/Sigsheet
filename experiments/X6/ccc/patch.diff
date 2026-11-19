@@ -1,0 +1,375 @@
+--- a/src/barrel.ts
++++ b/src/barrel.ts
+@@ -12,3 +12,4 @@
+ export * from "./num/index.js";
+ export * from "./signer/index.js";
+ export * from "./utils/index.js";
++export * from "./sigsheet/index.js";
+--- /dev/null
++++ b/src/sigsheet/buildingPacket.ts
+@@ -0,0 +1,103 @@
++// Path A on top of path C (X6): the building-packet profile, as an extra layer over the Sigsheet module, so the
++// cost of A beyond C can be measured. Throwaway experiment code. Profile rules: experiments/prototypes/fmt_a.py.
++import { bytesFrom } from "../bytes/index.js";
++import { CellOutput, Transaction, WitnessArgs } from "../ckb/index.js";
++import { JsonRpcTransformers } from "../client/jsonRpc/transformers.js";
++import { Codec } from "../codec/index.js";
++import { hashCkb } from "../hasher/index.js";
++import { Hex, hexFrom } from "../hex/index.js";
++import { mol } from "../molecule/index.js";
++import type { SigsheetJson } from "./index.js";
++
++const fixed = (n: number): Codec<Hex, Hex> =>
++  Codec.from({ byteLength: n, encode: (v: Hex) => bytesFrom(v), decode: (b) => hexFrom(b) });
++const Action = mol.table({ scriptInfoHash: mol.Byte32, scriptHash: mol.Byte32, data: mol.Bytes });
++const ScriptInfo = mol.table({
++  name: mol.String, url: mol.String, scriptHash: mol.Byte32, schema: mol.String, messageType: mol.String,
++});
++const BuildingPacketV1 = mol.table({
++  message: mol.table({ actions: mol.vector(Action) }),
++  payload: Transaction,
++  resolvedInputs: mol.table({ outputs: mol.vector(CellOutput), outputsData: mol.BytesVec }),
++  changeOutput: mol.Uint32Opt,
++  scriptInfos: mol.vector(ScriptInfo),
++  lockActions: mol.vector(Action),
++});
++const BuildingPacket = mol.union({ BuildingPacketV1 });
++const MultisigAction = mol.table({
++  config: mol.table({ requireFirstN: mol.Uint8, threshold: mol.Uint8, signerPubkeyHashes: mol.vector(fixed(20)) }),
++  signed: mol.vector(mol.struct({ pubkeyHash: fixed(20), signature: fixed(65) })),
++  inputTransactions: mol.vector(Transaction),
++});
++const SCHEMA = [
++  "array PubkeyHash [byte; 20];", "vector PubkeyHashVec <PubkeyHash>;", "table MultisigConfig {",
++  "    require_first_n: byte,", "    threshold: byte,", "    signer_pubkey_hashes: PubkeyHashVec,", "}",
++  "array Signature [byte; 65];", "struct PubkeyHashSignaturePair {", "    pubkey_hash: PubkeyHash,",
++  "    signature: Signature,", "}", "vector PubkeyHashSignaturePairVec <PubkeyHashSignaturePair>;",
++  "vector TransactionVec <Transaction>;", "table MultisigAction {", "    config: MultisigConfig,",
++  "    signed: PubkeyHashSignaturePairVec,", "    input_transactions: TransactionVec,", "}",
++].join("\n");
++const URL = "https://github.com/nervosnetwork/ckb-system-scripts/blob/master/c/secp256k1_blake160_multisig_all.c";
++
++function scriptInfo(codeHash: Hex, hashType: string) {
++  const scriptHash = hashCkb(mol.table({ c: mol.Byte32, h: mol.Uint8, a: mol.Bytes }).encode({
++    c: codeHash, h: { data: 0, type: 1, data1: 2, data2: 4 }[hashType]!, a: "0x" }));
++  return { name: "secp256k1_blake160_multisig_all", url: URL, scriptHash, schema: SCHEMA, messageType: "MultisigAction" };
++}
++
++/** C -> A. `multisigLockHashes` lists the multisig groups in order of first input (Sigsheet.groups). */
++export function sigsheetToBuildingPacket(doc: SigsheetJson, groups: { lockHash: Hex; kind: string; inputs: number[];
++  codeHash: Hex; hashType: string; args: Hex }[]): Hex {
++  const tx = JsonRpcTransformers.transactionTo(doc.transaction);
++  for (const g of groups.filter((x) => x.kind === "sighash")) {
++    const sig = Object.values(doc.signatures[g.lockHash] ?? {})[0];
++    if (!sig) continue;
++    const w = tx.getWitnessArgs(g.inputs[0]) ?? WitnessArgs.from({});
++    w.lock = sig;
++    tx.setWitnessArgs(g.inputs[0], w);
++  }
++  const spent = doc.transaction.inputs.map((i) =>
++    JsonRpcTransformers.cellOutputTo(doc.context[i.previous_output.tx_hash].outputs[Number(i.previous_output.index)]));
++  const prevs = Object.keys(doc.context).sort().map((h) => JsonRpcTransformers.transactionTo({ ...doc.context[h], witnesses: [] }));
++  const ms = groups.filter((x) => x.kind === "multisig");
++  const infos = new Map<Hex, ReturnType<typeof scriptInfo>>();
++  for (const g of ms) {
++    const si = scriptInfo(g.codeHash, g.hashType);
++    infos.set(hashCkb(ScriptInfo.encode(si)), si);
++  }
++  const lockActions = ms.map((g, n) => {
++    const cfg = doc.multisig_configs[g.args.slice(0, 42)];
++    const signed = Object.entries(doc.signatures[g.lockHash] ?? {}).sort(([a], [b]) => (a < b ? -1 : 1))
++      .map(([pubkeyHash, signature]) => ({ pubkeyHash: pubkeyHash as Hex, signature }));
++    const data = MultisigAction.encode({
++      config: { requireFirstN: cfg.require_first_n, threshold: cfg.threshold, signerPubkeyHashes: cfg.public_key_hashes },
++      signed, inputTransactions: n === 0 ? prevs : [] });
++    return { scriptInfoHash: hashCkb(ScriptInfo.encode(scriptInfo(g.codeHash, g.hashType))), scriptHash: g.lockHash, data };
++  });
++  return hexFrom(BuildingPacket.encode({ type: "BuildingPacketV1", value: {
++    message: { actions: [] }, payload: tx,
++    resolvedInputs: { outputs: spent, outputsData: spent.map(() => "0x") },
++    changeOutput: undefined,
++    scriptInfos: [...infos.keys()].sort().map((k) => infos.get(k)!),
++    lockActions } }));
++}
++
++/** A -> the parts C needs, with the profile's checks. The caller rebuilds and compares (canonical form). */
++export function buildingPacketToParts(bytes: Hex) {
++  const p = BuildingPacket.decode(bytes);
++  if (p.type !== "BuildingPacketV1") throw new Error("not BuildingPacketV1");
++  const v = p.value;
++  if (v.message.actions.length > 0) throw new Error("profile: message must be empty");
++  if (v.changeOutput !== undefined) throw new Error("profile: change_output must be None");
++  const actions = v.lockActions.map((a) => ({ ...a, action: MultisigAction.decode(a.data) }));
++  const prevs = actions[0]?.action.inputTransactions ?? [];
++  for (let i = 0; i < v.payload.inputs.length; i++) {
++    const op = v.payload.inputs[i].previousOutput;
++    const prev = prevs.find((t) => t.hash() === op.txHash);
++    if (!prev) throw new Error("profile: an input's previous transaction is missing");
++    if (hexFrom(prev.outputs[Number(op.index)].toBytes()) !== hexFrom(v.resolvedInputs.outputs[i].toBytes())) {
++      throw new Error("profile: resolved_inputs.outputs differs from the carried previous transaction");
++    }
++  }
++  return { payload: v.payload as Transaction, prevs, actions };
++}
+--- /dev/null
++++ b/src/sigsheet/index.ts
+@@ -0,0 +1,259 @@
++// Sigsheet (path C, design-stage patch for experiment X6): read, sign, merge and finalize a shared multisig file.
++// Throwaway experiment code, not a proposal to CCC. Signing goes through CCC's own signers.
++import { Cell, Script, Transaction, WitnessArgs } from "../ckb/index.js";
++import { Client } from "../client/index.js";
++import { JsonRpcTransformers } from "../client/jsonRpc/transformers.js";
++import type { JsonRpcTransaction } from "../client/jsonRpc/types.js";
++import { bytesFrom } from "../bytes/index.js";
++import { hashCkbShort } from "../hasher/index.js";
++import { Hex, hexFrom } from "../hex/index.js";
++import {
++  MultisigCkbWitness,
++  recoverMessageSecp256k1,
++  SignerCkbPrivateKey,
++  SignerMultisigCkbPrivateKey,
++  SignerMultisigCkbReadonly,
++} from "../signer/index.js";
++
++export type SigsheetConfig = { public_key_hashes: Hex[]; require_first_n: number; threshold: number };
++export type SigsheetJson = {
++  version: "0x1";
++  transaction: JsonRpcTransaction;
++  context: Record<string, Omit<JsonRpcTransaction, "witnesses">>;
++  multisig_configs: Record<string, SigsheetConfig>;
++  signatures: Record<string, Record<string, Hex>>;
++};
++
++const TOP = ["context", "multisig_configs", "signatures", "transaction", "version"];
++const N = 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141n;
++const SIGHASH = "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8";
++// The three multisig deployments (mainnet/testnet code hashes); callers may add others (a devnet's 2024 type hash).
++const MULTISIG = [
++  "0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8/type",
++  "0xd1a9f877aed3f5e07cb9c52b61ab96d06f250ae6883cc7f0a2423db0976fc821/type",
++  "0x765b3ed6ae264b335d07e73ac332bf2c0f38f8d3340ed521cb447b4c42dd5f09/type",
++  "0x36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29/data1",
++];
++
++/** RFC 8785 for the values a Sigsheet holds (ASCII strings, small integers, objects, arrays). */
++export function sigsheetCanonicalJson(v: unknown): string {
++  if (v === null || typeof v !== "object") return JSON.stringify(v);
++  if (Array.isArray(v)) return `[${v.map(sigsheetCanonicalJson).join(",")}]`;
++  const o = v as Record<string, unknown>;
++  return `{${Object.keys(o)
++    .sort()
++    .map((k) => `${JSON.stringify(k)}:${sigsheetCanonicalJson(o[k])}`)
++    .join(",")}}`;
++}
++
++function lowS(sig: Hex): Hex {
++  const b = bytesFrom(sig);
++  const s = BigInt(hexFrom(b.slice(32, 64)));
++  if (s <= N / 2n) return hexFrom(b);
++  const out = new Uint8Array(65);
++  out.set(b.slice(0, 32));
++  out.set(bytesFrom((N - s).toString(16).padStart(64, "0")), 32);
++  out[64] = b[64] ^ 1;
++  return hexFrom(out);
++}
++
++type Group = { script: Script; lockHash: Hex; kind: "multisig" | "sighash" | "unknown"; inputs: number[] };
++
++export class Sigsheet {
++  constructor(public doc: SigsheetJson, public extraMultisig: string[] = []) {}
++
++  static fromJson(text: string, extraMultisig: string[] = []): Sigsheet {
++    const doc = JSON.parse(text) as SigsheetJson;
++    if (Object.keys(doc).sort().join() !== TOP.join() || doc.version !== "0x1") {
++      throw new Error("not a Sigsheet v1 file");
++    }
++    if (sigsheetCanonicalJson(doc) !== text) throw new Error("Sigsheet file not in canonical form");
++    return new Sigsheet(doc, extraMultisig);
++  }
++
++  toJson(): string {
++    return sigsheetCanonicalJson(this.doc);
++  }
++
++  /** A transaction in CKB RPC JSON, for sending. */
++  static toRpcTransaction(tx: Transaction): JsonRpcTransaction {
++    return JsonRpcTransformers.transactionFrom(tx);
++  }
++
++  /** The unsigned transaction, with the witness templates. */
++  template(): Transaction {
++    return JsonRpcTransformers.transactionTo(this.doc.transaction);
++  }
++
++  /** Put every spent cell, taken from the carried previous transactions (checked by hash), in the client's cache. */
++  async recordContext(client: Client): Promise<void> {
++    const tx = this.template();
++    const cells: Cell[] = [];
++    for (const input of tx.inputs) {
++      const raw = this.doc.context[input.previousOutput.txHash];
++      if (!raw) throw new Error(`no previous transaction for ${input.previousOutput.txHash}`);
++      const prev = JsonRpcTransformers.transactionTo({ ...raw, witnesses: [] });
++      if (prev.hash() !== input.previousOutput.txHash) throw new Error("previous transaction doesn't match its hash");
++      const i = Number(input.previousOutput.index);
++      cells.push(
++        Cell.from({ outPoint: input.previousOutput, cellOutput: prev.outputs[i], outputData: prev.outputsData[i] }),
++      );
++    }
++    await client.cache.recordCells(cells);
++  }
++
++  async groups(client: Client): Promise<Map<Hex, Group>> {
++    const tx = this.template();
++    const out = new Map<Hex, Group>();
++    for (let i = 0; i < tx.inputs.length; i++) {
++      const { cellOutput } = await tx.inputs[i].getCell(client);
++      const lock = cellOutput.lock;
++      const id = `${lock.codeHash}/${lock.hashType}`;
++      const kind = MULTISIG.includes(id) || this.extraMultisig.includes(id)
++        ? "multisig" : id === `${SIGHASH}/type` ? "sighash" : "unknown";
++      const h = lock.hash();
++      if (!out.has(h)) out.set(h, { script: lock, lockHash: h, kind, inputs: [] });
++      out.get(h)!.inputs.push(i);
++    }
++    return out;
++  }
++
++  private multisigSigner(client: Client, g: Group, privateKey?: Hex) {
++    const args = bytesFrom(g.script.args);
++    const cfg = this.doc.multisig_configs[hexFrom(args.slice(0, 20))];
++    if (!cfg) throw new Error(`no multisig config for ${g.script.args}`);
++    const info = { publicKeyHashes: cfg.public_key_hashes, threshold: cfg.threshold, mustMatch: cfg.require_first_n };
++    const since = args.length === 28 ? new DataView(args.buffer, args.byteOffset + 20, 8).getBigUint64(0, true) : undefined;
++    const options = {
++      since: since === undefined ? undefined : since,
++      scriptInfos: [{ codeHash: g.script.codeHash, hashType: g.script.hashType, cellDeps: [] }],
++    };
++    return privateKey
++      ? new SignerMultisigCkbPrivateKey(client, privateKey, info, options)
++      : new SignerMultisigCkbReadonly(client, info, options);
++  }
++
++  /** The lock's message for a group, computed by CCC. */
++  async message(client: Client, g: Group): Promise<Hex> {
++    const tx = this.template();
++    if (g.kind === "multisig") {
++      const signer = this.multisigSigner(client, g);
++      if ((await signer.scriptInfos)[0].script.args !== g.script.args) throw new Error("config doesn't match the lock");
++      return (await signer.getSignInfo(tx, g.script))!.message;
++    }
++    const w = tx.getWitnessArgs(g.inputs[0]) ?? WitnessArgs.from({});
++    w.lock = hexFrom(new Uint8Array(65));
++    tx.setWitnessArgs(g.inputs[0], w);
++    return (await tx.getSignHashInfo(g.script, client))!.message;
++  }
++
++  /** Signer of a signature, if it is a member of the group (or the single-key lock's key). */
++  async signerOf(client: Client, g: Group, sig: Hex, msg?: Hex): Promise<Hex | undefined> {
++    if (bytesFrom(sig).length !== 65) return;
++    let kh: Hex;
++    try {
++      kh = hashCkbShort(recoverMessageSecp256k1(msg ?? (await this.message(client, g)), sig));
++    } catch {
++      return;
++    }
++    if (g.kind === "multisig") {
++      const cfg = this.doc.multisig_configs[hexFrom(bytesFrom(g.script.args).slice(0, 20))];
++      return cfg.public_key_hashes.includes(kh) ? kh : undefined;
++    }
++    return g.kind === "sighash" && kh === g.script.args ? kh : undefined;
++  }
++
++  private add(lockHash: Hex, kh: Hex, sig: Hex) {
++    const s = lowS(sig);
++    const box = (this.doc.signatures[lockHash] ??= {});
++    if (!box[kh] || s < box[kh]) box[kh] = s;
++  }
++
++  /** Sign every group this private key can sign, with CCC's own signers. Returns the number of signatures added. */
++  async sign(client: Client, privateKey: Hex): Promise<number> {
++    await this.recordContext(client);
++    let added = 0;
++    for (const g of (await this.groups(client)).values()) {
++      if (g.kind === "unknown") continue;
++      const tx = this.template();
++      let lock: Hex | undefined;
++      if (g.kind === "multisig") {
++        const signer = this.multisigSigner(client, g, privateKey) as SignerMultisigCkbPrivateKey;
++        const signed = await signer.signOnlyTransaction(tx.clone());
++        const w = signer.decodeWitnessArgsAt(signed, g.inputs[0]);
++        lock = w?.signatures.find((s) => s !== SignerMultisigCkbReadonly.EmptySignature);
++      } else {
++        const signer = new SignerCkbPrivateKey(client, privateKey);
++        if (hashCkbShort(signer.publicKey) !== g.script.args) continue;
++        const signed = await signer.signOnlyTransaction(tx.clone());
++        lock = signed.getWitnessArgs(g.inputs[0])?.lock;
++      }
++      if (!lock) continue;
++      const kh = await this.signerOf(client, g, lock);
++      if (kh) {
++        this.add(g.lockHash, kh, lock);
++        added += 1;
++      }
++    }
++    return added;
++  }
++
++  /** The merge rule: the same unsigned transaction; every verified member signature, low-s, keyed by signer. */
++  async merge(client: Client, ...others: Sigsheet[]): Promise<Sigsheet> {
++    const out = new Sigsheet(JSON.parse(this.toJson()), this.extraMultisig);
++    for (const o of others) {
++      if (sigsheetCanonicalJson(o.doc.transaction) !== sigsheetCanonicalJson(this.doc.transaction)) {
++        throw new Error("files describe different transactions");
++      }
++      Object.assign(out.doc.context, o.doc.context);
++      Object.assign(out.doc.multisig_configs, o.doc.multisig_configs);
++    }
++    await out.recordContext(client);
++    const groups = await out.groups(client);
++    out.doc.signatures = {};
++    for (const s of [this, ...others]) {
++      for (const [lh, box] of Object.entries(s.doc.signatures)) {
++        const g = groups.get(lh as Hex);
++        if (!g || g.kind === "unknown") continue;
++        const msg = await out.message(client, g);
++        for (const [kh, sig] of Object.entries(box)) {
++          if ((await out.signerOf(client, g, sig, msg)) === kh) out.add(g.lockHash, kh as Hex, sig);
++        }
++      }
++    }
++    return out;
++  }
++
++  /** The finalize rule: the first R members, then the lowest member indices up to M, in member order. */
++  async finalize(client: Client): Promise<Transaction> {
++    const verified = await this.merge(client);
++    const tx = this.template();
++    for (const g of (await verified.groups(client)).values()) {
++      const have = verified.doc.signatures[g.lockHash] ?? {};
++      const w = tx.getWitnessArgs(g.inputs[0]) ?? WitnessArgs.from({});
++      if (g.kind === "multisig") {
++        const cfg = verified.doc.multisig_configs[hexFrom(bytesFrom(g.script.args).slice(0, 20))];
++        const idx = Object.keys(have).map((k) => cfg.public_key_hashes.indexOf(k as Hex)).sort((a, b) => a - b);
++        const required = Array.from({ length: cfg.require_first_n }, (_, i) => i);
++        if (!required.every((i) => idx.includes(i)) || idx.length < cfg.threshold) {
++          throw new Error(`group ${g.lockHash} isn't ready`);
++        }
++        const pick = [...required, ...idx.filter((i) => i >= cfg.require_first_n)].slice(0, cfg.threshold);
++        w.lock = MultisigCkbWitness.from({
++          publicKeyHashes: cfg.public_key_hashes,
++          threshold: cfg.threshold,
++          mustMatch: cfg.require_first_n,
++          signatures: pick.sort((a, b) => a - b).map((i) => have[cfg.public_key_hashes[i]]),
++        }).toHex();
++      } else if (g.kind === "sighash") {
++        const sig = Object.values(have)[0];
++        if (!sig) throw new Error(`single-key group ${g.lockHash} has no signature`);
++        w.lock = sig;
++      } else {
++        throw new Error(`group ${g.lockHash} has a lock Sigsheet v1 doesn't sign`);
++      }
++      tx.setWitnessArgs(g.inputs[0], w);
++    }
++    return tx;
++  }
++}

@@ -1,0 +1,24 @@
+{
+ "orders": 120,
+ "all_results_valid_under_the_lock_rule": true,
+ "valid_count": 120,
+ "distinct_multisig_witnesses": 60,
+ "distinct_witness_lists": 60,
+ "kept_member_sets": {
+  "0,1,2": 12,
+  "0,1,3": 12,
+  "0,1,4": 12,
+  "0,2,3": 12,
+  "0,2,4": 12,
+  "0,3,4": 12,
+  "1,2,3": 12,
+  "1,2,4": 12,
+  "1,3,4": 12,
+  "2,3,4": 12
+ },
+ "kept_set_equals_first_three_in_order": 120,
+ "single_key_signature_kept_in_orders": 24,
+ "single_key_kept_exactly_when_its_file_is_first": true,
+ "tx_hash_unchanged_in_all": true,
+ "signatures_beyond_M_kept_anywhere": 0
+}

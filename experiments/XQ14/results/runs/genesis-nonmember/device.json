@@ -1,0 +1,23 @@
+{
+ "job": "experiments/XQ14/results/runs/genesis-nonmember/job.json",
+ "kind": "transaction",
+ "screens": [
+  "Confirm | Transaction",
+  "Amount | 999",
+  "Fee | 1",
+  "Destination (1/2) | ckb1qzda0cr08m85hc | 8jlnfp3zer7xulejywt4 | 9kt2rr0vthywaa50xws",
+  "Destination (2/2) | qduttp4q2sphy5e4w | q6j9m6p7gh8z75qvq | n6e95f",
+  "Reject",
+  "Accept"
+ ],
+ "presses": {
+  "right": 6,
+  "both": 1
+ },
+ "annotated_bytes": 3091,
+ "annotated_sha256": "ac0dec1d966d09b9035a38bc93ae12f5510b0e1068d411d19717e69bb92a0cec",
+ "apdus": 14,
+ "signature": "f4f8100a306e861d2492a9c43245b7304040e4c77b93469dbf8ee95b6f30e50071a2318a4735f89092e5e2559772a67c8f0e6ed92fc41ce83a18569c423e8a4e01",
+ "result": "signed",
+ "seconds": 2.097
+}

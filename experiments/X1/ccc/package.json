@@ -1,0 +1,9 @@
+{
+  "name": "x1-ccc-harness",
+  "private": true,
+  "type": "module",
+  "description": "X1: compute the multisig signing message and sign with @ckb-ccc/core at a pinned version",
+  "dependencies": {
+    "@ckb-ccc/core": "1.23.1"
+  }
+}

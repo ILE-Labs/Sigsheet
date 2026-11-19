@@ -1,0 +1,313 @@
+{
+ "date": "2026-11-18 21:32 UTC",
+ "probes": [
+  {
+   "name": "probe-0-x1",
+   "data_bytes": 0,
+   "previous_tx_raw_bytes": 460,
+   "inputs_from_it": 1,
+   "result": "signed",
+   "error": null,
+   "seconds": 2.103,
+   "annotated_bytes": 1012,
+   "apdus": 5,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-16000-x1",
+   "data_bytes": 16000,
+   "previous_tx_raw_bytes": 16460,
+   "inputs_from_it": 1,
+   "result": "signed",
+   "error": null,
+   "seconds": 2.205,
+   "annotated_bytes": 17012,
+   "apdus": 74,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-64000-x1",
+   "data_bytes": 64000,
+   "previous_tx_raw_bytes": 64460,
+   "inputs_from_it": 1,
+   "result": "signed",
+   "error": null,
+   "seconds": 2.417,
+   "annotated_bytes": 65012,
+   "apdus": 283,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-128000-x1",
+   "data_bytes": 128000,
+   "previous_tx_raw_bytes": 128460,
+   "inputs_from_it": 1,
+   "result": "signed",
+   "error": null,
+   "seconds": 2.614,
+   "annotated_bytes": 129012,
+   "apdus": 561,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-283000-x1",
+   "data_bytes": 283000,
+   "previous_tx_raw_bytes": 283460,
+   "inputs_from_it": 1,
+   "result": "signed",
+   "error": null,
+   "seconds": 3.136,
+   "annotated_bytes": 284012,
+   "apdus": 1235,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-400000-x1",
+   "data_bytes": 400000,
+   "previous_tx_raw_bytes": 400460,
+   "inputs_from_it": 1,
+   "result": "signed",
+   "error": null,
+   "seconds": 3.546,
+   "annotated_bytes": 401012,
+   "apdus": 1744,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-1000000-x1",
+   "data_bytes": 1000000,
+   "previous_tx_raw_bytes": 1000460,
+   "inputs_from_it": 1,
+   "result": "signed",
+   "error": null,
+   "seconds": 5.604,
+   "annotated_bytes": 1001012,
+   "apdus": 4353,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-0-x2",
+   "data_bytes": 0,
+   "previous_tx_raw_bytes": 460,
+   "inputs_from_it": 2,
+   "result": "signed",
+   "error": null,
+   "seconds": 2.105,
+   "annotated_bytes": 1540,
+   "apdus": 7,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-16000-x2",
+   "data_bytes": 16000,
+   "previous_tx_raw_bytes": 16460,
+   "inputs_from_it": 2,
+   "result": "signed",
+   "error": null,
+   "seconds": 2.302,
+   "annotated_bytes": 33540,
+   "apdus": 146,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-64000-x2",
+   "data_bytes": 64000,
+   "previous_tx_raw_bytes": 64460,
+   "inputs_from_it": 2,
+   "result": "signed",
+   "error": null,
+   "seconds": 2.616,
+   "annotated_bytes": 129540,
+   "apdus": 564,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-128000-x2",
+   "data_bytes": 128000,
+   "previous_tx_raw_bytes": 128460,
+   "inputs_from_it": 2,
+   "result": "signed",
+   "error": null,
+   "seconds": 3.04,
+   "annotated_bytes": 257540,
+   "apdus": 1120,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-283000-x2",
+   "data_bytes": 283000,
+   "previous_tx_raw_bytes": 283460,
+   "inputs_from_it": 2,
+   "result": "signed",
+   "error": null,
+   "seconds": 4.175,
+   "annotated_bytes": 567540,
+   "apdus": 2468,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-400000-x2",
+   "data_bytes": 400000,
+   "previous_tx_raw_bytes": 400460,
+   "inputs_from_it": 2,
+   "result": "signed",
+   "error": null,
+   "seconds": 4.89,
+   "annotated_bytes": 801540,
+   "apdus": 3485,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  },
+  {
+   "name": "probe-1000000-x2",
+   "data_bytes": 1000000,
+   "previous_tx_raw_bytes": 1000460,
+   "inputs_from_it": 2,
+   "result": "signed",
+   "error": null,
+   "seconds": 8.606,
+   "annotated_bytes": 2001540,
+   "apdus": 8703,
+   "screens": 7,
+   "presses": {
+    "right": 6,
+    "both": 1
+   },
+   "emulator": {
+    "app_exited": false,
+    "exit_line": [],
+    "still_listening": true
+   },
+   "signature_recovers_to_device_key": true
+  }
+ ]
+}

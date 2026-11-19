@@ -1,0 +1,14 @@
+ℹ tsdown v0.23.7 powered by rolldown v1.3.2
+
+ ERROR  Error: Failed to import module "unrun". Please ensure it is installed.
+    at importWithError (file://experiments/X6/ccc/core/node_modules/.pnpm/tsdown@0.23.7_@typescript+typescript6@6.0.2/node_modules/tsdown/dist/style-BMCJFWa9.mjs:45:9)
+    at async unrunImport (file://experiments/X6/ccc/core/node_modules/.pnpm/tsdown@0.23.7_@typescript+typescript6@6.0.2/node_modules/tsdown/dist/options-C2rtkmcY.mjs:600:20)
+    at async iterateAsync (file://experiments/X6/ccc/core/node_modules/.pnpm/quansync@1.0.0/node_modules/quansync/dist/src-C2Pm6gXo.js:58:28)
+    at async iterateAsync (file://experiments/X6/ccc/core/node_modules/.pnpm/quansync@1.0.0/node_modules/quansync/dist/src-C2Pm6gXo.js:58:28)
+    at async iterateAsync (file://experiments/X6/ccc/core/node_modules/.pnpm/quansync@1.0.0/node_modules/quansync/dist/src-C2Pm6gXo.js:58:28)
+    at async loadConfigFile (file://experiments/X6/ccc/core/node_modules/.pnpm/tsdown@0.23.7_@typescript+typescript6@6.0.2/node_modules/tsdown/dist/options-C2rtkmcY.mjs:511:19)
+    at async resolveConfig (file://experiments/X6/ccc/core/node_modules/.pnpm/tsdown@0.23.7_@typescript+typescript6@6.0.2/node_modules/tsdown/dist/build-S0sSJY-K.mjs:96:51)
+    at async build$1 (file://experiments/X6/ccc/core/node_modules/.pnpm/tsdown@0.23.7_@typescript+typescript6@6.0.2/node_modules/tsdown/dist/build-S0sSJY-K.mjs:721:28)
+    at async CAC.<anonymous> (file://experiments/X6/ccc/core/node_modules/.pnpm/tsdown@0.23.7_@typescript+typescript6@6.0.2/node_modules/tsdown/dist/run.mjs:21:2)
+    at async runCLI (file://experiments/X6/ccc/core/node_modules/.pnpm/tsdown@0.23.7_@typescript+typescript6@6.0.2/node_modules/tsdown/dist/run.mjs:81:3)
+

@@ -1,0 +1,106 @@
+ts-jest[versions] (WARN) Version 27.5.1 of jest installed has not been tested with ts-jest. If you're experiencing issues, consider using a supported version (>=29.0.0 <30.0.0-0). Please do not report issues in ts-jest if you are using unsupported versions.
+(node:3334081) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+PASS Unit Tests tests/services/tx/transaction-sender.test.ts (29.822 s)
+  ● Console
+
+    console.debug
+      [2026-11-18T21:49:46.696Z] [debug] withdrawFromDao fee: 468
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+PASS Unit Tests tests/controllers/offline-sign.test.ts
+FAIL Unit Tests tests/services/multisig.test.ts
+  ● Test suite failed to run
+
+    Electron failed to install correctly, please delete node_modules/electron and try installing again
+
+      2 | import path from 'path'
+      3 | import dotenv from 'dotenv'
+    > 4 | import { app as electronApp } from 'electron'
+        | ^
+      5 |
+      6 | const app = electronApp ?? {
+      7 |   getPath(aPath: string): string {
+
+      at getElectronPath (../../../../../refs/neuron-x1/node_modules/electron/index.js:17:11)
+      at Object.<anonymous> (../../../../../refs/neuron-x1/node_modules/electron/index.js:21:18)
+      at Object.<anonymous> (src/env.ts:4:1)
+
+PASS Unit Tests tests/controllers/multisig.test.ts (7.582 s)
+PASS Unit Tests tests/services/offline-sign.test.ts
+FAIL Unit Tests tests/utils/multisig.test.ts
+  ● Test suite failed to run
+
+    Electron failed to install correctly, please delete node_modules/electron and try installing again
+
+      2 | import path from 'path'
+      3 | import dotenv from 'dotenv'
+    > 4 | import { app as electronApp } from 'electron'
+        | ^
+      5 |
+      6 | const app = electronApp ?? {
+      7 |   getPath(aPath: string): string {
+
+      at getElectronPath (../../../../../refs/neuron-x1/node_modules/electron/index.js:17:11)
+      at Object.<anonymous> (../../../../../refs/neuron-x1/node_modules/electron/index.js:21:18)
+      at Object.<anonymous> (src/env.ts:4:1)
+
+FAIL Unit Tests tests/services/hardware.test.ts
+  ● Test suite failed to run
+
+    Electron failed to install correctly, please delete node_modules/electron and try installing again
+
+      2 | import path from 'path'
+      3 | import dotenv from 'dotenv'
+    > 4 | import { app as electronApp } from 'electron'
+        | ^
+      5 |
+      6 | const app = electronApp ?? {
+      7 |   getPath(aPath: string): string {
+
+      at getElectronPath (../../../../../refs/neuron-x1/node_modules/electron/index.js:17:11)
+      at Object.<anonymous> (../../../../../refs/neuron-x1/node_modules/electron/index.js:21:18)
+      at Object.<anonymous> (src/env.ts:4:1)
+
+FAIL Unit Tests tests/controllers/hardware.test.ts
+  ● Test suite failed to run
+
+    Electron failed to install correctly, please delete node_modules/electron and try installing again
+
+      2 | import path from 'path'
+      3 | import dotenv from 'dotenv'
+    > 4 | import { app as electronApp } from 'electron'
+        | ^
+      5 |
+      6 | const app = electronApp ?? {
+      7 |   getPath(aPath: string): string {
+
+      at getElectronPath (../../../../../refs/neuron-x1/node_modules/electron/index.js:17:11)
+      at Object.<anonymous> (../../../../../refs/neuron-x1/node_modules/electron/index.js:21:18)
+      at Object.<anonymous> (src/env.ts:4:1)
+
+PASS Unit Tests tests/models/offline-sign.test.ts
+FAIL Unit Tests tests/services/hardware/ledger.test.ts
+  ● Test suite failed to run
+
+    Electron failed to install correctly, please delete node_modules/electron and try installing again
+
+      2 | import path from 'path'
+      3 | import dotenv from 'dotenv'
+    > 4 | import { app as electronApp } from 'electron'
+        | ^
+      5 |
+      6 | const app = electronApp ?? {
+      7 |   getPath(aPath: string): string {
+
+      at getElectronPath (../../../../../refs/neuron-x1/node_modules/electron/index.js:17:11)
+      at Object.<anonymous> (../../../../../refs/neuron-x1/node_modules/electron/index.js:21:18)
+      at Object.<anonymous> (src/env.ts:4:1)
+
+Test Suites: 5 failed, 5 passed, 10 total
+Tests:       85 passed, 85 total
+Snapshots:   0 total
+Time:        46.474 s
+Ran all test suites matching /tests\/controllers\/multisig.test.ts|tests\/controllers\/hardware.test.ts|tests\/controllers\/offline-sign.test.ts|tests\/models\/offline-sign.test.ts|tests\/services\/multisig.test.ts|tests\/services\/hardware.test.ts|tests\/services\/offline-sign.test.ts|tests\/services\/tx\/transaction-sender.test.ts|tests\/utils\/multisig.test.ts|tests\/services\/hardware\/ledger.test.ts/i.
+exit=1

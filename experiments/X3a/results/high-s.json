@@ -1,0 +1,37 @@
+[
+ {
+  "member": 0,
+  "original_low_s": true,
+  "original_recovers_to": "0xfb52471221d011bbef7e83f7168b70f47100c977",
+  "twin_recovers_to": "0xfb52471221d011bbef7e83f7168b70f47100c977",
+  "member_key_hash": "0xfb52471221d011bbef7e83f7168b70f47100c977"
+ },
+ {
+  "member": 1,
+  "original_low_s": true,
+  "original_recovers_to": "0x5cf028300e33eef47429c9cfcb1d53e7a537e4e1",
+  "twin_recovers_to": "0x5cf028300e33eef47429c9cfcb1d53e7a537e4e1",
+  "member_key_hash": "0x5cf028300e33eef47429c9cfcb1d53e7a537e4e1"
+ },
+ {
+  "member": 2,
+  "original_low_s": true,
+  "original_recovers_to": "0x871dfe24b25f52a5746a5e7d7462f7460de2c638",
+  "twin_recovers_to": "0x871dfe24b25f52a5746a5e7d7462f7460de2c638",
+  "member_key_hash": "0x871dfe24b25f52a5746a5e7d7462f7460de2c638"
+ },
+ {
+  "member": 3,
+  "original_low_s": true,
+  "original_recovers_to": "0xdaddc38a7f03be3bdbc85e3592f2987489292a5e",
+  "twin_recovers_to": "0xdaddc38a7f03be3bdbc85e3592f2987489292a5e",
+  "member_key_hash": "0xdaddc38a7f03be3bdbc85e3592f2987489292a5e"
+ },
+ {
+  "member": 4,
+  "original_low_s": true,
+  "original_recovers_to": "0x36a50bd159a7e79c1f0bcca9407b3bcb2a740e9d",
+  "twin_recovers_to": "0x36a50bd159a7e79c1f0bcca9407b3bcb2a740e9d",
+  "member_key_hash": "0x36a50bd159a7e79c1f0bcca9407b3bcb2a740e9d"
+ }
+]

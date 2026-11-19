@@ -1,0 +1,23 @@
+{
+ "job": "experiments/XQ14/results/runs/two-inputs-one-group/job.json",
+ "kind": "transaction",
+ "screens": [
+  "Confirm | Transaction",
+  "Amount | 1999",
+  "Fee | 1",
+  "Destination (1/2) | ckb1qzda0cr08m85hc | 8jlnfp3zer7xulejywt4 | 9kt2rr0vthywaa50xws",
+  "Destination (2/2) | qduttp4q2sphy5e4w | q6j9m6p7gh8z75qvq | n6e95f",
+  "Reject",
+  "Accept"
+ ],
+ "presses": {
+  "right": 6,
+  "both": 1
+ },
+ "annotated_bytes": 5698,
+ "annotated_sha256": "bfb16d4936ebff2c432938a767cc3fe17fc48f0d08cb553b7667d336307e5c63",
+ "apdus": 25,
+ "signature": "c5a6eaf067f1a3fdbc62723633c91090a018aff6caa00e32a2a598f1416f99a83a85fd6843a23d76dee0b23e685f913e946b38193e449c05c669e30ff0e088db01",
+ "result": "signed",
+ "seconds": 2.095
+}

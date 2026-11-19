@@ -1,0 +1,259 @@
+{
+ "tool": "ckb-cli 2.0.0 (80efc21), tx sign-inputs",
+ "cases": {
+  "S1-genesis-2of3": {
+   "k1": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S1-genesis-2of3.json --privkey-path <keys/x1>/k1.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0xb6ad649cdd792e0a409ab54ff8870b75d52a6186f8ad4535e1fcc298812bfdc359996468c0a6cece5d97550388f6f9aa66ee832235775839d6fe8fe83d7acd0601"
+     }
+    ]
+   },
+   "k2": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S1-genesis-2of3.json --privkey-path <keys/x1>/k2.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0x05b6717c65c2ba5fe8158fce7ab58d05f6c5db59e85031e33acbef47f31841fe697f4ba795e6e89f33526ad25ff563522c31b0e539bd1f2d6a0d730be73d291201"
+     }
+    ]
+   }
+  },
+  "S2-2024-2of3": {
+   "k1": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S2-2024-2of3.json --privkey-path <keys/x1>/k1.privkey --output-format json",
+    "exit": 1,
+    "stdout": "",
+    "stderr": "Input(no.1) invalid lock script code_hash: 0x6283a479a3cf5d4276cd93594de9f1827ab9b55c7b05b3d28e4c2e0a696cfefd, hash_type: type, args.length: 20\n"
+   },
+   "k3": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S2-2024-2of3.json --privkey-path <keys/x1>/k3.privkey --output-format json",
+    "exit": 1,
+    "stdout": "",
+    "stderr": "Input(no.1) invalid lock script code_hash: 0x6283a479a3cf5d4276cd93594de9f1827ab9b55c7b05b3d28e4c2e0a696cfefd, hash_type: type, args.length: 20\n"
+   }
+  },
+  "S3-v2-2of3-two-inputs": {
+   "k2": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S3-v2-2of3-two-inputs.json --privkey-path <keys/x1>/k2.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0xff49ec0ad3a545542b3cfa9082be050e3b4b6a2c6719694a3a94e85174433ecb5f39856e1f5588b28e6f6cee20332db21022a595e6846117b54cd334ab78e5b601"
+     }
+    ]
+   },
+   "k3": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S3-v2-2of3-two-inputs.json --privkey-path <keys/x1>/k3.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0x0b07c199c4db13a47a2944d37a235c1ffd54d92d39c332d24a091de0576129cb4c36870d6ea0ba9b505ed9d066b78d9a941adf8ccecda1a485d9fa2a2e81a37501"
+     }
+    ]
+   }
+  },
+  "S4-v2-first-R": {
+   "k2": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S4-v2-first-R.json --privkey-path <keys/x1>/k2.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060",
+      "signature": "0xf2646cb5b52e35609edf23a2f1d91c55accc2e4fe67ffc7c2b7fb8550d5e3c603f1048059a2641aaebcb116649ebfc9152818eda5b9c4514a6c17bf76462263100"
+     }
+    ]
+   },
+   "k4": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S4-v2-first-R.json --privkey-path <keys/x1>/k4.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060",
+      "signature": "0x6947c9d79d14cccc1499f263590e847bb32d6f44ea4237d65e2916c5778b4c97198a548a29468a1c4654ba275049247e2e866c9df8d4fabf8f5419455d7e2f7700"
+     }
+    ]
+   }
+  },
+  "S5-v2-since-in-args": {
+   "k1": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S5-v2-since-in-args.json --privkey-path <keys/x1>/k1.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa1351400000000000000",
+      "signature": "0x5bceab6be7930c610e5fc5d9612d3cc33d3f982f140be541aa60cdcdac10443a5743eda3fcfc13d179de45276ed3af46eeddaa15f2a8df5351772f8459c020e501"
+     }
+    ]
+   },
+   "k3": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S5-v2-since-in-args.json --privkey-path <keys/x1>/k3.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa1351400000000000000",
+      "signature": "0xe0c0ce643b6c05a8c2f9e0fe4fdd65f9aa112ec02a0c721340b2cfc5d7f3e0f05551b80537af059be80b3d025c82e03fb2a007e91ca2cc36ac2ad746f5b93ef000"
+     }
+    ]
+   }
+  },
+  "S6-two-multisig-groups": {
+   "k1": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S6-two-multisig-groups.json --privkey-path <keys/x1>/k1.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0xb48db0e02289a3d43979bf5f7bb8384c8da067e8d2dadb35702cad71155e9aaf2963c1a7b29d4dc39c57b426fd3926a9b0c073007f7dc296a04ef9ec45e70d5a00"
+     },
+     {
+      "lock-arg": "0x3358dd7cbb20910c038867bdde3566a9aafd76a5",
+      "signature": "0x7fb4c5140c74fa3ff8e139623d779035e3bb034827bae49831e5399d605008bf7dd1b6ef0560f561c831535dd8b5d923ee2291eff418544e72c734231b9b3a1201"
+     }
+    ]
+   },
+   "k2": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S6-two-multisig-groups.json --privkey-path <keys/x1>/k2.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0x7930d0a18bd5ade26016749b208d1d50b0d478873b1476d22e0fc71992b54e4676b304beaeb5e5da8200efacfed99d68aa0d7230fa762e9eb1d8ed72d8c746f800"
+     },
+     {
+      "lock-arg": "0x3358dd7cbb20910c038867bdde3566a9aafd76a5",
+      "signature": "0x3e9980fa7b1eddfa33cb498a34267dbccea3ed76a1118f2e3b2f7515e9bc1abc51926e384fbaee1cec946f6d7b8209e5f0b1b385ddbe5856736ee2ea6164d47b01"
+     }
+    ]
+   },
+   "k3": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S6-two-multisig-groups.json --privkey-path <keys/x1>/k3.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x3358dd7cbb20910c038867bdde3566a9aafd76a5",
+      "signature": "0x5c317c96de67d0b9b2829c70a7bdbb981a9011757d40a10cfd84f600c7ac0ea92a3e6dbcc92386a420d1e546d28c39a657abe1fdd40856d5658358ae18861acb01"
+     },
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0x50ac5256e9ae011c35dbfff349bdbc60a5730526deb1227360cb273af79110f77270456356daa2bd93b8e134d799db9a6a4c840c47397f2a9642b0ab000ef17000"
+     }
+    ]
+   },
+   "k5": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S6-two-multisig-groups.json --privkey-path <keys/x1>/k5.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x3358dd7cbb20910c038867bdde3566a9aafd76a5",
+      "signature": "0xa3d7d5886715e1230778a61172054bc8fd805e2a71a90b6b7cd1c5f7e46f110e1c2f41c9323d317a6c07fd765aeaf72987d4d5255f925001670176f892ff22db00"
+     }
+    ]
+   }
+  },
+  "S7-multisig-plus-single-key": {
+   "k1": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S7-multisig-plus-single-key.json --privkey-path <keys/x1>/k1.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0x6dc2d008ea6bd4a4769c11b67456b669a6a8d2fe87a25fb7b20d81dae9f36ff422e7acc8da1b83456ec1529dc42614b114dce2bc3f0017482c0fe3348e87195700"
+     }
+    ]
+   },
+   "k2": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S7-multisig-plus-single-key.json --privkey-path <keys/x1>/k2.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0xbf95ad3a3ebe18ed8bb727be9c0292e9d215817fbcd7d61b1d2617a3951cfa132049b3cc7f0130524f003c581d11fcda4d18cc3f583926116aff76b19397450300"
+     }
+    ]
+   },
+   "k7": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S7-multisig-plus-single-key.json --privkey-path <keys/x1>/k7.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0xb2dcd1b7746fdae2ca1cd5549f2b0e9986c75f9a",
+      "signature": "0x8a57bf7d16309f66a4975a0950d9ef45add371134b17862360194d61c21c408a43a9e2261784d0cb1dcf01866448034398085f6f77528aea1fd0692724221bd200"
+     }
+    ]
+   }
+  },
+  "S8-neuron-export": {
+   "k1": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S8-neuron-export.json --privkey-path <keys/x1>/k1.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0xfcf178bd8f18ac004d9c42d008da8dae827ddced1b39224c3f779d0b79d83eaf077d20a5deb4420ec7a5d9c6e68b3fec805db27258d2f7c387da7b505aad5d3d00"
+     }
+    ]
+   },
+   "k3": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S8-neuron-export.json --privkey-path <keys/x1>/k3.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0xcc09b5a343868fe9a1e50f9b2ab75aa75f7afa10d70a004ef800a0983fb9c812598f48eb1f5a04ea569eaa3aceb4aaea960ef6dfc5445c0e523ef813a09fd34b01"
+     }
+    ]
+   }
+  },
+  "S9-extra-witness": {
+   "k2": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S9-extra-witness.json --privkey-path <keys/x1>/k2.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0x5ee383e24f1dcf0da9d260e185522a2b857668b906c7e18413b866003e4e8b3e44028b4bafd586861c0d65e8003723fcb19ac8fbaf310e39ff83fc0a4ad2588001"
+     }
+    ]
+   },
+   "k3": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S9-extra-witness.json --privkey-path <keys/x1>/k3.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x593b2fc595771b0c3ebb9449e902f59e54afa135",
+      "signature": "0xb7e2d03bc2c51fc5c705e29ca5621efd3c65c72fa8ac80bb2f5dc93c614a350c457db14e86710a2d6046b8915b2e9cc23a51e408019111c9d0bd95750914698001"
+     }
+    ]
+   }
+  },
+  "S4N-v2-first-R-missing-required": {
+   "k1": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required.json --privkey-path <keys/x1>/k1.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060",
+      "signature": "0x64a6c26e461848e730896b9ee662df051c8b184b0f6be508f6cf081338a6ff4e10f59f82312e9a807179a72c3d78ec1116806a0a8cede439a7fbc1623827a2e800"
+     }
+    ]
+   },
+   "k2": {
+    "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required.json --privkey-path <keys/x1>/k2.privkey --output-format json",
+    "exit": 0,
+    "output": [
+     {
+      "lock-arg": "0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060",
+      "signature": "0x82449810c31a0e7b18f37715787a497297d17677ede8e865425cb8f2c4ee027362d565817c06e02fcbd6bee255f98d9a83ffb3df44bb2c7afc4c9478956a603101"
+     }
+    ]
+   }
+  }
+ }
+}

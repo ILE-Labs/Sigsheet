@@ -1,0 +1,2 @@
+status=bound executable_file=multisig-v2.bin idl_file=multisig-v2.bin.idl.json manifest_file=multisig-v2.bin.binding.json idl_sha256=0x5611da25ce2ca2b2b21a96955f29a6e95a0aab778460c9face5aafc19364b879 bound_code_data_ckb_hash=0x299e691ab5a12ed626b33513a4d1b303e77d334b5fc9477a7413ef28aa00bce1
+exit 0

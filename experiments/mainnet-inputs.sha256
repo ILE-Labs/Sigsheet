@@ -1,0 +1,47 @@
+# SHA-256 of every mainnet input the experiments use, as recorded (paths from the repository root).
+# These files are not in this branch: experiments/mainnet-inputs.md says what each is and how to get it.
+# ./bench/fetch-mainnet.sh rebuilds the uncommented ones and checks them against these digests.
+
+81ad3ca032b1beb4bc483c14e62e090a7378878ca14e47510c4758f7dc7cb804  experiments/X1/cases/R1-fiber-scripts-pr34.json
+f7e2858cd3a38fef38a195377dbd5d311b580c00e30bdf9a272e178bb40c1392  experiments/X1/cases/R2-dao-payout.json
+b398a62a7e414eb21526fb1abd5d2b08df6f1e2c86e02457f1b970350a4d642a  experiments/X1/data/fiber-scripts-34/comment-1.txt
+b3b0ddf2e02a5377d73000f2ab6624d598dd70dbceae3c4b0209ddaf165bf033  experiments/X1/data/fiber-scripts-34/comment-2.txt
+1d865a8e1f93c33d7498e299a633f8ef553b052e867bea95c4f75d2ce3997834  experiments/X1/data/fiber-scripts-34/comment-3.txt
+028f1f6aa94af77c37dae55dce24149cdf6b9d022bc1cfca948807c914f4dd69  experiments/X1/data/fiber-scripts-34/comment-4.txt
+8563ba8dcd0d051822dd0cc21db995dc8e6a2984e900d3500068f0185a07b51e  experiments/X1/data/fiber-scripts-34/mainnet.json
+d4765f26e967e12d144624c37cd6a3035b8b3c8931c6fc465a2a8a96a9279692  experiments/X2/cases/R1-fiber-scripts-pr34.json
+c544f793fd63afd89c2d42442b3a5318744cd00a080ce1275d97ee1e850cbf2a  experiments/X2/cases/R2-dao-payout.json
+0b86a830ca2faeecb987810cce35ff73b86dfbe424d0630e62cc67ddd85fd459  experiments/X3a/results/partials.json
+8ee622df9f7604172ad314c5f6519967b57b3566867967ca0954e65e4fac889c  experiments/X6/interop/a-check/R1-fiber-scripts-pr34.c.json
+3b7817cac314254926ac2a2c62ca02c5fdaefaeae739ad504bee38e79c2e5399  experiments/X6/interop/a-check/R1-fiber-scripts-pr34.a.hex
+a4715334e072844d31e3202415fb1d28897a4d9865be38eaa9237cc6702ca327  experiments/X6/interop/a-check/R2-dao-payout.c.json
+75d6f5a75907805cf2d45ecfb19bbd78f7392e22f0ce5b5e3035c340a95cf8d2  experiments/X6/interop/a-check/R2-dao-payout.a.hex
+
+# Fetched records that carry their fetch time, so a new fetch has a different digest; each transaction hash
+# inside is checked when it is fetched. From X1/scripts/fetch_mainnet.py (all) or bench/fetch_mainnet.py (marked *).
+# 9b9ba4055bbc2654313f60f880cbf8b09477f4aab075e5fb4060e043479217d0  experiments/X1/data/mainnet/0x0a13d8d9c83c3374196ee43d4f0116dac497b0fec3e71c04f7cb7780abc455d8.json
+# 626535f85ff36da2cbffc00f35b05fcfb292e48289a34d11a201fc1ed0643475  experiments/X1/data/mainnet/0x1565338fd543a257906e5debe6b4b5cedbe4cff86af47ec620e18a3bfb838b9a.json *
+# ed5927177e9d0938c40da56e1aeb1b79733d5240e486197ab9f33d9260dadd6e  experiments/X1/data/mainnet/0x3e27a1a247f2378dd609dbb2f29876350ac2898d22332dac64bfa22d1e5fa282.json
+# be30c02d52d0f9472103e04e76c549ea4a867020d74a2033c1d6e3a41c7141b9  experiments/X1/data/mainnet/0x4396de69818bd88b7fce64797ccec25d1294912d56846432f29fd192120992ee.json *
+# efb3ef98848b56f0f256764c1527d7f5b12ef400b82e20bd63681acfae2de3a5  experiments/X1/data/mainnet/0x44be4f4feda80c0e41783ab10e191df3b2bb5c3731b0970c916dbec385dcdc60.json
+# 255a8189d9f59725d90976b731dd9f0a14992d42f3f6381d9e14f868bec0bbf3  experiments/X1/data/mainnet/0x63a7f3a52fc91c52939186ca9c1064238ccdfe498d3398f25707537f591bbaa4.json *
+# 1c349a5db45d5663de1bf2342f2f610792d89a0860b8dd648826b9e60da998a6  experiments/X1/data/mainnet/0x6888aa39ab30c570c2c30d9d5684d3769bf77265a7973211a3c087fe8efbf738.json
+# b73bb92f3839af186352c03347443e737339d970c7e7a86452d70c2ee8edca1e  experiments/X1/data/mainnet/genesis-block.json
+# bf81f5c7d7342eba4ef3174f8fe0da4cbeb1444b27b16abfc3313a2119c9164c  experiments/X1/data/mainnet/multisig-2024.bin
+# 6f8e58f823a188f5c7f202a13795ab0edb8ad483ffe593a21e16f0399ca51b8f  experiments/X1/data/mainnet/multisig-capacity-by-deployment.json
+# 00e32c6a9eeb53d8fc0e09d642e8800cbb536d8344573d33163f78d713a0939a  experiments/X1/data/mainnet/multisig-genesis.bin
+# 72d1d1fa8f306168bb478c19d5371a6206b4c11bf6715ff8e97a37b0446bc0b1  experiments/X1/data/mainnet/multisig-v2.bin
+# a01f6f560a0cd97c7efe545fcb2d715105d9e8a98f5a2696054cfd29f6a238ee  experiments/X1/data/mainnet/payout-block-header.json
+# 9d981f2340e091a690018e60b04b6f495798e0c15acd31aadbba1d08f48d386f  experiments/X1/data/mainnet/summary.json
+# 4afaacb58e4972fd704244fc6da2e326bbf7861ee42b9fcbeff989bde4b47681  experiments/XQ14/results/runs/dao-payout-replay/device.json
+# 20839889493981a64dd5d656790c14adb3aea3b2ad5e3fc361eab67c3ab4b05c  experiments/XQ14/results/runs/dao-payout-replay/job.json
+# 21cea915a179dbb2d4ac4eba5490a72c38bae53dc6e17b9fde4b8fafd7093a1e  experiments/XQ14/results/runs/dao-payout-replay/result.json
+# 2a88f8204e4d69b5537c75b6d71c361e6bf08eb7808e8d36aff476aac11e752c  experiments/XQ14/results/runs/pr34-replay-contract-data/device.json
+# eb688191840b642fbf8eb0293f21f5a77f7451e44d7a767e383289bccaa83320  experiments/XQ14/results/runs/pr34-replay-contract-data/job.json
+# 3053d6700113a211448c91cf2c3be7c0799f816893499fe74c7bcc8774ab752a  experiments/XQ14/results/runs/pr34-replay-contract-data/result.json
+# 074e0c73ac99892eef17ec143f41c745d7bfb9397237f757673135b42de503c7  experiments/XQ14/results/runs/pr34-replay-default/device.json
+# eb688191840b642fbf8eb0293f21f5a77f7451e44d7a767e383289bccaa83320  experiments/XQ14/results/runs/pr34-replay-default/job.json
+# ff7abcb808334c46502b9cd348d1e49688bc23a2964b0f77171736ebf4453b66  experiments/XQ14/results/runs/pr34-replay-default/result.json
+# d98ed8c4fbbdab74a66742c7252e71e16f7c01089d4c6079c179aec0491b6544  experiments/XQ14/results/speculos/dao-payout-replay.log
+# a4a646d21eb646319bd6c062ff514508728c072094c70fc70cf81df96c5d2397  experiments/XQ14/results/speculos/pr34-replay-contract-data.log
+# a4a646d21eb646319bd6c062ff514508728c072094c70fc70cf81df96c5d2397  experiments/XQ14/results/speculos/pr34-replay-default.log

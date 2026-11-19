@@ -1,0 +1,50 @@
+--- a/speculos/api/api.py
++++ b/speculos/api/api.py
+@@ -107,4 +107,4 @@
+ 
+     def run(self):
+         # threaded must be set to allow serving requests along events streaming
+-        self._app.run(host="0.0.0.0", port=self._port, threaded=True, use_reloader=False)  # noqa: S104
++        self._app.run(host="127.0.0.1", port=self._port, threaded=True, use_reloader=False)  # noqa: S104
+--- a/speculos/main.py
++++ b/speculos/main.py
+@@ -685,7 +685,7 @@
+         if api_enabled:
+             logger.warning("--automation-port is incompatible with the API server, disabling the latter")
+             api_enabled = False
+-        automation_server = AutomationServer(("0.0.0.0", args.automation_port), AutomationClient)  # noqa: S104
++        automation_server = AutomationServer(("127.0.0.1", args.automation_port), AutomationClient)  # noqa: S104
+         automation_thread = threading.Thread(target=automation_server.serve_forever, daemon=True)
+         automation_thread.start()
+ 
+@@ -703,7 +703,7 @@
+     else:
+         transport_type = TransportType[args.usb.upper()]
+ 
+-    apdu = apdu_server.ApduServer(host="0.0.0.0", port=args.apdu_port)  # noqa: S104
++    apdu = apdu_server.ApduServer(host="127.0.0.1", port=args.apdu_port)  # noqa: S104
+     seph = seproxyhal.SeProxyHal(
+         s2,
+         args.model,
+--- a/speculos/mcu/button_tcp.py
++++ b/speculos/mcu/button_tcp.py
+@@ -57,7 +57,7 @@
+     def __init__(self, port: int):
+         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+         self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+-        self.socket.bind(("0.0.0.0", port))  # lgtm [py/bind-socket-all-network-interfaces]  # noqa: S104
++        self.socket.bind(("127.0.0.1", port))  # lgtm [py/bind-socket-all-network-interfaces]  # noqa: S104
+         self.socket.listen(5)
+         self.logger = logging.getLogger("button")
+ 
+--- a/speculos/mcu/finger_tcp.py
++++ b/speculos/mcu/finger_tcp.py
+@@ -49,7 +49,7 @@
+     def __init__(self, port: int):
+         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+         self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+-        self.socket.bind(("0.0.0.0", port))  # lgtm [py/bind-socket-all-network-interfaces]  # noqa: S104
++        self.socket.bind(("127.0.0.1", port))  # lgtm [py/bind-socket-all-network-interfaces]  # noqa: S104
+         self.socket.listen(5)
+         self.logger = logging.getLogger("finger")
+ 

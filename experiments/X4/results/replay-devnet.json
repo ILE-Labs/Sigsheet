@@ -1,0 +1,19 @@
+{
+ "date": "2026-11-18 22:00 UTC",
+ "resend_committed_tx": {
+  "tx": "0xe59840d59f37a707904b4b39f098960ca9dc2411915a835c0d49fbee03588a8a",
+  "result": {
+   "ok": false,
+   "error": "send_transaction: {'code': -301, 'message': 'TransactionFailedToResolve: Resolve failed Unknown(OutPoint(0x280cc0c93554e9d486b69ccf1311e3f872c839b4283818c6cd907cf487db54d00d000000))', 'data': 'Resolve(Unknown(OutPoint(0x280cc0c93554e9d486b69ccf1311e3f872c839b4283818c6cd907cf487db54d00d000000)))'}"
+  }
+ },
+ "old_signatures_on_new_tx": {
+  "dry_run": {
+   "ok": false,
+   "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: ValidationFailure: see error code -52 on page https://nervosnetwork.github.io/ckb-script-error-codes/by-data-hash/36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29.html#-52 })', 'data': 'Verification(Error { kind: Script, inner: TransactionScriptError { source: Inputs[0].Lock, cause: ValidationFailure: see error code -52 on page https://nervosnetwork.github.io/ckb-script-error-codes/by-data-hash/36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29.html#-52 } })'}"
+  },
+  "python_lock_rules": {
+   "0x648a0721a76b40c7af8206528ef82c3341c4ea20148c355a9650b501fb885863": false
+  }
+ }
+}

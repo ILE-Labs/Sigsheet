@@ -1,0 +1,27 @@
+{
+ "job": "experiments/XQ14/results/runs/genesis-member/job.json",
+ "kind": "transaction",
+ "screens": [
+  "Confirm | Transaction",
+  "Amount | 999",
+  "Fee | 1",
+  "Output 1/2 (1/3) | 500 CKB -> |   | ckb1qzda0cr08m85hc | 8jlnfp3zer7xulejywt4",
+  "Output 1/2 (2/3) | 9kt2rr0vthywaa50xws | qduttp4q2sphy5e4w | q6j9m6p7gh8z75qvq",
+  "Output 1/2 (3/3) | n6e95f",
+  "Output 2/2 (1/3) | 499 CKB -> |   | ckb1qpw9q60tppt7l3 | j7r09qcp7lxnp3vcanv",
+  "Output 2/2 (2/3) | gha8pmvsa3jplykxn3 | 2sq2llwyym5fg2vmzc | wgxcvceknmpn9smp",
+  "Output 2/2 (3/3) | ns7v7rax",
+  "Reject",
+  "Accept"
+ ],
+ "presses": {
+  "right": 10,
+  "both": 1
+ },
+ "annotated_bytes": 3200,
+ "annotated_sha256": "d75e365b42d5f531c7a4ee0d5bd7ffd9c2e5bda5e1226b144c833d87a0317d65",
+ "apdus": 14,
+ "signature": "df029dbfde61e38cac42b27f73f2db3ed73a6d516b53081d6ae8c549edcc082c0605ffac80362eab5ca617240fd697fa2c254ad86b07fd8e91888855ff329c1201",
+ "result": "signed",
+ "seconds": 3.13
+}

@@ -1,0 +1,108 @@
+{
+ "id": "S8-neuron-export",
+ "network": "devnet",
+ "description": "v2 2-of-3, signed first in Neuron and exported as Neuron's offline JSON, then completed by others",
+ "tx": {
+  "version": "0x0",
+  "cell_deps": [
+   {
+    "out_point": {
+     "tx_hash": "0x2d7768b94bfd7d6b8f0baa8d2b4c80aaecd17968cec09929f6655e766597ab1e",
+     "index": "0x3"
+    },
+    "dep_type": "dep_group"
+   }
+  ],
+  "header_deps": [],
+  "inputs": [
+   {
+    "since": "0x0",
+    "previous_output": {
+     "tx_hash": "0xb44ae96554e4ac61f367b5f06ba36e31d3bfd1428545af18cff43db712268635",
+     "index": "0x6"
+    }
+   }
+  ],
+  "outputs": [
+   {
+    "capacity": "0x2540be400",
+    "lock": {
+     "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+     "hash_type": "type",
+     "args": "0x405ec6bd9ffa555ab7f04561c1b4074cb8405964"
+    },
+    "type": null
+   },
+   {
+    "capacity": "0x14f4697d60",
+    "lock": {
+     "code_hash": "0x36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29",
+     "hash_type": "data1",
+     "args": "0x593b2fc595771b0c3ebb9449e902f59e54afa135"
+    },
+    "type": null
+   }
+  ],
+  "outputs_data": [
+   "0x",
+   "0x"
+  ],
+  "witnesses": [
+   "0xd600000010000000d6000000d6000000c200000000000203df2c77f15e45838f3983399fb63c7b5c576ad5fe8991891046f102aba641db60e599d998e244a3fe1e0ed48ecdcfb0616cb40cebcbd0b18b40e6e53f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  ]
+ },
+ "tx_hash": "0xaaeb866bcc26568a9c49caa4f9628114ab92228f2bcbb99f3dd9f6dcda03d77e",
+ "input_cells": [
+  {
+   "out_point": {
+    "tx_hash": "0xb44ae96554e4ac61f367b5f06ba36e31d3bfd1428545af18cff43db712268635",
+    "index": "0x6"
+   },
+   "output": {
+    "capacity": "0x174876e800",
+    "lock": {
+     "code_hash": "0x36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29",
+     "hash_type": "data1",
+     "args": "0x593b2fc595771b0c3ebb9449e902f59e54afa135"
+    },
+    "type": null
+   },
+   "data": "0x"
+  }
+ ],
+ "groups": [
+  {
+   "name": "V",
+   "kind": "multisig",
+   "deployment": "v2",
+   "lock": {
+    "code_hash": "0x36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29",
+    "hash_type": "data1",
+    "args": "0x593b2fc595771b0c3ebb9449e902f59e54afa135"
+   },
+   "input_indices": [
+    0
+   ],
+   "multisig": {
+    "require_first_n": 0,
+    "threshold": 2,
+    "key_hashes": [
+     "0xdf2c77f15e45838f3983399fb63c7b5c576ad5fe",
+     "0x8991891046f102aba641db60e599d998e244a3fe",
+     "0x1e0ed48ecdcfb0616cb40cebcbd0b18b40e6e53f"
+    ]
+   },
+   "members": [
+    "k1",
+    "k2",
+    "k3"
+   ],
+   "script": "0x00000203df2c77f15e45838f3983399fb63c7b5c576ad5fe8991891046f102aba641db60e599d998e244a3fe1e0ed48ecdcfb0616cb40cebcbd0b18b40e6e53f",
+   "since_in_args": null,
+   "signers": [
+    "k1",
+    "k3"
+   ]
+  }
+ ]
+}

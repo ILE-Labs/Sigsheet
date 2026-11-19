@@ -1,0 +1,10 @@
+{
+ "app": {
+  "version": "0.6.3",
+  "hash": "8713fdf7"
+ },
+ "path": "44'/309'/0'/0/0",
+ "publicKey": "043abf7271ee6b1abdaf6d38021c2dc4cce9bb112a69c3992394627b793f94c4084ce99ce10f0e8ed51d1911af769b9cc87f16f5b842415c1b65895111a4ec2221",
+ "lockArg": "e5260d839a786ac2a909181df9a423f1efbe863d",
+ "address": "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsq09ycxc8xncdtp2jzgcrhu6ggl3a7lgv0g2ws60n"
+}

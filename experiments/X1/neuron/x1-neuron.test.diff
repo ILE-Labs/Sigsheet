@@ -1,0 +1,306 @@
+--- base/x1-neuron.test.ts
++++ x1-neuron.test.ts
+@@ -1,3 +1,15 @@
++// X1, implementation N: Neuron v0.204.1's own signing code, run in Node under Neuron's jest setup.
++//
++// The mock preamble below (down to the first import of src/) is copied from Neuron's own test
++// tests/services/tx/transaction-sender.test.ts at d3a7467d218e4b6f777326682a83fec802669c00
++// (lines 1-189), with the relative paths adjusted for tests/x1/. Only electron, the wallet
++// service, RPC, the database-backed services and the hardware service are mocked; the code under
++// test (TransactionSender.signMultisig, TransactionSender.signSingleMultiSignScript, the
++// Transaction / WitnessArgs / Multisig models and OfflineSignController.exportTransactionAsJSON)
++// is Neuron's unchanged source.
++//
++// Env: X1_CASES (cases folder), X1_KEYS (keys.json), X1_OUT (output JSON), X1_EXPORT_DIR (folder
++// for Neuron's offline JSON export of case S8), X1_CONTEXT_DIR (folder with input transactions).
+ import { dialog } from 'electron'
+ import { CKBComponents } from '@ckb-lumos/lumos/rpc'
+ import { bytes } from '@ckb-lumos/lumos/codec'
+@@ -110,8 +122,8 @@
+   }
+ })
+ 
+-jest.mock('../../../src/models/system-script-info', () => {
+-  const originalModule = jest.requireActual('../../../src/models/system-script-info')
++jest.mock('../../src/models/system-script-info', () => {
++  const originalModule = jest.requireActual('../../src/models/system-script-info')
+   return {
+     ...originalModule.default,
+     isSecpScript: originalModule.default.isSecpScript,
+@@ -185,9 +197,273 @@
+ jest.mock('electron', () => ({
+   dialog: {
+     showMessageBox: jest.fn(),
++    // X1 addition: the export path asks where to save; the test answers with a fixed file path.
++    showSaveDialog: jest.fn(),
+   },
+ }))
+ 
+-import Transaction from '../../../src/models/chain/transaction'
+-import TxStatus from '../../../src/models/chain/tx-status'
+-import CellDep, { DepType } from '../../../src/models/chain/cell-dep'
++// ---------------------------------------------------------------- X1 harness (not from Neuron)
++// The original test imports these right after its mocks (its lines 191-193); the mocks above use them.
++import CellDep, { DepType } from '../../src/models/chain/cell-dep'
++import OutPoint from '../../src/models/chain/out-point'
++void bytes
++void resetMocks
++void dialog
++export type X1Unused = CKBComponents.RawTransaction
++import fs from 'fs'
++import path from 'path'
++import { dialog as x1Dialog } from 'electron'
++import { hd as x1hd } from '@ckb-lumos/lumos'
++import { CKBHasher } from '@ckb-lumos/lumos/utils'
++import X1Transaction from '../../src/models/chain/transaction'
++import X1CellDep from '../../src/models/chain/cell-dep'
++import X1OutPoint from '../../src/models/chain/out-point'
++import X1Input from '../../src/models/chain/input'
++import X1Script from '../../src/models/chain/script'
++import X1Output from '../../src/models/chain/output'
++import X1WitnessArgs from '../../src/models/chain/witness-args'
++import X1TransactionSender from '../../src/services/transaction-sender'
++import X1MultisigConfigModel from '../../src/models/multisig-config'
++import X1Multisig from '../../src/models/multisig'
++import X1OfflineSign from '../../src/models/offline-sign'
++import { getMultisigStatus as x1GetMultisigStatus } from '../../src/utils/multisig'
++import { serializeWitnessArgs as x1SerializeWitnessArgs } from '../../src/utils/serialization'
++
++const CASES = process.env.X1_CASES!
++const KEYS: Record<string, any> = Object.fromEntries(
++  JSON.parse(fs.readFileSync(process.env.X1_KEYS!, 'utf8')).map((k: any) => [k.name, k])
++)
++const OUT = process.env.X1_OUT!
++const EXPORT_DIR = process.env.X1_EXPORT_DIR!
++const CONTEXT_DIR = process.env.X1_CONTEXT_DIR!
++
++const fakeWallet = {
++  name: 'x1-wallet',
++  id: 'x1',
++  extendedKey: 'a',
++  keystore: new x1hd.Keystore(
++    { cipher: 'x', cipherparams: { iv: 'x' }, ciphertext: 'x', kdf: '1', kdfparams: { dklen: 1, n: 1, r: 1, p: 1, salt: '1' }, mac: '1' },
++    '0'
++  ),
++  isHardware: () => false,
++}
++
++const scriptFrom = (s: any) => X1Script.fromObject({ codeHash: s.code_hash, args: s.args, hashType: s.hash_type })
++
++function neuronTx(c: any): X1Transaction {
++  const tx = c.tx
++  return X1Transaction.fromObject({
++    version: tx.version,
++    cellDeps: tx.cell_deps.map((d: any) =>
++      X1CellDep.fromObject({
++        outPoint: X1OutPoint.fromObject({ txHash: d.out_point.tx_hash, index: d.out_point.index }),
++        depType: d.dep_type === 'dep_group' ? ('depGroup' as any) : ('code' as any),
++      })
++    ),
++    headerDeps: tx.header_deps,
++    inputs: tx.inputs.map((i: any, idx: number) =>
++      X1Input.fromObject({
++        previousOutput: X1OutPoint.fromObject({ txHash: i.previous_output.tx_hash, index: i.previous_output.index }),
++        since: i.since,
++        lock: scriptFrom(c.input_cells[idx].output.lock),
++        capacity: BigInt(c.input_cells[idx].output.capacity).toString(),
++      })
++    ),
++    outputs: tx.outputs.map((o: any) =>
++      X1Output.fromObject({ capacity: BigInt(o.capacity).toString(), lock: scriptFrom(o.lock), type: o.type ? scriptFrom(o.type) : null })
++    ),
++    outputsData: tx.outputs_data,
++    witnesses: [...tx.witnesses],
++  })
++}
++
++const digestSpy = jest.spyOn(CKBHasher.prototype, 'digestHex')
++
++describe('X1 Neuron signing path', () => {
++  const sender = new X1TransactionSender()
++  const result: any = { tool: 'Neuron v0.204.1 (d3a7467), TransactionSender', cases: {} }
++
++  beforeEach(() => {
++    stubbedGetWallet.mockReturnValue(fakeWallet)
++    // A user who is asked about a lock Neuron doesn't recognise chooses "ignore and continue".
++    ;(x1Dialog.showMessageBox as jest.Mock).mockClear()
++    ;(x1Dialog.showMessageBox as jest.Mock).mockResolvedValue({ response: 1 })
++  })
++
++  afterAll(() => {
++    fs.writeFileSync(OUT, JSON.stringify(result, null, 1))
++  })
++
++  const files = fs.readdirSync(CASES).filter(f => f.endsWith('.json')).sort()
++  for (const f of files) {
++    it(f, async () => {
++      const c = JSON.parse(fs.readFileSync(path.join(CASES, f), 'utf8'))
++      const r: any = (result.cases[c.id] = { groups: {} })
++      const base = neuronTx(c)
++      r.neuron_tx_hash = base.computeHash()
++      r.tx_hash_matches = r.neuron_tx_hash === c.tx_hash
++
++      for (const g of c.groups.filter((x: any) => x.kind === 'multisig')) {
++        const gr: any = (r.groups[g.name] = {})
++        const cfg = X1MultisigConfigModel.fromObject({
++          walletId: fakeWallet.id,
++          r: g.multisig.require_first_n,
++          m: g.multisig.threshold,
++          n: g.multisig.key_hashes.length,
++          blake160s: g.multisig.key_hashes,
++          lockCodeHash: g.lock.code_hash,
++        })
++        const inputLockHash = base.inputs[g.input_indices[0]].lockHash
++        try {
++          gr.neuron_config_lock_hash = cfg.getLockHash()
++          gr.neuron_recognises_lock = gr.neuron_config_lock_hash === inputLockHash
++        } catch (e: any) {
++          gr.neuron_config_error = String(e && e.message ? e.message : e)
++          gr.neuron_recognises_lock = false
++        }
++
++        // (1) Neuron's message function, called directly with the witnesses signMultisig would pass
++        // (transaction-sender.ts lines 344-379: string witnesses become empty WitnessArgs; the first
++        // group witness stays WitnessArgs, the others become '0x' when empty).
++        const serializedMultiSign = X1Multisig.serialize(g.multisig.key_hashes, g.multisig.require_first_n, g.multisig.threshold, g.multisig.key_hashes.length)
++        const groupWitnesses: (X1WitnessArgs | string)[] = g.input_indices.map((idx: number, k: number) => {
++          const w = base.witnesses[idx]
++          const args = w instanceof X1WitnessArgs ? w : X1WitnessArgs.generateEmpty()
++          if (k === 0) return args
++          if (args.lock === undefined && args.inputType === undefined && args.outputType === undefined) return '0x'
++          return x1SerializeWitnessArgs(args.toSDK())
++        })
++        const anyKey = KEYS[(g.signers && g.signers[0]) || 'k1']
++        digestSpy.mockClear()
++        const signed = await X1TransactionSender.signSingleMultiSignScript(
++          anyKey.secret, groupWitnesses, r.neuron_tx_hash, serializedMultiSign, fakeWallet as any, g.multisig.threshold
++        )
++        gr.direct_message = digestSpy.mock.results[digestSpy.mock.results.length - 1].value
++        gr.direct_signature = (signed[0] as X1WitnessArgs).lock
++
++        // (2) The full signMultisig, one call per designated signer, as each signer's Neuron would.
++        if (!gr.neuron_recognises_lock || !(g.signers || []).length) continue
++        let tx = neuronTx(c)
++        gr.signatures = {}
++        gr.messages_seen_by_full_path = []
++        for (const k of g.signers) {
++          sender.getAddressInfos = jest.fn().mockReturnValue([
++            { walletId: fakeWallet.id, path: `m/44'/309'/0'/0/0`, blake160: KEYS[k].blake160, version: 'testnet' },
++          ]) as any
++          sender.getPrivateKeys = jest.fn().mockReturnValue([{ path: `m/44'/309'/0'/0/0`, privateKey: KEYS[k].secret }]) as any
++          const before = (() => {
++            const w = tx.witnesses[g.input_indices[0]]
++            return w instanceof X1WitnessArgs ? (w.lock || '') : ''
++          })()
++          tx = await sender.signMultisig(fakeWallet.id, tx, 'x', [cfg])
++          const w = tx.witnesses[g.input_indices[0]]
++          const lock = w instanceof X1WitnessArgs ? w.lock! : (X1WitnessArgs as any).fromSDK ? '' : ''
++          const lockHex = w instanceof X1WitnessArgs ? lock : null
++          gr.signatures[k] = lockHex ? '0x' + lockHex.slice(2 + (before ? before.length - 2 : serializedMultiSign.length - 2)).slice(0, 130) : null
++          gr[`witness_after_${k}`] = w instanceof X1WitnessArgs ? { lock: w.lock, inputType: w.inputType, outputType: w.outputType } : w
++          if (c.id.startsWith('S8') && k === g.signers[0]) {
++            // Neuron's own offline JSON after the first signature (OfflineSignController.exportTransactionAsJSON,
++            // controllers/offline-sign.ts lines 20-75, builds it with OfflineSign.fromJSON(...).toJSON()).
++            const context = c.input_cells.map((ic: any) =>
++              JSON.parse(fs.readFileSync(path.join(CONTEXT_DIR, `${ic.out_point.tx_hash}.json`), 'utf8')).result.transaction
++            ).map(({ hash, ...raw }: any) => raw)
++            const status = x1GetMultisigStatus(cfg, tx.signatures)
++            let exported: any
++            try {
++              const { default: OfflineSignController } = await import('../../src/controllers/offline-sign')
++              const file = path.join(EXPORT_DIR, 'S8-neuron-export-after-first-signature.json')
++              ;(x1Dialog.showSaveDialog as jest.Mock).mockResolvedValue({ canceled: false, filePath: file })
++              const res = await new OfflineSignController().exportTransactionAsJSON({
++                // The UI sends the transaction over IPC as JSON, with type 'SendFromMultisigOnlySig'
++                // (neuron-ui SendFromMultisigDialog/hooks.ts line 250).
++                transaction: JSON.parse(JSON.stringify(tx)),
++                type: 'SendFromMultisigOnlySig',
++                status,
++                context,
++              } as any)
++              exported = { via: 'OfflineSignController.exportTransactionAsJSON', file, status: res.status }
++            } catch (e: any) {
++              const json = X1OfflineSign.fromJSON({ transaction: JSON.parse(JSON.stringify(tx)), type: 'SendFromMultisigOnlySig', status, context } as any).toJSON()
++              const file = path.join(EXPORT_DIR, 'S8-neuron-export-after-first-signature.json')
++              fs.writeFileSync(file, JSON.stringify(json))
++              exported = { via: 'OfflineSign.fromJSON(...).toJSON() (controller import failed: ' + String(e).slice(0, 200) + ')', file }
++            }
++            gr.export = exported
++          }
++        }
++        gr.final_status = x1GetMultisigStatus(cfg, tx.signatures)
++        gr.tx_signatures = tx.signatures
++        gr.final_witness = tx.witnesses[g.input_indices[0]] instanceof X1WitnessArgs ? 'WitnessArgs (not yet serialized)' : tx.witnesses[g.input_indices[0]]
++        gr.witness_count_after = tx.witnesses.length
++        gr.witness_count_before = c.tx.witnesses.length
++        gr.dialog_calls = (x1Dialog.showMessageBox as jest.Mock).mock.calls.length
++      }
++    })
++  }
++})
++
++// ---------------------------------------------------------------- X1: Neuron reading ckb-cli tx files
++// Runs Neuron's own parseMultisigTxJsonFromCkbCli (utils/multisig.ts lines 41-58) on ckb-cli's real tx
++// files from this experiment, then the lock-hash check of MultisigController.loadMultisigTxJson
++// (controllers/multisig.ts lines 280-286), which compares every input's lockHash with the multisig
++// address the user opened.
++import { parseMultisigTxJsonFromCkbCli as x1ParseCkbCli } from '../../src/utils/multisig'
++import { computeScriptHash as x1ScriptHash } from '@ckb-lumos/lumos/utils'
++
++describe('X1 Neuron imports ckb-cli tx files', () => {
++  const result: any = {}
++  afterAll(() => {
++    fs.writeFileSync(OUT.replace(/\.json$/, '-ckbcli-import.json'), JSON.stringify(result, null, 1))
++  })
++  for (const id of ['S1-genesis-2of3', 'S3-v2-2of3-two-inputs']) {
++    it(id, () => {
++      const file = path.join(CASES, '..', 'results', 'ckb-cli', `${id}.json`)
++      const ckbcli = JSON.parse(fs.readFileSync(file, 'utf8'))
++      const c = JSON.parse(fs.readFileSync(path.join(CASES, `${id}.json`), 'utf8'))
++      const g = c.groups[0]
++      const realLockHash = x1ScriptHash({ codeHash: g.lock.code_hash, hashType: g.lock.hash_type, args: g.lock.args } as any)
++      const tx = x1ParseCkbCli(ckbcli as any)
++      const r: any = (result[id] = {})
++      r.ckbcli_file_signatures = ckbcli.signatures
++      r.neuron_signatures_after_import = tx.signatures
++      r.neuron_input_locks = tx.inputs.map((i: any) => ({ codeHash: i.lock?.codeHash, hashType: i.lock?.hashType, args: i.lock?.args, lockHash: i.lockHash }))
++      r.real_input_lock = g.lock
++      r.real_lock_hash = realLockHash
++      // loadMultisigTxJson rejects the file when every input's lockHash differs from the opened multisig's.
++      r.loadMultisigTxJson_rejects = tx.inputs.every((v: any) => v.lockHash && v.lockHash !== realLockHash)
++    })
++    it(`${id}: sign after import`, async () => {
++      // The UI then sends the transaction back over IPC as JSON, and signMultisig rebuilds it with
++      // Transaction.fromObject, which recomputes each input's lockHash from its lock.
++      const file = path.join(CASES, '..', 'results', 'ckb-cli', `${id}.json`)
++      const c = JSON.parse(fs.readFileSync(path.join(CASES, `${id}.json`), 'utf8'))
++      const g = c.groups[0]
++      const tx = JSON.parse(JSON.stringify(x1ParseCkbCli(JSON.parse(fs.readFileSync(file, 'utf8')) as any)))
++      const cfg = X1MultisigConfigModel.fromObject({
++        walletId: fakeWallet.id, r: g.multisig.require_first_n, m: g.multisig.threshold,
++        n: g.multisig.key_hashes.length, blake160s: g.multisig.key_hashes, lockCodeHash: g.lock.code_hash,
++      })
++      const k = g.signers[0]
++      stubbedGetWallet.mockReturnValue(fakeWallet)
++      ;(x1Dialog.showMessageBox as jest.Mock).mockClear()
++      ;(x1Dialog.showMessageBox as jest.Mock).mockResolvedValue({ response: 1 })
++      const sender = new X1TransactionSender()
++      sender.getAddressInfos = jest.fn().mockReturnValue([
++        { walletId: fakeWallet.id, path: `m/44'/309'/0'/0/0`, blake160: KEYS[k].blake160, version: 'testnet' },
++      ]) as any
++      sender.getPrivateKeys = jest.fn().mockReturnValue([{ path: `m/44'/309'/0'/0/0`, privateKey: KEYS[k].secret }]) as any
++      const r: any = result[id]
++      try {
++        const signed = await sender.signMultisig(fakeWallet.id, tx, 'x', [cfg])
++        r.sign_after_import = {
++          signer: k,
++          signatures_map: signed.signatures,
++          witness0: signed.witnesses[0] instanceof X1WitnessArgs ? { lock: (signed.witnesses[0] as any).lock } : signed.witnesses[0],
++          unrecognised_lock_dialogs: (x1Dialog.showMessageBox as jest.Mock).mock.calls.length,
++        }
++      } catch (e: any) {
++        r.sign_after_import = { signer: k, error: String(e && e.message ? e.message : e) }
++      }
++    })
++  }
++})

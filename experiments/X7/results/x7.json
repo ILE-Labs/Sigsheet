@@ -1,0 +1,491 @@
+{
+ "date": "2026-11-19 06:52 UTC",
+ "python": "3.14.4",
+ "sizes": {
+  "C": {
+   "R1-fiber-scripts-pr34": 733078,
+   "R2-dao-payout": 2371,
+   "S1-genesis-2of3": 4653,
+   "S2-2024-2of3": 4653,
+   "S3-v2-2of3-two-inputs": 4788,
+   "S4-v2-first-R": 4654,
+   "S4N-v2-first-R-missing-required": 2365,
+   "S5-v2-since-in-args": 4671,
+   "S6-two-multisig-groups": 6065,
+   "S7-multisig-plus-single-key": 5377,
+   "S8-neuron-export": 4654,
+   "S9-extra-witness": 4667
+  },
+  "B": {
+   "R1-fiber-scripts-pr34": 1300648,
+   "R2-dao-payout": 2221,
+   "S1-genesis-2of3": 4635,
+   "S2-2024-2of3": 4635,
+   "S3-v2-2of3-two-inputs": 8067,
+   "S4-v2-first-R": 4635,
+   "S4N-v2-first-R-missing-required": 2221,
+   "S5-v2-since-in-args": 4690,
+   "S6-two-multisig-groups": 9010,
+   "S7-multisig-plus-single-key": 8407,
+   "S8-neuron-export": 4635,
+   "S9-extra-witness": 4635
+  },
+  "B+w": {
+   "R1-fiber-scripts-pr34": 1300721,
+   "R2-dao-payout": 2278,
+   "S1-genesis-2of3": 4692,
+   "S2-2024-2of3": 4692,
+   "S3-v2-2of3-two-inputs": 8140,
+   "S4-v2-first-R": 4692,
+   "S4N-v2-first-R-missing-required": 2278,
+   "S5-v2-since-in-args": 4747,
+   "S6-two-multisig-groups": 9083,
+   "S7-multisig-plus-single-key": 8480,
+   "S8-neuron-export": 4692,
+   "S9-extra-witness": 4716
+  },
+  "A": {
+   "R1-fiber-scripts-pr34": 367378,
+   "R2-dao-payout": 2037,
+   "S1-genesis-2of3": 3244,
+   "S2-2024-2of3": 3244,
+   "S3-v2-2of3-two-inputs": 3405,
+   "S4-v2-first-R": 3244,
+   "S4N-v2-first-R-missing-required": 2037,
+   "S5-v2-since-in-args": 3260,
+   "S6-two-multisig-groups": 4786,
+   "S7-multisig-plus-single-key": 3636,
+   "S8-neuron-export": 3244,
+   "S9-extra-witness": 3256
+  },
+  "A-json-view": {
+   "R1-fiber-scripts-pr34": 734217,
+   "R2-dao-payout": 3458,
+   "S1-genesis-2of3": 5862,
+   "S2-2024-2of3": 5862,
+   "S3-v2-2of3-two-inputs": 6205,
+   "S4-v2-first-R": 5864,
+   "S4N-v2-first-R-missing-required": 3450,
+   "S5-v2-since-in-args": 5897,
+   "S6-two-multisig-groups": 8351,
+   "S7-multisig-plus-single-key": 6712,
+   "S8-neuron-export": 5864,
+   "S9-extra-witness": 5877
+  }
+ },
+ "sizes_zlib9": {
+  "C": {
+   "R1-fiber-scripts-pr34": 247785,
+   "R2-dao-payout": 914,
+   "S1-genesis-2of3": 1132,
+   "S2-2024-2of3": 1131,
+   "S3-v2-2of3-two-inputs": 1133,
+   "S4-v2-first-R": 1129,
+   "S4N-v2-first-R-missing-required": 927,
+   "S5-v2-since-in-args": 1125,
+   "S6-two-multisig-groups": 1506,
+   "S7-multisig-plus-single-key": 1276,
+   "S8-neuron-export": 1124,
+   "S9-extra-witness": 1129
+  },
+  "B+w": {
+   "R1-fiber-scripts-pr34": 445366,
+   "R2-dao-payout": 883,
+   "S1-genesis-2of3": 1172,
+   "S2-2024-2of3": 1173,
+   "S3-v2-2of3-two-inputs": 1227,
+   "S4-v2-first-R": 1184,
+   "S4N-v2-first-R-missing-required": 883,
+   "S5-v2-since-in-args": 1208,
+   "S6-two-multisig-groups": 1567,
+   "S7-multisig-plus-single-key": 1344,
+   "S8-neuron-export": 1179,
+   "S9-extra-witness": 1185
+  },
+  "A": {
+   "R1-fiber-scripts-pr34": 222827,
+   "R2-dao-payout": 1136,
+   "S1-genesis-2of3": 1389,
+   "S2-2024-2of3": 1395,
+   "S3-v2-2of3-two-inputs": 1396,
+   "S4-v2-first-R": 1394,
+   "S4N-v2-first-R-missing-required": 1138,
+   "S5-v2-since-in-args": 1400,
+   "S6-two-multisig-groups": 1840,
+   "S7-multisig-plus-single-key": 1513,
+   "S8-neuron-export": 1395,
+   "S9-extra-witness": 1402
+  }
+ },
+ "python_times": {
+  "R1-fiber-scripts-pr34": {
+   "C": {
+    "decode_validate_ms": 136.3,
+    "messages_ms": 1.79,
+    "merge_two_files_ms": 147.19,
+    "merge_one_file_per_signature_ms": 174.17,
+    "files_merged": 6,
+    "finalize_ms": 64.99
+   },
+   "B+w": {
+    "decode_validate_ms": 145.63,
+    "messages_ms": 1.83,
+    "merge_two_files_ms": 164.53,
+    "merge_one_file_per_signature_ms": 237.74,
+    "files_merged": 6,
+    "finalize_ms": 64.96
+   },
+   "A": {
+    "decode_validate_ms": 140.77,
+    "messages_ms": 1.83,
+    "merge_two_files_ms": 158.29,
+    "merge_one_file_per_signature_ms": 225.54,
+    "files_merged": 6,
+    "finalize_ms": 64.34
+   }
+  },
+  "R2-dao-payout": {
+   "C": {
+    "decode_validate_ms": 40.56,
+    "messages_ms": 0.03,
+    "merge_two_files_ms": 40.73,
+    "merge_one_file_per_signature_ms": 40.35,
+    "files_merged": 2,
+    "finalize_ms": 19.91
+   },
+   "B+w": {
+    "decode_validate_ms": 40.61,
+    "messages_ms": 0.03,
+    "merge_two_files_ms": 41.52,
+    "merge_one_file_per_signature_ms": 40.96,
+    "files_merged": 2,
+    "finalize_ms": 19.96
+   },
+   "A": {
+    "decode_validate_ms": 41.42,
+    "messages_ms": 0.03,
+    "merge_two_files_ms": 41.44,
+    "merge_one_file_per_signature_ms": 41.09,
+    "files_merged": 2,
+    "finalize_ms": 20.04
+   }
+  },
+  "S1-genesis-2of3": {
+   "C": {
+    "decode_validate_ms": 40.33,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 40.8,
+    "merge_one_file_per_signature_ms": 40.38,
+    "files_merged": 2,
+    "finalize_ms": 19.96
+   },
+   "B+w": {
+    "decode_validate_ms": 41.43,
+    "messages_ms": 0.06,
+    "merge_two_files_ms": 41.61,
+    "merge_one_file_per_signature_ms": 40.8,
+    "files_merged": 2,
+    "finalize_ms": 19.87
+   },
+   "A": {
+    "decode_validate_ms": 40.56,
+    "messages_ms": 0.06,
+    "merge_two_files_ms": 41.92,
+    "merge_one_file_per_signature_ms": 42.04,
+    "files_merged": 2,
+    "finalize_ms": 20.25
+   }
+  },
+  "S2-2024-2of3": {
+   "C": {
+    "decode_validate_ms": 40.51,
+    "messages_ms": 0.06,
+    "merge_two_files_ms": 41.03,
+    "merge_one_file_per_signature_ms": 41.09,
+    "files_merged": 2,
+    "finalize_ms": 20.27
+   },
+   "B+w": {
+    "decode_validate_ms": 41.5,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 42.27,
+    "merge_one_file_per_signature_ms": 41.62,
+    "files_merged": 2,
+    "finalize_ms": 20.16
+   },
+   "A": {
+    "decode_validate_ms": 44.59,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 43.55,
+    "merge_one_file_per_signature_ms": 42.69,
+    "files_merged": 2,
+    "finalize_ms": 20.35
+   }
+  },
+  "S3-v2-2of3-two-inputs": {
+   "C": {
+    "decode_validate_ms": 41.76,
+    "messages_ms": 0.11,
+    "merge_two_files_ms": 41.95,
+    "merge_one_file_per_signature_ms": 41.95,
+    "files_merged": 2,
+    "finalize_ms": 20.56
+   },
+   "B+w": {
+    "decode_validate_ms": 45.03,
+    "messages_ms": 0.11,
+    "merge_two_files_ms": 43.63,
+    "merge_one_file_per_signature_ms": 43.13,
+    "files_merged": 2,
+    "finalize_ms": 20.88
+   },
+   "A": {
+    "decode_validate_ms": 42.02,
+    "messages_ms": 0.11,
+    "merge_two_files_ms": 43.39,
+    "merge_one_file_per_signature_ms": 43.06,
+    "files_merged": 2,
+    "finalize_ms": 20.42
+   }
+  },
+  "S4-v2-first-R": {
+   "C": {
+    "decode_validate_ms": 40.48,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 41.76,
+    "merge_one_file_per_signature_ms": 42.08,
+    "files_merged": 2,
+    "finalize_ms": 21.06
+   },
+   "B+w": {
+    "decode_validate_ms": 41.28,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 42.13,
+    "merge_one_file_per_signature_ms": 42.43,
+    "files_merged": 2,
+    "finalize_ms": 20.1
+   },
+   "A": {
+    "decode_validate_ms": 42.49,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 43.72,
+    "merge_one_file_per_signature_ms": 42.2,
+    "files_merged": 2,
+    "finalize_ms": 20.05
+   }
+  },
+  "S4N-v2-first-R-missing-required": {
+   "C": {
+    "decode_validate_ms": 40.57,
+    "messages_ms": 0.03,
+    "merge_two_files_ms": 41.46,
+    "merge_one_file_per_signature_ms": 42.21,
+    "files_merged": 2,
+    "finalize_ms": null
+   },
+   "B+w": {
+    "decode_validate_ms": 40.68,
+    "messages_ms": 0.03,
+    "merge_two_files_ms": 41.63,
+    "merge_one_file_per_signature_ms": 41.8,
+    "files_merged": 2,
+    "finalize_ms": null
+   },
+   "A": {
+    "decode_validate_ms": 45.36,
+    "messages_ms": 0.03,
+    "merge_two_files_ms": 42.88,
+    "merge_one_file_per_signature_ms": 44.09,
+    "files_merged": 2,
+    "finalize_ms": null
+   }
+  },
+  "S5-v2-since-in-args": {
+   "C": {
+    "decode_validate_ms": 41.46,
+    "messages_ms": 0.08,
+    "merge_two_files_ms": 43.25,
+    "merge_one_file_per_signature_ms": 42.42,
+    "files_merged": 2,
+    "finalize_ms": 20.72
+   },
+   "B+w": {
+    "decode_validate_ms": 41.91,
+    "messages_ms": 0.06,
+    "merge_two_files_ms": 43.06,
+    "merge_one_file_per_signature_ms": 42.65,
+    "files_merged": 2,
+    "finalize_ms": 20.31
+   },
+   "A": {
+    "decode_validate_ms": 42.04,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 44.02,
+    "merge_one_file_per_signature_ms": 43.43,
+    "files_merged": 2,
+    "finalize_ms": 20.51
+   }
+  },
+  "S6-two-multisig-groups": {
+   "C": {
+    "decode_validate_ms": 111.24,
+    "messages_ms": 0.14,
+    "merge_two_files_ms": 107.24,
+    "merge_one_file_per_signature_ms": 109.11,
+    "files_merged": 5,
+    "finalize_ms": 51.51
+   },
+   "B+w": {
+    "decode_validate_ms": 113.78,
+    "messages_ms": 0.15,
+    "merge_two_files_ms": 110.64,
+    "merge_one_file_per_signature_ms": 113.67,
+    "files_merged": 5,
+    "finalize_ms": 52.21
+   },
+   "A": {
+    "decode_validate_ms": 111.02,
+    "messages_ms": 0.14,
+    "merge_two_files_ms": 115.97,
+    "merge_one_file_per_signature_ms": 111.1,
+    "files_merged": 5,
+    "finalize_ms": 51.19
+   }
+  },
+  "S7-multisig-plus-single-key": {
+   "C": {
+    "decode_validate_ms": 62.99,
+    "messages_ms": 0.13,
+    "merge_two_files_ms": 64.2,
+    "merge_one_file_per_signature_ms": 64.25,
+    "files_merged": 3,
+    "finalize_ms": 33.08
+   },
+   "B+w": {
+    "decode_validate_ms": 67.94,
+    "messages_ms": 0.13,
+    "merge_two_files_ms": 66.53,
+    "merge_one_file_per_signature_ms": 68.09,
+    "files_merged": 3,
+    "finalize_ms": 41.53
+   },
+   "A": {
+    "decode_validate_ms": 67.93,
+    "messages_ms": 0.13,
+    "merge_two_files_ms": 68.5,
+    "merge_one_file_per_signature_ms": 67.47,
+    "files_merged": 3,
+    "finalize_ms": 32.52
+   }
+  },
+  "S8-neuron-export": {
+   "C": {
+    "decode_validate_ms": 42.43,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 42.09,
+    "merge_one_file_per_signature_ms": 43.77,
+    "files_merged": 2,
+    "finalize_ms": 20.22
+   },
+   "B+w": {
+    "decode_validate_ms": 40.39,
+    "messages_ms": 0.06,
+    "merge_two_files_ms": 42.71,
+    "merge_one_file_per_signature_ms": 42.38,
+    "files_merged": 2,
+    "finalize_ms": 20.32
+   },
+   "A": {
+    "decode_validate_ms": 41.82,
+    "messages_ms": 0.06,
+    "merge_two_files_ms": 42.4,
+    "merge_one_file_per_signature_ms": 42.62,
+    "files_merged": 2,
+    "finalize_ms": 20.6
+   }
+  },
+  "S9-extra-witness": {
+   "C": {
+    "decode_validate_ms": 41.99,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 42.1,
+    "merge_one_file_per_signature_ms": 42.86,
+    "files_merged": 2,
+    "finalize_ms": 20.6
+   },
+   "B+w": {
+    "decode_validate_ms": 41.57,
+    "messages_ms": 0.06,
+    "merge_two_files_ms": 43.15,
+    "merge_one_file_per_signature_ms": 43.15,
+    "files_merged": 2,
+    "finalize_ms": 21.74
+   },
+   "A": {
+    "decode_validate_ms": 41.7,
+    "messages_ms": 0.07,
+    "merge_two_files_ms": 43.9,
+    "merge_one_file_per_signature_ms": 45.08,
+    "files_merged": 2,
+    "finalize_ms": 20.91
+   }
+  }
+ },
+ "signature_fragment_bytes": {
+  "R1-fiber-scripts-pr34": 367,
+  "R2-dao-payout": 367,
+  "S1-genesis-2of3": 367,
+  "S2-2024-2of3": 367,
+  "S3-v2-2of3-two-inputs": 367,
+  "S4-v2-first-R": 367,
+  "S4N-v2-first-R-missing-required": 367,
+  "S5-v2-since-in-args": 367,
+  "S6-two-multisig-groups": 367,
+  "S7-multisig-plus-single-key": 367,
+  "S8-neuron-export": 367,
+  "S9-extra-witness": 367
+ },
+ "wallet_times_pr34": {
+  "ckb-cli merge two PR #34 files": {
+   "median_s": 0.1,
+   "rc": 0,
+   "stdout": "merged: 2",
+   "stderr": ""
+  },
+  "ckb-cli finalize PR #34": {
+   "median_s": 0.08,
+   "rc": 0,
+   "stdout": "tx_hash: Byte32(0x4396de69818bd88b7fce64797ccec25d1294912d56846432f29fd192120992ee)",
+   "stderr": ""
+  },
+  "CCC merge two PR #34 files": {
+   "median_s": 1.86,
+   "rc": 0,
+   "stdout": "{\"cmd\":\"merge\",\"inputs\":2,\"ms\":614}",
+   "stderr": "(node:828952) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+  },
+  "CCC finalize PR #34": {
+   "median_s": 1.84,
+   "rc": 0,
+   "stdout": "{\"cmd\":\"finalize\",\"tx_hash\":\"0x4396de69818bd88b7fce64797ccec25d1294912d56846432f29fd192120992ee\",\"ms\":618}",
+   "stderr": "(node:830018) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+  },
+  "ckb-cli and CCC merges identical": true,
+  "final tx hash": "0x4396de69818bd88b7fce64797ccec25d1294912d56846432f29fd192120992ee",
+  "final passes lock rules": true
+ },
+ "limits": {
+  "ckb_tx_pool_size_limit_bytes": 512000,
+  "pr34_final_transaction_molecule_bytes": 81889,
+  "pr34_final_transaction_json_bytes": 163901,
+  "lock_witness_limit_bytes": 32768,
+  "largest_multisig_lock_bytes": 21679,
+  "nip11_relay_message_limits_seen": [
+   16384,
+   65535,
+   524288
+  ],
+  "pr34_file_bytes_C": 733078,
+  "pr34_signature_fragment_bytes": 367
+ }
+}

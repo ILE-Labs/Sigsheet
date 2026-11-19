@@ -1,0 +1,66 @@
+{
+ "ckb_idl_client_e7d8124": {
+  "client.rs": {
+   "lines_before_tests": 861,
+   "code_lines": 733
+  },
+  "error.rs": {
+   "lines_before_tests": 235,
+   "code_lines": 141
+  },
+  "interface.rs": {
+   "lines_before_tests": 357,
+   "code_lines": 311
+  },
+  "lib.rs": {
+   "lines_before_tests": 26,
+   "code_lines": 12
+  },
+  "types.rs": {
+   "lines_before_tests": 213,
+   "code_lines": 121
+  },
+  "TOTAL": {
+   "lines_before_tests": 1692,
+   "code_lines": 1318
+  }
+ },
+ "existing_multisig_witness_code": {
+  "ckb-sdk-rust MultisigConfig struct": {
+   "file": "ckb-sdk-rust/src/unlock/signer.rs",
+   "lines": "L142-L148",
+   "total_lines": 7,
+   "code_lines": 7
+  },
+  "ckb-sdk-rust MultisigConfig impl": {
+   "file": "ckb-sdk-rust/src/unlock/signer.rs",
+   "lines": "L149-L266",
+   "total_lines": 118,
+   "code_lines": 111
+  },
+  "ccc MultisigCkbWitnessLike type": {
+   "file": "ccc/packages/core/src/signer/ckb/signerMultisigCkbReadonly.ts",
+   "lines": "L50-L63",
+   "total_lines": 14,
+   "code_lines": 14
+  },
+  "ccc MultisigCkbWitness codec decorator": {
+   "file": "ccc/packages/core/src/signer/ckb/signerMultisigCkbReadonly.ts",
+   "lines": "L69-L141",
+   "total_lines": 73,
+   "code_lines": 67
+  },
+  "ccc MultisigCkbWitness class": {
+   "file": "ccc/packages/core/src/signer/ckb/signerMultisigCkbReadonly.ts",
+   "lines": "L142-L314",
+   "total_lines": 173,
+   "code_lines": 114
+  },
+  "neuron Multisig.serialize": {
+   "file": "neuron/packages/neuron-wallet/src/models/multisig.ts",
+   "lines": "L20-L25",
+   "total_lines": 6,
+   "code_lines": 6
+  }
+ }
+}

@@ -1,0 +1,29 @@
+Wed Nov 18 11:37:54 UTC 2026
+== npm view ckb-idl
+npm ERR! code E404
+npm ERR! 404 Not Found - GET https://registry.npmjs.org/ckb-idl - Not found
+== npm view ckb-idl-client
+npm ERR! code E404
+npm ERR! 404 Not Found - GET https://registry.npmjs.org/ckb-idl-client - Not found
+== npm view @ckb-idl/client
+npm ERR! code E404
+npm ERR! 404 Not Found - GET https://registry.npmjs.org/@ckb-idl%2fclient - Not found
+== npm view @ckb-idl/core
+npm ERR! code E404
+npm ERR! 404 Not Found - GET https://registry.npmjs.org/@ckb-idl%2fcore - Not found
+== npm view ckb-idl-derive-ts
+npm ERR! code E404
+npm ERR! 404 Not Found - GET https://registry.npmjs.org/ckb-idl-derive-ts - Not found
+== npm view @ckb-idl/derive-ts
+npm ERR! code E404
+npm ERR! 404 Not Found - GET https://registry.npmjs.org/@ckb-idl%2fderive-ts - Not found
+== npm view idl-derive-ts
+npm ERR! code E404
+npm ERR! 404 Not Found - GET https://registry.npmjs.org/idl-derive-ts - Not found
+== npm search ckb-idl (names)
+['webidl-conversions', '@solana/program-client-core', '@codama/nodes', '@webref/idl', '@ckb-lumos/base', '@codama/node-types', 'thriftrw', '@nervosnetwork/ckb-types', '@codama/nodes-from-anchor', '@ckb-lumos/config-manager', '@nervosnetwork/ckb-sdk-utils', '@octokit/graphql-schema', 'codama', '@ckb-lumos/bi', '@metaplex-foundation/mpl-auction-house', '@foxglove/omgidl-parser', '@foxglove/ros2idl-parser', 'vega-lite', '@ckb-lumos/toolkit', '@nervosnetwork/ckb-sdk-rpc']
+== crates.io ckb-idl-client: max_version 0.1.0 updated 2026-09-29T22:15:36.265606Z downloads 73
+== crates.io ckb-idl-cli: max_version 0.1.0 updated 2026-09-29T22:25:46.211394Z downloads 12
+== crates.io ckb-idl-derive: max_version 0.1.0 updated 2026-09-29T21:24:17.355493Z downloads 30
+== crates.io ckb-idl-types: max_version 0.1.0 updated 2026-09-29T21:15:37.471487Z downloads 32
+== crates.io ckb-idl-export: max_version 0.1.0 updated 2026-09-29T22:00:21.644184Z downloads 13

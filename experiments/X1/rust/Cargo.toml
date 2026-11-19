@@ -1,0 +1,14 @@
+[package]
+name = "x1-rust-paths"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "X1: the signing message as ckb-cli v2.0.0 and ckb-sdk 5.0.0 compute it"
+
+[dependencies]
+# The versions ckb-cli v2.0.0 builds with (its Cargo.lock at 80efc21).
+ckb-sdk = { version = "=5.0.0", default-features = false, features = ["rustls-tls"] }
+ckb-types = "=1.0.0"
+ckb-jsonrpc-types = "=1.0.0"
+ckb-hash = "=1.0.0"
+serde_json = "1"

@@ -1,0 +1,18 @@
+{
+ "job": "experiments/XQ14/results/runs/v2-blind-hash/job.json",
+ "kind": "message_hash",
+ "screens": [
+  "Sign | Message Hash",
+  "Message Hash:  (1/2) | 6A23FBE47672BE8A2 | 43E87685A15395FAA6 | 5235458D23FC675CF9",
+  "Message Hash:  (2/2) | 7AD4437FDA3",
+  "Reject",
+  "Accept"
+ ],
+ "presses": {
+  "right": 4,
+  "both": 1
+ },
+ "signature": "35d4a0caf1df6cbdc8904404ee62f6fee0b3d1f876fa5040b3dd82ae69d5dc99442308f55cd066f213b718397b837c498c736c4cd321eb7faffb8da279d4c45e01",
+ "result": "signed",
+ "seconds": 1.486
+}

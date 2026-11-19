@@ -1,0 +1,466 @@
+{
+ "S1-genesis-2of3": {
+  "G": {
+   "k1": {
+    "ccc": {
+     "signature": "0xb6ad649cdd792e0a409ab54ff8870b75d52a6186f8ad4535e1fcc298812bfdc359996468c0a6cece5d97550388f6f9aa66ee832235775839d6fe8fe83d7acd0601",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xb6ad649cdd792e0a409ab54ff8870b75d52a6186f8ad4535e1fcc298812bfdc359996468c0a6cece5d97550388f6f9aa66ee832235775839d6fe8fe83d7acd0601",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0xb6ad649cdd792e0a409ab54ff8870b75d52a6186f8ad4535e1fcc298812bfdc359996468c0a6cece5d97550388f6f9aa66ee832235775839d6fe8fe83d7acd0601",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xfea61b673ad0b0bdece4020602ae2dfc82cefab9c71d32d2f83b8f4189b3134149cf810350c0ead6f93a4c0c94c73665b2b7967104c88a00fb4e197f1dd7f43d01",
+     "valid_for_M_message": true
+    }
+   },
+   "k2": {
+    "ccc": {
+     "signature": "0x05b6717c65c2ba5fe8158fce7ab58d05f6c5db59e85031e33acbef47f31841fe697f4ba795e6e89f33526ad25ff563522c31b0e539bd1f2d6a0d730be73d291201",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x05b6717c65c2ba5fe8158fce7ab58d05f6c5db59e85031e33acbef47f31841fe697f4ba795e6e89f33526ad25ff563522c31b0e539bd1f2d6a0d730be73d291201",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x05b6717c65c2ba5fe8158fce7ab58d05f6c5db59e85031e33acbef47f31841fe697f4ba795e6e89f33526ad25ff563522c31b0e539bd1f2d6a0d730be73d291201",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x2e62a3f0228e5d294886a0aa6189d12e7b23f8db0813ac89b7b9936762912ce87daa085cbac3597e0c5f2f6319d1117dd7a50f28f65db1cd31c5b1dd0e6c858500",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ },
+ "S2-2024-2of3": {
+  "B": {
+   "k1": {
+    "ccc": {
+     "signature": "0xc60032b601f697b3bbf204be03798999db9b959296ad6da0a995fd8e9c9a3d7941eb315467ae90a657ee012bae00679091aee0394a1396dffdc2024c4cb6981701",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x256ceb58e98a827c872611d7070d69d1db2399f83657a5903d5f285bf4d4b44c314d9bf7e89246ac41486a3eb3d6abf89e3ce2a736346febab10ff2cd5c1383e01",
+     "valid_for_M_message": true
+    }
+   },
+   "k3": {
+    "ccc": {
+     "signature": "0xf371b99112eb273d215a76a31764cbe2bbaf04c2469538bb18604c991060404e75ac5fc13318e662c6f8750e1f64a0975a1704c3fc9fcc810dcb2f3759f2ff9c00",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xeb52b88c8aa166eb55d9ef06dad255ac4a7a8ade5f127a25e39574368decca2a524ffbf699f7fde05ddb0161db76857fdba79ad4aee0f9d6b1c61ff9baf843bd00",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ },
+ "S3-v2-2of3-two-inputs": {
+  "V": {
+   "k2": {
+    "ccc": {
+     "signature": "0xff49ec0ad3a545542b3cfa9082be050e3b4b6a2c6719694a3a94e85174433ecb5f39856e1f5588b28e6f6cee20332db21022a595e6846117b54cd334ab78e5b601",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xff49ec0ad3a545542b3cfa9082be050e3b4b6a2c6719694a3a94e85174433ecb5f39856e1f5588b28e6f6cee20332db21022a595e6846117b54cd334ab78e5b601",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0xff49ec0ad3a545542b3cfa9082be050e3b4b6a2c6719694a3a94e85174433ecb5f39856e1f5588b28e6f6cee20332db21022a595e6846117b54cd334ab78e5b601",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xcadf168347ffebeb56acc09fd56c7afd425a5624c09669753b2a898ef62368b63f4a28b72c83a9c47f31bafb0a7d6b7f9d1d49e5b4f4ed03a5e6febcf7c8c29b00",
+     "valid_for_M_message": true
+    }
+   },
+   "k3": {
+    "ccc": {
+     "signature": "0x0b07c199c4db13a47a2944d37a235c1ffd54d92d39c332d24a091de0576129cb4c36870d6ea0ba9b505ed9d066b78d9a941adf8ccecda1a485d9fa2a2e81a37501",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x0b07c199c4db13a47a2944d37a235c1ffd54d92d39c332d24a091de0576129cb4c36870d6ea0ba9b505ed9d066b78d9a941adf8ccecda1a485d9fa2a2e81a37501",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x0b07c199c4db13a47a2944d37a235c1ffd54d92d39c332d24a091de0576129cb4c36870d6ea0ba9b505ed9d066b78d9a941adf8ccecda1a485d9fa2a2e81a37501",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xda939c3511c4f2e6c7e53270b7889d5ac5ce38d5e9bf3f9a19bc11ce99704fc42e91d2826fe703e6641886792345cf89d1482ab3e08fb30dbca38d49e220a07800",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ },
+ "S4-v2-first-R": {
+  "VR": {
+   "k2": {
+    "ccc": {
+     "signature": "0xf2646cb5b52e35609edf23a2f1d91c55accc2e4fe67ffc7c2b7fb8550d5e3c603f1048059a2641aaebcb116649ebfc9152818eda5b9c4514a6c17bf76462263100",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xf2646cb5b52e35609edf23a2f1d91c55accc2e4fe67ffc7c2b7fb8550d5e3c603f1048059a2641aaebcb116649ebfc9152818eda5b9c4514a6c17bf76462263100",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0xf2646cb5b52e35609edf23a2f1d91c55accc2e4fe67ffc7c2b7fb8550d5e3c603f1048059a2641aaebcb116649ebfc9152818eda5b9c4514a6c17bf76462263100",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x87fa935a1e188844082a862cbaff836b57dc6628ebb2571bc967fe871eae6a8c3bd13a40d7ecb0c7785b7cc849ce45789f55a157a72df7cd610366b2a839ecd200",
+     "valid_for_M_message": true
+    }
+   },
+   "k4": {
+    "ccc": {
+     "signature": "0x6947c9d79d14cccc1499f263590e847bb32d6f44ea4237d65e2916c5778b4c97198a548a29468a1c4654ba275049247e2e866c9df8d4fabf8f5419455d7e2f7700",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x6947c9d79d14cccc1499f263590e847bb32d6f44ea4237d65e2916c5778b4c97198a548a29468a1c4654ba275049247e2e866c9df8d4fabf8f5419455d7e2f7700",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x6947c9d79d14cccc1499f263590e847bb32d6f44ea4237d65e2916c5778b4c97198a548a29468a1c4654ba275049247e2e866c9df8d4fabf8f5419455d7e2f7700",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xadcb889d983b99d4f448290aed0fb0ba4ff8f454a5dc03677ca3a3599e709337143e919650887860b572f62ecad5b820bd20466e457d8cc424fd206e316f12b200",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ },
+ "S4N-v2-first-R-missing-required": {
+  "VR": {
+   "k1": {
+    "ccc": {
+     "signature": "0x64a6c26e461848e730896b9ee662df051c8b184b0f6be508f6cf081338a6ff4e10f59f82312e9a807179a72c3d78ec1116806a0a8cede439a7fbc1623827a2e800",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x64a6c26e461848e730896b9ee662df051c8b184b0f6be508f6cf081338a6ff4e10f59f82312e9a807179a72c3d78ec1116806a0a8cede439a7fbc1623827a2e800",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x64a6c26e461848e730896b9ee662df051c8b184b0f6be508f6cf081338a6ff4e10f59f82312e9a807179a72c3d78ec1116806a0a8cede439a7fbc1623827a2e800",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xc949cce377c4efa1eab5679442cd23a626f0292e4655a1b030dc74b3a339159469ef30b7ed1994d49752d59e00759a7e6595b2d863a2a78cb3a859c2b070014700",
+     "valid_for_M_message": true
+    }
+   },
+   "k2": {
+    "ccc": {
+     "signature": "0x82449810c31a0e7b18f37715787a497297d17677ede8e865425cb8f2c4ee027362d565817c06e02fcbd6bee255f98d9a83ffb3df44bb2c7afc4c9478956a603101",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x82449810c31a0e7b18f37715787a497297d17677ede8e865425cb8f2c4ee027362d565817c06e02fcbd6bee255f98d9a83ffb3df44bb2c7afc4c9478956a603101",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x82449810c31a0e7b18f37715787a497297d17677ede8e865425cb8f2c4ee027362d565817c06e02fcbd6bee255f98d9a83ffb3df44bb2c7afc4c9478956a603101",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xcf4a0212abeaf0746135c3b24ed6a32f9d96dd0a4fd93839cdf00bf49ec7b1b0712450f0b4c240bc07ba96f996a1ba7f7393d7857ddaa24f8610fe23d32038d100",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ },
+ "S5-v2-since-in-args": {
+  "VS": {
+   "k1": {
+    "ccc": {
+     "signature": "0x5bceab6be7930c610e5fc5d9612d3cc33d3f982f140be541aa60cdcdac10443a5743eda3fcfc13d179de45276ed3af46eeddaa15f2a8df5351772f8459c020e501",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x5bceab6be7930c610e5fc5d9612d3cc33d3f982f140be541aa60cdcdac10443a5743eda3fcfc13d179de45276ed3af46eeddaa15f2a8df5351772f8459c020e501",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x626d4cf312d1a1e2bd7be67cb04539e8c4aae96f4aa32f961901055299c4c53a26857abcb1af7d751534fa18ceac4c8fc47585d8b51b3523f2015e4e1b7a012d01",
+     "valid_for_M_message": true
+    }
+   },
+   "k3": {
+    "ccc": {
+     "signature": "0xe0c0ce643b6c05a8c2f9e0fe4fdd65f9aa112ec02a0c721340b2cfc5d7f3e0f05551b80537af059be80b3d025c82e03fb2a007e91ca2cc36ac2ad746f5b93ef000",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xe0c0ce643b6c05a8c2f9e0fe4fdd65f9aa112ec02a0c721340b2cfc5d7f3e0f05551b80537af059be80b3d025c82e03fb2a007e91ca2cc36ac2ad746f5b93ef000",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xbc9117ce93873a424ce629c25df516449b1bc441108bca47ede12e458256f48547698765741f8a780294b4a38f26845ceb055c9ccd8ae1c266c7ba1645f4309701",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ },
+ "S6-two-multisig-groups": {
+  "G": {
+   "k1": {
+    "ccc": {
+     "signature": "0xb48db0e02289a3d43979bf5f7bb8384c8da067e8d2dadb35702cad71155e9aaf2963c1a7b29d4dc39c57b426fd3926a9b0c073007f7dc296a04ef9ec45e70d5a00",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xb48db0e02289a3d43979bf5f7bb8384c8da067e8d2dadb35702cad71155e9aaf2963c1a7b29d4dc39c57b426fd3926a9b0c073007f7dc296a04ef9ec45e70d5a00",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0xb48db0e02289a3d43979bf5f7bb8384c8da067e8d2dadb35702cad71155e9aaf2963c1a7b29d4dc39c57b426fd3926a9b0c073007f7dc296a04ef9ec45e70d5a00",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xf02c90d3b52d4510cdc21d902a8d2a0365f566aa2c37ebca98569f69e25611c2497c7e5e0a177b4ab786e933429f18e41f662320de88257175a149631d7afe6600",
+     "valid_for_M_message": true
+    }
+   },
+   "k2": {
+    "ccc": {
+     "signature": "0x7930d0a18bd5ade26016749b208d1d50b0d478873b1476d22e0fc71992b54e4676b304beaeb5e5da8200efacfed99d68aa0d7230fa762e9eb1d8ed72d8c746f800",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x7930d0a18bd5ade26016749b208d1d50b0d478873b1476d22e0fc71992b54e4676b304beaeb5e5da8200efacfed99d68aa0d7230fa762e9eb1d8ed72d8c746f800",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x7930d0a18bd5ade26016749b208d1d50b0d478873b1476d22e0fc71992b54e4676b304beaeb5e5da8200efacfed99d68aa0d7230fa762e9eb1d8ed72d8c746f800",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xb2a0b44e70dc5822eb6f912733499b1e6e6461d36a126c20bb27ff9b2cb70b544600fb72e5c9d9f0a71de255d6af89e0a0d969717ee7863edf816ac5b1717a6300",
+     "valid_for_M_message": true
+    }
+   },
+   "k3": {
+    "ckb-cli": {
+     "signature": "0x50ac5256e9ae011c35dbfff349bdbc60a5730526deb1227360cb273af79110f77270456356daa2bd93b8e134d799db9a6a4c840c47397f2a9642b0ab000ef17000",
+     "valid_for_M_message": true
+    }
+   }
+  },
+  "V35": {
+   "k1": {
+    "ccc": {
+     "signature": "0x7fb4c5140c74fa3ff8e139623d779035e3bb034827bae49831e5399d605008bf7dd1b6ef0560f561c831535dd8b5d923ee2291eff418544e72c734231b9b3a1201",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x7fb4c5140c74fa3ff8e139623d779035e3bb034827bae49831e5399d605008bf7dd1b6ef0560f561c831535dd8b5d923ee2291eff418544e72c734231b9b3a1201",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x7fb4c5140c74fa3ff8e139623d779035e3bb034827bae49831e5399d605008bf7dd1b6ef0560f561c831535dd8b5d923ee2291eff418544e72c734231b9b3a1201",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x15fb5ba57ad55850287e5f46b43cda4fbc4b7736ceb214d39d212d66f56fac7309b8a79421ca6895d9a34f45491b6bdd99c819626a345c4e3c004dd71a9866b301",
+     "valid_for_M_message": true
+    }
+   },
+   "k2": {
+    "ckb-cli": {
+     "signature": "0x3e9980fa7b1eddfa33cb498a34267dbccea3ed76a1118f2e3b2f7515e9bc1abc51926e384fbaee1cec946f6d7b8209e5f0b1b385ddbe5856736ee2ea6164d47b01",
+     "valid_for_M_message": true
+    }
+   },
+   "k3": {
+    "ccc": {
+     "signature": "0x5c317c96de67d0b9b2829c70a7bdbb981a9011757d40a10cfd84f600c7ac0ea92a3e6dbcc92386a420d1e546d28c39a657abe1fdd40856d5658358ae18861acb01",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x5c317c96de67d0b9b2829c70a7bdbb981a9011757d40a10cfd84f600c7ac0ea92a3e6dbcc92386a420d1e546d28c39a657abe1fdd40856d5658358ae18861acb01",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x5c317c96de67d0b9b2829c70a7bdbb981a9011757d40a10cfd84f600c7ac0ea92a3e6dbcc92386a420d1e546d28c39a657abe1fdd40856d5658358ae18861acb01",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x2f9d5e9cbce0255e6941d00ec83082d86178ad72c4495c307b05dd3afbc53bcc4a6ac66e9d61e5017fc6d21f23d9e7cb969e969553cb0390f7338c3dccda247501",
+     "valid_for_M_message": true
+    }
+   },
+   "k5": {
+    "ccc": {
+     "signature": "0xa3d7d5886715e1230778a61172054bc8fd805e2a71a90b6b7cd1c5f7e46f110e1c2f41c9323d317a6c07fd765aeaf72987d4d5255f925001670176f892ff22db00",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xa3d7d5886715e1230778a61172054bc8fd805e2a71a90b6b7cd1c5f7e46f110e1c2f41c9323d317a6c07fd765aeaf72987d4d5255f925001670176f892ff22db00",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0xa3d7d5886715e1230778a61172054bc8fd805e2a71a90b6b7cd1c5f7e46f110e1c2f41c9323d317a6c07fd765aeaf72987d4d5255f925001670176f892ff22db00",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0xbb620889b6f3082ce792e4447b5e9e977f7a1d223f1780570b25bf2a3afd14ba3f720d8337f1e0860c2f65e92be2bb035609b3d7fc47fa660403821206b271c100",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ },
+ "S7-multisig-plus-single-key": {
+  "V": {
+   "k1": {
+    "ccc": {
+     "signature": "0x6dc2d008ea6bd4a4769c11b67456b669a6a8d2fe87a25fb7b20d81dae9f36ff422e7acc8da1b83456ec1529dc42614b114dce2bc3f0017482c0fe3348e87195700",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x6dc2d008ea6bd4a4769c11b67456b669a6a8d2fe87a25fb7b20d81dae9f36ff422e7acc8da1b83456ec1529dc42614b114dce2bc3f0017482c0fe3348e87195700",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x6dc2d008ea6bd4a4769c11b67456b669a6a8d2fe87a25fb7b20d81dae9f36ff422e7acc8da1b83456ec1529dc42614b114dce2bc3f0017482c0fe3348e87195700",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x045b09dda08a3d881180137cabee39577bcf54da1dfaeb6e5d96732c0d1d2dfd7430b38cfe78a79496bc96a50128cc34f59edef821e0865cb3b9743c3346472300",
+     "valid_for_M_message": true
+    }
+   },
+   "k2": {
+    "ccc": {
+     "signature": "0xbf95ad3a3ebe18ed8bb727be9c0292e9d215817fbcd7d61b1d2617a3951cfa132049b3cc7f0130524f003c581d11fcda4d18cc3f583926116aff76b19397450300",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xbf95ad3a3ebe18ed8bb727be9c0292e9d215817fbcd7d61b1d2617a3951cfa132049b3cc7f0130524f003c581d11fcda4d18cc3f583926116aff76b19397450300",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0xbf95ad3a3ebe18ed8bb727be9c0292e9d215817fbcd7d61b1d2617a3951cfa132049b3cc7f0130524f003c581d11fcda4d18cc3f583926116aff76b19397450300",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x73d2050ae0af88b1c7813177f56a737f33aa98e5c836be8b7491e0ef05d8f3f025925d9b98a5bf9bd3c97e9735a50edd1a6a8682c9d3eeb6b7bdaba15ab3367401",
+     "valid_for_M_message": true
+    }
+   }
+  },
+  "k7": {
+   "k7": {
+    "ccc": {
+     "signature": "0x8a57bf7d16309f66a4975a0950d9ef45add371134b17862360194d61c21c408a43a9e2261784d0cb1dcf01866448034398085f6f77528aea1fd0692724221bd200",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x8a57bf7d16309f66a4975a0950d9ef45add371134b17862360194d61c21c408a43a9e2261784d0cb1dcf01866448034398085f6f77528aea1fd0692724221bd200",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x61b832d8978235f2576168fd868280f73c231973fda73bfa0b4b96ff16aac968193c7b4cc90fd4ddd3ccb6429af6044bf00213402c56f88ef3e5cf9c92cf2a5401",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ },
+ "S8-neuron-export": {
+  "V": {
+   "k1": {
+    "ccc": {
+     "signature": "0xfcf178bd8f18ac004d9c42d008da8dae827ddced1b39224c3f779d0b79d83eaf077d20a5deb4420ec7a5d9c6e68b3fec805db27258d2f7c387da7b505aad5d3d00",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xfcf178bd8f18ac004d9c42d008da8dae827ddced1b39224c3f779d0b79d83eaf077d20a5deb4420ec7a5d9c6e68b3fec805db27258d2f7c387da7b505aad5d3d00",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0xfcf178bd8f18ac004d9c42d008da8dae827ddced1b39224c3f779d0b79d83eaf077d20a5deb4420ec7a5d9c6e68b3fec805db27258d2f7c387da7b505aad5d3d00",
+     "valid_for_M_message": true
+    },
+    "neuron-export": {
+     "signature": "0xfcf178bd8f18ac004d9c42d008da8dae827ddced1b39224c3f779d0b79d83eaf077d20a5deb4420ec7a5d9c6e68b3fec805db27258d2f7c387da7b505aad5d3d00",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x0a83c53e061e62bf088e83839f5f01bb53880f603fbf02129205e849758cef11120f284cbba1d368e299bfde8454448bc28422f5783e56284f80578ca0fa63d601",
+     "valid_for_M_message": true
+    }
+   },
+   "k3": {
+    "ccc": {
+     "signature": "0xcc09b5a343868fe9a1e50f9b2ab75aa75f7afa10d70a004ef800a0983fb9c812598f48eb1f5a04ea569eaa3aceb4aaea960ef6dfc5445c0e523ef813a09fd34b01",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xcc09b5a343868fe9a1e50f9b2ab75aa75f7afa10d70a004ef800a0983fb9c812598f48eb1f5a04ea569eaa3aceb4aaea960ef6dfc5445c0e523ef813a09fd34b01",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0xcc09b5a343868fe9a1e50f9b2ab75aa75f7afa10d70a004ef800a0983fb9c812598f48eb1f5a04ea569eaa3aceb4aaea960ef6dfc5445c0e523ef813a09fd34b01",
+     "valid_for_M_message": true
+    },
+    "python": {
+     "signature": "0x613fa22a2d8d7c57fa12107e5b251681aaa7fd4908dcd66e8400d911e06aff6f72875ee178ca0dd5b9173b8d631a3ef4908e137eac414ecbd36f5468e47b74bb00",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ },
+ "S9-extra-witness": {
+  "V": {
+   "k2": {
+    "ccc": {
+     "signature": "0x5ee383e24f1dcf0da9d260e185522a2b857668b906c7e18413b866003e4e8b3e44028b4bafd586861c0d65e8003723fcb19ac8fbaf310e39ff83fc0a4ad2588001",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0x5ee383e24f1dcf0da9d260e185522a2b857668b906c7e18413b866003e4e8b3e44028b4bafd586861c0d65e8003723fcb19ac8fbaf310e39ff83fc0a4ad2588001",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x2b4c6e445986ebf22233390e712ae941206244150c631418eb87464917e80410158378328e97c2669a88fd4d08c6204693af8e7f97ad68c1ce09b66e240a465701",
+     "valid_for_M_message": false
+    },
+    "python": {
+     "signature": "0x974e0d815fbee46e202cd904d439bc01d9d2dd2f8fa4e19a08466d9ddbfb7caf228ca09a62cbaafb809a70a9b3ec85cd715ba61047a01de6dad045957d68ed8f00",
+     "valid_for_M_message": true
+    }
+   },
+   "k3": {
+    "ccc": {
+     "signature": "0xb7e2d03bc2c51fc5c705e29ca5621efd3c65c72fa8ac80bb2f5dc93c614a350c457db14e86710a2d6046b8915b2e9cc23a51e408019111c9d0bd95750914698001",
+     "valid_for_M_message": true
+    },
+    "ckb-cli": {
+     "signature": "0xb7e2d03bc2c51fc5c705e29ca5621efd3c65c72fa8ac80bb2f5dc93c614a350c457db14e86710a2d6046b8915b2e9cc23a51e408019111c9d0bd95750914698001",
+     "valid_for_M_message": true
+    },
+    "neuron": {
+     "signature": "0x17d40b7db2376d757cb3ce9a19a0ca1aeb90293d52a41be2eda947f86b33e0a34d73877e6855532e86d793d05fc59702f8a5d5a143dcede944bd5a40c40cd46101",
+     "valid_for_M_message": false
+    },
+    "python": {
+     "signature": "0xf0c80a0231a67685c1701c84e82ef1e65e2596cfb6f6601dfd80c1285c412e4f732452adc0bef4ea8fb4342beec2150f33fd95fb6729dc155de1a834d3fe02f001",
+     "valid_for_M_message": true
+    }
+   }
+  }
+ }
+}

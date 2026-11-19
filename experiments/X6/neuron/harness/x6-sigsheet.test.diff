@@ -1,0 +1,87 @@
+--- base/x6-sigsheet.test.ts
++++ x6-sigsheet.test.ts
+@@ -1,3 +1,16 @@
++// X5/X6: Neuron v0.204.1, patched (X6), signs a Sigsheet file with its own signMultisig, run in Node under
++// Neuron's jest setup. The mock preamble is X1's (itself copied from Neuron's transaction-sender.test.ts).
++//
++// The mock preamble below (down to the first import of src/) is copied from Neuron's own test
++// tests/services/tx/transaction-sender.test.ts at d3a7467d218e4b6f777326682a83fec802669c00
++// (lines 1-189), with the relative paths adjusted for tests/x1/. Only electron, the wallet
++// service, RPC, the database-backed services and the hardware service are mocked; the code under
++// test (TransactionSender.signMultisig, TransactionSender.signSingleMultiSignScript, the
++// Transaction / WitnessArgs / Multisig models and OfflineSignController.exportTransactionAsJSON)
++// is Neuron's unchanged source.
++//
++// Env: X1_CASES (cases folder), X1_KEYS (keys.json), X1_OUT (output JSON), X1_EXPORT_DIR (folder
++// for Neuron's offline JSON export of case S8), X1_CONTEXT_DIR (folder with input transactions).
+ import { dialog } from 'electron'
+ import { CKBComponents } from '@ckb-lumos/lumos/rpc'
+ import { bytes } from '@ckb-lumos/lumos/codec'
+@@ -110,8 +123,8 @@
+   }
+ })
+ 
+-jest.mock('../../../src/models/system-script-info', () => {
+-  const originalModule = jest.requireActual('../../../src/models/system-script-info')
++jest.mock('../../src/models/system-script-info', () => {
++  const originalModule = jest.requireActual('../../src/models/system-script-info')
+   return {
+     ...originalModule.default,
+     isSecpScript: originalModule.default.isSecpScript,
+@@ -185,9 +198,53 @@
+ jest.mock('electron', () => ({
+   dialog: {
+     showMessageBox: jest.fn(),
++    // X1 addition: the export path asks where to save; the test answers with a fixed file path.
++    showSaveDialog: jest.fn(),
+   },
+ }))
+ 
+-import Transaction from '../../../src/models/chain/transaction'
+-import TxStatus from '../../../src/models/chain/tx-status'
+-import CellDep, { DepType } from '../../../src/models/chain/cell-dep'
++// ---------------------------------------------------------------- X5/X6 harness (not from Neuron)
++import CellDep, { DepType } from '../../src/models/chain/cell-dep'
++import OutPoint from '../../src/models/chain/out-point'
++void bytes
++void resetMocks
++void dialog
++export type X6Unused = CKBComponents.RawTransaction
++import fs from 'fs'
++import { dialog as x6Dialog } from 'electron'
++import { hd as x6hd } from '@ckb-lumos/lumos'
++import X6TransactionSender from '../../src/services/transaction-sender'
++import { parseSigsheet, sigsheetToNeuron, addNeuronSignatures, sigsheetCanonicalJson } from '../../src/utils/sigsheet'
++
++// Env: SIGSHEET_IN, SIGSHEET_OUT (files), SIGNER_SECRET, SIGNER_BLAKE160 (a fresh devnet test key)
++const fakeWallet = {
++  name: 'x6-wallet',
++  id: 'x6',
++  extendedKey: 'a',
++  keystore: new x6hd.Keystore(
++    { cipher: 'x', cipherparams: { iv: 'x' }, ciphertext: 'x', kdf: '1', kdfparams: { dklen: 1, n: 1, r: 1, p: 1, salt: '1' }, mac: '1' },
++    '0'
++  ),
++  isHardware: () => false,
++}
++
++describe('Neuron signs a Sigsheet file', () => {
++  beforeEach(() => {
++    stubbedGetWallet.mockReturnValue(fakeWallet)
++    ;(x6Dialog.showMessageBox as jest.Mock).mockResolvedValue({ response: 1 }) // ignore locks without a config
++  })
++  it('signs every multisig group the key belongs to', async () => {
++    const t0 = Date.now()
++    const doc = parseSigsheet(fs.readFileSync(process.env.SIGSHEET_IN!, 'utf8'))
++    const { tx, context, configs } = sigsheetToNeuron(doc, fakeWallet.id)
++    const sender = new X6TransactionSender()
++    sender.getAddressInfos = jest.fn().mockReturnValue([
++      { walletId: fakeWallet.id, path: `m/44'/309'/0'/0/0`, blake160: process.env.SIGNER_BLAKE160, version: 'testnet' },
++    ]) as any
++    sender.getPrivateKeys = jest.fn().mockReturnValue([{ path: `m/44'/309'/0'/0/0`, privateKey: process.env.SIGNER_SECRET }]) as any
++    const signed = await sender.signMultisig(fakeWallet.id, tx, 'x', configs, context as any)
++    const out = addNeuronSignatures(doc, signed)
++    fs.writeFileSync(process.env.SIGSHEET_OUT!, sigsheetCanonicalJson(out))
++    fs.writeFileSync(process.env.SIGSHEET_OUT! + '.neuron.json', JSON.stringify({ ms: Date.now() - t0, signatures: signed.signatures, dialogs: (x6Dialog.showMessageBox as jest.Mock).mock.calls.length }))
++  })
++})

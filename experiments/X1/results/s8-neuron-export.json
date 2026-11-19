@@ -1,0 +1,29 @@
+{
+ "file_fields": [
+  "transaction",
+  "type",
+  "status",
+  "context"
+ ],
+ "status": "PartiallySigned",
+ "type": "SendFromMultisigOnlySig",
+ "checks": {
+  "input 0: a context transaction hashes to its out point's tx hash": true,
+  "input 0: Neuron's lock equals the context cell's lock": true,
+  "input 0: Neuron's capacity equals the context cell's capacity": true,
+  "transaction hash recomputed from the file equals case S8": true,
+  "the hash Neuron wrote in transaction.hash equals it too": true,
+  "message from the file equals the case S8 message": true,
+  "the partial signature recovers to a member key": true,
+  "Neuron's signatures map lists that key under the input's lock hash": true
+ },
+ "partial_witness": {
+  "lock_bytes": 129,
+  "script_bytes": 64,
+  "signatures_present": 1,
+  "threshold": 2,
+  "full_length_would_be": 194
+ },
+ "message_from_file": "0xcc35c504d452b03b0d70e4760199ecefc4582239585e8e492aff215b99c657c7",
+ "recovered_key_hash": "0xdf2c77f15e45838f3983399fb63c7b5c576ad5fe"
+}

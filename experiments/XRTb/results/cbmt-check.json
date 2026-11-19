@@ -1,0 +1,70 @@
+{
+ "sent": [
+  "0x79c167e570dc03bbf61881e910b7a93d81476616dd36b2ac044296411946652a",
+  "0x54c729fc3276fd53c7824f63575954dba118fa0583898f77edb647930cd696ae",
+  "0xc47d1a5308ba4e45a0a23f6b748c3f06f0c26332b93ecbae0cd39f505beccd27",
+  "0xb276e70964a43b43728c2d1bdfc300234eb5507e9e0a082e459de089063f70ee"
+ ],
+ "blocks": {
+  "0x79c167e570dc03bbf61881e910b7a93d81476616dd36b2ac044296411946652a": "0x6389bad10b53021f9fa62849948635acc3ad92896bbb43d8e9366972c15d6ad5",
+  "0x54c729fc3276fd53c7824f63575954dba118fa0583898f77edb647930cd696ae": "0x6389bad10b53021f9fa62849948635acc3ad92896bbb43d8e9366972c15d6ad5",
+  "0xc47d1a5308ba4e45a0a23f6b748c3f06f0c26332b93ecbae0cd39f505beccd27": "0x6389bad10b53021f9fa62849948635acc3ad92896bbb43d8e9366972c15d6ad5",
+  "0xb276e70964a43b43728c2d1bdfc300234eb5507e9e0a082e459de089063f70ee": "0x6389bad10b53021f9fa62849948635acc3ad92896bbb43d8e9366972c15d6ad5"
+ },
+ "checks": [
+  {
+   "block_number": 63697,
+   "txs_in_block": 5,
+   "tx": "0x253ff550818e9721fbd1edbbb3e4f8002e04521c0bd0242a4edade86c7aa5d7b",
+   "indices": [
+    "0x4"
+   ],
+   "lemmas": 2,
+   "verifies_offline": true
+  },
+  {
+   "block_number": 63697,
+   "txs_in_block": 5,
+   "tx": "0xb276e70964a43b43728c2d1bdfc300234eb5507e9e0a082e459de089063f70ee",
+   "indices": [
+    "0x5"
+   ],
+   "lemmas": 2,
+   "verifies_offline": true
+  },
+  {
+   "block_number": 63697,
+   "txs_in_block": 5,
+   "tx": "0xc47d1a5308ba4e45a0a23f6b748c3f06f0c26332b93ecbae0cd39f505beccd27",
+   "indices": [
+    "0x6"
+   ],
+   "lemmas": 2,
+   "verifies_offline": true
+  },
+  {
+   "block_number": 63697,
+   "txs_in_block": 5,
+   "tx": "0x54c729fc3276fd53c7824f63575954dba118fa0583898f77edb647930cd696ae",
+   "indices": [
+    "0x7"
+   ],
+   "lemmas": 3,
+   "verifies_offline": true
+  },
+  {
+   "block_number": 63697,
+   "txs_in_block": 5,
+   "tx": "0x79c167e570dc03bbf61881e910b7a93d81476616dd36b2ac044296411946652a",
+   "indices": [
+    "0x8"
+   ],
+   "lemmas": 3,
+   "verifies_offline": true
+  },
+  {
+   "block_number": 63697,
+   "wrong_tx_hash_verifies": false
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "x6-ccc-harness",
+  "private": true,
+  "type": "module",
+  "description": "X6/X5: run the patched CCC core (../core/src) from TypeScript, without a build",
+  "dependencies": { "tsx": "4.20.6" }
+}

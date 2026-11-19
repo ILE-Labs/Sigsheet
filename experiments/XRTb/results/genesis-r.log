@@ -1,0 +1,4 @@
+A [([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'member', True), ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'descending', True)]
+B [([5, 10], 'member', False), ([5, 10], 'descending', False), ([10, 11], 'member', False), ([10, 11], 'descending', False), ([5, 11], 'member', True), ([5, 11], 'descending', True)]
+C1 [([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 'member', True), ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 'descending', True)]
+C2 [([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11], 'member', True), ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11], 'descending', True)]

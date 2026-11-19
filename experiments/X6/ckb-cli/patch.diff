@@ -1,0 +1,452 @@
+--- a/src/subcommands/tx.rs
++++ b/src/subcommands/tx.rs
+@@ -41,6 +41,7 @@
+         get_network_type, get_privkey_signer, get_to_data, read_password,
+     },
+     rpc::HttpRpcClient,
++    sigsheet::Sigsheet,
+     tx_helper::{SignerFn, TxHelper},
+ };
+ 
+@@ -243,6 +244,20 @@
+                     )
+                     .arg(arg_skip_check)
+                     .arg(arg_allow_zero_lock),
++                App::new("sigsheet-sign")
++                    .about("Sign a Sigsheet file (sigsheet prototype)")
++                    .arg(Arg::with_name("sigsheet").long("sigsheet").takes_value(true).required(true))
++                    .arg(Arg::with_name("output").long("output").takes_value(true))
++                    .arg(arg::privkey_path().required_unless(arg::from_account().get_name()))
++                    .arg(arg::from_account().required_unless(arg::privkey_path().get_name())),
++                App::new("sigsheet-merge")
++                    .about("Merge Sigsheet files (sigsheet prototype)")
++                    .arg(Arg::with_name("sigsheet").long("sigsheet").takes_value(true).multiple(true).required(true))
++                    .arg(Arg::with_name("output").long("output").takes_value(true).required(true)),
++                App::new("sigsheet-send")
++                    .about("Finalize a Sigsheet file and send it, or write it with --output (sigsheet prototype)")
++                    .arg(Arg::with_name("sigsheet").long("sigsheet").takes_value(true).required(true))
++                    .arg(Arg::with_name("output").long("output").takes_value(true)),
+                 App::new("build-multisig-address")
+                     .about(
+                         "Build multisig address with multisig config and since(optional) argument",
+@@ -256,8 +271,62 @@
+     }
+ }
+ 
++impl TxSubCommand<'_> {
++    fn process_sigsheet(&mut self, name: &str, m: &ArgMatches) -> Result<Output, String> {
++        let read = |p: &str| Sigsheet::read(&fs::read_to_string(p).map_err(|e| e.to_string())?);
++        match name {
++            "sigsheet-sign" => {
++                let file = m.value_of("sigsheet").unwrap();
++                let mut sheet = read(file)?;
++                let privkey_opt: Option<PrivkeyWrapper> =
++                    PrivkeyPathParser.from_matches_opt(m, "privkey-path")?;
++                let mut signer = if let Some(privkey) = privkey_opt {
++                    get_privkey_signer(privkey)
++                } else {
++                    let account: H160 = FixedHashParser::<H160>::default().from_matches(m, "from-account")?;
++                    let password = if self.plugin_mgr.keystore_require_password() {
++                        Some(read_password(false, None)?)
++                    } else {
++                        None
++                    };
++                    let client = HttpRpcClient::new(self.rpc_client.url().to_owned());
++                    get_keystore_signer(self.plugin_mgr.keystore_handler(), client, account, password)
++                };
++                let added = sheet.sign(&mut signer)?;
++                fs::write(m.value_of("output").unwrap_or(file), sheet.to_text()).map_err(|e| e.to_string())?;
++                Ok(Output::new_output(serde_json::json!({ "signatures_added": added })))
++            }
++            "sigsheet-merge" => {
++                let sheets = m.values_of("sigsheet").unwrap().map(read).collect::<Result<Vec<_>, _>>()?;
++                let merged = sheets[0].merge(&sheets[1..])?;
++                fs::write(m.value_of("output").unwrap(), merged.to_text()).map_err(|e| e.to_string())?;
++                Ok(Output::new_output(serde_json::json!({ "merged": sheets.len() })))
++            }
++            _ => {
++                let tx = read(m.value_of("sigsheet").unwrap())?.finalize()?;
++                if let Some(out) = m.value_of("output") {
++                    let json = serde_json::to_string_pretty(&json_types::Transaction::from(tx.data()))
++                        .map_err(|e| e.to_string())?;
++                    fs::write(out, json).map_err(|e| e.to_string())?;
++                    return Ok(Output::new_output(serde_json::json!({ "tx_hash": tx.hash().to_string() })));
++                }
++                let resp = self
++                    .rpc_client
++                    .send_transaction(tx.data(), Some(json_types::OutputsValidator::Passthrough))
++                    .map_err(|err| format!("Send transaction error: {}", err))?;
++                Ok(Output::new_output(resp))
++            }
++        }
++    }
++}
++
+ impl CliSubCommand for TxSubCommand<'_> {
+     fn process(&mut self, matches: &ArgMatches, debug: bool) -> Result<Output, String> {
++        if let (name, Some(m)) = matches.subcommand() {
++            if name.starts_with("sigsheet-") {
++                return self.process_sigsheet(name, m);
++            }
++        }
+         let network = get_network_type(self.rpc_client)?;
+ 
+         match matches.subcommand() {
+--- a/src/utils/mod.rs
++++ b/src/utils/mod.rs
+@@ -10,6 +10,7 @@
+ pub mod printer;
+ pub mod rpc;
+ pub mod signer;
++pub mod sigsheet;
+ pub mod tx_helper;
+ 
+ #[allow(clippy::cast_lossless)]
+--- /dev/null
++++ b/src/utils/sigsheet.rs
+@@ -0,0 +1,345 @@
++//! Sigsheet (path C), design-stage patch for experiment X6: read, sign, merge and finalize a shared multisig file.
++//! Throwaway experiment code, not a proposal to ckb-cli. Signing goes through ckb-cli's own `build_signature`
++//! and `SignerFn` (keystore, private key or plugin), as `tx sign-inputs` does.
++use std::collections::{BTreeMap, HashSet};
++
++use ckb_hash::blake2b_256;
++use ckb_jsonrpc_types as json_types;
++use ckb_jsonrpc_types::JsonBytes;
++use ckb_sdk::{
++    constants::{MultisigScript, SIGHASH_TYPE_HASH},
++    unlock::MultisigConfig,
++    SECP256K1,
++};
++use ckb_types::{
++    bytes::Bytes,
++    core::{ScriptHashType, TransactionView},
++    packed::{self, WitnessArgs},
++    prelude::*,
++    H160, H256,
++};
++use serde_derive::{Deserialize, Serialize};
++
++use super::tx_helper::{build_signature, SignerFn};
++
++// secp256k1 group order N, big-endian
++const N: [u8; 32] = [
++    0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xfe, 0xba, 0xae,
++    0xdc, 0xe6, 0xaf, 0x48, 0xa0, 0x3b, 0xbf, 0xd2, 0x5e, 0x8c, 0xd0, 0x36, 0x41, 0x41,
++];
++
++#[derive(Serialize, Deserialize, Clone, PartialEq)]
++#[serde(deny_unknown_fields)]
++pub struct Config {
++    pub public_key_hashes: Vec<H160>,
++    pub require_first_n: u8,
++    pub threshold: u8,
++}
++
++#[derive(Serialize, Deserialize, Clone, PartialEq)]
++#[serde(deny_unknown_fields)]
++pub struct RawTx {
++    pub cell_deps: Vec<json_types::CellDep>,
++    pub header_deps: Vec<H256>,
++    pub inputs: Vec<json_types::CellInput>,
++    pub outputs: Vec<json_types::CellOutput>,
++    pub outputs_data: Vec<JsonBytes>,
++    pub version: json_types::Version,
++}
++
++#[derive(Serialize, Deserialize, Clone)]
++#[serde(deny_unknown_fields)]
++pub struct Sigsheet {
++    pub context: BTreeMap<H256, RawTx>,
++    pub multisig_configs: BTreeMap<H160, Config>,
++    pub signatures: BTreeMap<H256, BTreeMap<H160, JsonBytes>>,
++    pub transaction: json_types::Transaction,
++    pub version: String,
++}
++
++#[derive(PartialEq, Clone, Copy)]
++enum Kind {
++    Multisig(MultisigScript),
++    Sighash,
++}
++
++struct Group {
++    lock_hash: H256,
++    args: Bytes,
++    kind: Kind,
++    idxs: Vec<usize>,
++}
++
++/// RFC 8785 for the values a Sigsheet holds: object keys sorted, no whitespace.
++fn canonical(v: &serde_json::Value, out: &mut String) {
++    match v {
++        serde_json::Value::Object(m) => {
++            let mut keys: Vec<&String> = m.keys().collect();
++            keys.sort();
++            out.push('{');
++            for (i, k) in keys.iter().enumerate() {
++                if i > 0 {
++                    out.push(',');
++                }
++                out.push_str(&serde_json::to_string(k).unwrap());
++                out.push(':');
++                canonical(&m[k.as_str()], out);
++            }
++            out.push('}');
++        }
++        serde_json::Value::Array(a) => {
++            out.push('[');
++            for (i, x) in a.iter().enumerate() {
++                if i > 0 {
++                    out.push(',');
++                }
++                canonical(x, out);
++            }
++            out.push(']');
++        }
++        other => out.push_str(&serde_json::to_string(other).unwrap()),
++    }
++}
++
++fn low_s(sig: &[u8]) -> Vec<u8> {
++    let mut half = [0u8; 32];
++    let mut carry = 0u16;
++    for i in 0..32 {
++        let v = (carry << 8) | N[i] as u16;
++        half[i] = (v / 2) as u8;
++        carry = v % 2;
++    }
++    if sig[32..64] <= half[..] {
++        return sig.to_vec();
++    }
++    let mut s = [0u8; 32];
++    let mut borrow = 0i16;
++    for i in (0..32).rev() {
++        let mut d = N[i] as i16 - sig[32 + i] as i16 - borrow;
++        borrow = if d < 0 { 1 } else { 0 };
++        if d < 0 {
++            d += 256;
++        }
++        s[i] = d as u8;
++    }
++    let mut out = sig[0..32].to_vec();
++    out.extend_from_slice(&s);
++    out.push(sig[64] ^ 1);
++    out
++}
++
++impl Sigsheet {
++    pub fn read(text: &str) -> Result<Sigsheet, String> {
++        let sheet: Sigsheet = serde_json::from_str(text).map_err(|e| e.to_string())?;
++        if sheet.version != "0x1" {
++            return Err(format!("unknown Sigsheet version {}", sheet.version));
++        }
++        if sheet.to_text() != text {
++            return Err("Sigsheet file not in canonical form".to_string());
++        }
++        Ok(sheet)
++    }
++
++    pub fn to_text(&self) -> String {
++        let mut out = String::new();
++        canonical(&serde_json::to_value(self).unwrap(), &mut out);
++        out
++    }
++
++    fn tx(&self) -> TransactionView {
++        packed::Transaction::from(self.transaction.clone()).into_view()
++    }
++
++    /// The spent output and its data, from the carried previous transaction, checked by hash.
++    fn cell(&self, op: &json_types::OutPoint) -> Result<(json_types::CellOutput, JsonBytes), String> {
++        let raw = self.context.get(&op.tx_hash).ok_or("no previous transaction for an input")?;
++        let prev = json_types::Transaction {
++            version: raw.version,
++            cell_deps: raw.cell_deps.clone(),
++            header_deps: raw.header_deps.clone(),
++            inputs: raw.inputs.clone(),
++            outputs: raw.outputs.clone(),
++            outputs_data: raw.outputs_data.clone(),
++            witnesses: vec![],
++        };
++        let hash: H256 = packed::Transaction::from(prev).into_view().hash().unpack();
++        if hash != op.tx_hash {
++            return Err("previous transaction doesn't hash to its out point".to_string());
++        }
++        let i = op.index.value() as usize;
++        Ok((raw.outputs[i].clone(), raw.outputs_data[i].clone()))
++    }
++
++    fn groups(&self) -> Result<Vec<Group>, String> {
++        let mut out: Vec<Group> = vec![];
++        for (idx, input) in self.transaction.inputs.iter().enumerate() {
++            let lock = packed::Script::from(self.cell(&input.previous_output)?.0.lock);
++            let code: H256 = lock.code_hash().unpack();
++            let ht: u8 = lock.hash_type().into();
++            let kind = if code == SIGHASH_TYPE_HASH && ht == ScriptHashType::Type as u8 {
++                Some(Kind::Sighash)
++            } else {
++                [MultisigScript::Legacy, MultisigScript::V2]
++                    .into_iter()
++                    .find(|m| {
++                        let sid = m.script_id();
++                        sid.code_hash == code && sid.hash_type as u8 == ht
++                    })
++                    .map(Kind::Multisig)
++            };
++            let lock_hash: H256 = lock.calc_script_hash().unpack();
++            if let Some(g) = out.iter_mut().find(|g| g.lock_hash == lock_hash) {
++                g.idxs.push(idx);
++            } else if let Some(kind) = kind {
++                out.push(Group { lock_hash, args: lock.args().raw_data(), kind, idxs: vec![idx] });
++            }
++        }
++        Ok(out)
++    }
++
++    fn config(&self, g: &Group) -> Result<(Config, MultisigConfig), String> {
++        let Kind::Multisig(script) = g.kind else { return Err("not multisig".into()) };
++        let key = H160::from_slice(&g.args[0..20]).unwrap();
++        let cfg = self.multisig_configs.get(&key).ok_or("no multisig config for an input")?.clone();
++        let mc = MultisigConfig::new_with(script, cfg.public_key_hashes.clone(), cfg.require_first_n, cfg.threshold)
++            .map_err(|e| e.to_string())?;
++        if mc.hash160() != key {
++            return Err("multisig config doesn't hash to the lock args".to_string());
++        }
++        Ok((cfg, mc))
++    }
++
++    fn witnesses(&self) -> Vec<packed::Bytes> {
++        self.tx().witnesses().into_iter().collect()
++    }
++
++    /// The lock's message for a group, computed by ckb-cli's own build_signature.
++    fn message(&self, g: &Group) -> Result<H256, String> {
++        let mc = match g.kind {
++            Kind::Multisig(_) => Some(self.config(g)?.1),
++            Kind::Sighash => None,
++        };
++        let mut msg = H256::default();
++        build_signature(&self.tx(), self.transaction.inputs.len(), &g.idxs, &self.witnesses(), mc.as_ref(), |m, _| {
++            msg = m.clone();
++            Ok([0u8; 65])
++        })?;
++        Ok(msg)
++    }
++
++    fn signer_of(&self, g: &Group, sig: &[u8], msg: &H256) -> Option<H160> {
++        if sig.len() != 65 {
++            return None;
++        }
++        let id = secp256k1::ecdsa::RecoveryId::try_from(sig[64] as i32).ok()?;
++        let rs = secp256k1::ecdsa::RecoverableSignature::from_compact(&sig[0..64], id).ok()?;
++        let pk = SECP256K1.recover_ecdsa(&secp256k1::Message::from_digest(msg.0), &rs).ok()?;
++        let kh = H160::from_slice(&blake2b_256(pk.serialize())[0..20]).unwrap();
++        match g.kind {
++            Kind::Multisig(_) => self.config(g).ok()?.0.public_key_hashes.contains(&kh).then_some(kh),
++            Kind::Sighash => (kh.as_bytes() == g.args.as_ref()).then_some(kh),
++        }
++    }
++
++    fn add(&mut self, lock_hash: &H256, kh: H160, sig: &[u8]) {
++        let s = low_s(sig);
++        let box_ = self.signatures.entry(lock_hash.clone()).or_default();
++        match box_.get(&kh) {
++            Some(cur) if cur.as_bytes() <= &s[..] => {}
++            _ => {
++                box_.insert(kh, JsonBytes::from_vec(s));
++            }
++        }
++    }
++
++    /// Sign every group the signer holds a key for, as `tx sign-inputs` does. Returns how many were added.
++    pub fn sign(&mut self, signer: &mut SignerFn) -> Result<usize, String> {
++        let mut added = 0;
++        for g in self.groups()? {
++            let (lock_args, mc): (HashSet<H160>, Option<MultisigConfig>) = match g.kind {
++                Kind::Multisig(_) => {
++                    let (cfg, mc) = self.config(&g)?;
++                    (cfg.public_key_hashes.into_iter().collect(), Some(mc))
++                }
++                Kind::Sighash => ([H160::from_slice(&g.args).unwrap()].into_iter().collect(), None),
++            };
++            if signer(&lock_args, &H256::default(), &packed::Transaction::default().into())?.is_none() {
++                continue;
++            }
++            let sig = build_signature(&self.tx(), self.transaction.inputs.len(), &g.idxs, &self.witnesses(),
++                mc.as_ref(), |m, tx| signer(&lock_args, m, tx).map(|s| s.unwrap()))?;
++            let msg = self.message(&g)?;
++            if let Some(kh) = self.signer_of(&g, &sig, &msg) {
++                self.add(&g.lock_hash, kh, &sig);
++                added += 1;
++            }
++        }
++        Ok(added)
++    }
++
++    /// The merge rule: the same unsigned transaction; every verified member signature, low-s, keyed by signer.
++    pub fn merge(&self, others: &[Sigsheet]) -> Result<Sigsheet, String> {
++        let mut out = self.clone();
++        out.signatures.clear();
++        for o in others {
++            if o.transaction != self.transaction {
++                return Err("files describe different transactions".to_string());
++            }
++            out.context.extend(o.context.clone());
++            out.multisig_configs.extend(o.multisig_configs.clone());
++        }
++        let groups = out.groups()?;
++        for s in std::iter::once(self).chain(others.iter()) {
++            for (lh, box_) in &s.signatures {
++                let Some(g) = groups.iter().find(|g| &g.lock_hash == lh) else { continue };
++                let msg = out.message(g)?;
++                for (kh, sig) in box_ {
++                    if out.signer_of(g, sig.as_bytes(), &msg).as_ref() == Some(kh) {
++                        out.add(lh, kh.clone(), sig.as_bytes());
++                    }
++                }
++            }
++        }
++        Ok(out)
++    }
++
++    /// The finalize rule: the first R members, then the lowest member indices up to M, in member order.
++    pub fn finalize(&self) -> Result<TransactionView, String> {
++        let v = self.merge(&[])?;
++        let mut witnesses = v.witnesses();
++        for g in v.groups()? {
++            let have = v.signatures.get(&g.lock_hash).cloned().unwrap_or_default();
++            let lock = match g.kind {
++                Kind::Multisig(_) => {
++                    let (cfg, mc) = v.config(&g)?;
++                    let mut idx: Vec<usize> = have.keys()
++                        .filter_map(|k| cfg.public_key_hashes.iter().position(|x| x == k)).collect();
++                    idx.sort();
++                    let r = cfg.require_first_n as usize;
++                    if !(0..r).all(|i| idx.contains(&i)) || idx.len() < cfg.threshold as usize {
++                        return Err(format!("group {:#x} isn't ready", g.lock_hash));
++                    }
++                    let mut pick: Vec<usize> = (0..r).chain(idx.into_iter().filter(|i| *i >= r)).collect();
++                    pick.truncate(cfg.threshold as usize);
++                    pick.sort();
++                    let mut data = mc.to_witness_data();
++                    for i in pick {
++                        data.extend_from_slice(have[&cfg.public_key_hashes[i]].as_bytes());
++                    }
++                    Bytes::from(data)
++                }
++                Kind::Sighash => Bytes::from(
++                    have.values().next().ok_or("a single-key group has no signature")?.as_bytes().to_vec(),
++                ),
++            };
++            let w = &witnesses[g.idxs[0]];
++            let init = if w.raw_data().is_empty() {
++                WitnessArgs::default()
++            } else {
++                WitnessArgs::from_slice(&w.raw_data()).map_err(|e| e.to_string())?
++            };
++            witnesses[g.idxs[0]] = init.as_builder().lock(Some(lock).pack()).build().as_bytes().pack();
++        }
++        Ok(v.tx().as_advanced_builder().set_witnesses(witnesses).build())
++    }
++}

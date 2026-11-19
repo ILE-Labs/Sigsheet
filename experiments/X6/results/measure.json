@@ -1,0 +1,69 @@
+{
+ "ckb-cli": {
+  "commit": "80efc21c30e9fc7847407a217034681b6e46c763",
+  "files": {
+   "src/subcommands/tx.rs": {
+    "added": 69,
+    "removed": 0,
+    "code_added": 68
+   },
+   "src/utils/mod.rs": {
+    "added": 1,
+    "removed": 0,
+    "code_added": 1
+   },
+   "src/utils/sigsheet.rs": {
+    "added": 345,
+    "removed": 0,
+    "code_added": 312
+   }
+  },
+  "files_changed": 3,
+  "lines_added": 415,
+  "lines_removed": 0,
+  "code_lines_added": 381
+ },
+ "CCC": {
+  "commit": "7095ccad564b94ea2e59284cb4a364aa3499252e",
+  "files": {
+   "src/barrel.ts": {
+    "added": 1,
+    "removed": 0,
+    "code_added": 1
+   },
+   "src/sigsheet/buildingPacket.ts": {
+    "added": 103,
+    "removed": 0,
+    "code_added": 95
+   },
+   "src/sigsheet/index.ts": {
+    "added": 259,
+    "removed": 0,
+    "code_added": 228
+   }
+  },
+  "files_changed": 3,
+  "lines_added": 363,
+  "lines_removed": 0,
+  "code_lines_added": 324
+ },
+ "Neuron": {
+  "commit": "d3a7467d218e4b6f777326682a83fec802669c00",
+  "files": {
+   "src/services/transaction-sender.ts": {
+    "added": 8,
+    "removed": 2,
+    "code_added": 8
+   },
+   "src/utils/sigsheet.ts": {
+    "added": 145,
+    "removed": 0,
+    "code_added": 129
+   }
+  },
+  "files_changed": 2,
+  "lines_added": 153,
+  "lines_removed": 2,
+  "code_lines_added": 137
+ }
+}

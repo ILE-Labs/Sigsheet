@@ -1,0 +1,24 @@
+{
+ "job": "experiments/XQ14/results/runs/v2-member-contract-data/job.json",
+ "kind": "transaction",
+ "screens": [
+  "Confirm | Transaction",
+  "Amount | 999",
+  "Fee | 1",
+  "Destination (1/2) | ckb1qzda0cr08m85hc | 8jlnfp3zer7xulejywt4 | 9kt2rr0vthywaa50xws",
+  "Destination (2/2) | qduttp4q2sphy5e4w | q6j9m6p7gh8z75qvq | n6e95f",
+  "Contract | Not Present",
+  "Reject",
+  "Accept"
+ ],
+ "presses": {
+  "right": 7,
+  "both": 1
+ },
+ "annotated_bytes": 3091,
+ "annotated_sha256": "065f0cf58b514eddd71f825f99a5a11475f788f3a2f4d6de2cef90cca03b0e62",
+ "apdus": 14,
+ "signature": "bf08937e60ef269c0a9384b2c95eeade88160d26accb820091b85d6ba0cd22930664dd46006f0c0bd7eccf2526ec176beeaadd70efd57db19390d3bf0aa860bf00",
+ "result": "signed",
+ "seconds": 2.36
+}

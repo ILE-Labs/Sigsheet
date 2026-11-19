@@ -1,0 +1,70 @@
+{
+  "transaction": {
+    "version": "0x0",
+    "cell_deps": [
+      {
+        "out_point": {
+          "tx_hash": "0x2d7768b94bfd7d6b8f0baa8d2b4c80aaecd17968cec09929f6655e766597ab1e",
+          "index": "0x3"
+        },
+        "dep_type": "dep_group"
+      }
+    ],
+    "header_deps": [],
+    "inputs": [
+      {
+        "since": "0x0",
+        "previous_output": {
+          "tx_hash": "0xfe31d1634fb319bae8e14b92f0db109fc011dd8822bd7e9faeb899d44acfc5ad",
+          "index": "0x0"
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "capacity": "0x2540be400",
+        "lock": {
+          "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+          "hash_type": "type",
+          "args": "0x405ec6bd9ffa555ab7f04561c1b4074cb8405964"
+        },
+        "type": null
+      },
+      {
+        "capacity": "0x14f4697d60",
+        "lock": {
+          "code_hash": "0x36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29",
+          "hash_type": "data1",
+          "args": "0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060"
+        },
+        "type": null
+      }
+    ],
+    "outputs_data": [
+      "0x",
+      "0x"
+    ],
+    "witnesses": [
+      "0xd600000010000000d6000000d6000000c200000000010203c19b48790406b273fbf9708b2113bbf523b10707df2c77f15e45838f3983399fb63c7b5c576ad5fe8991891046f102aba641db60e599d998e244a3fe00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    ]
+  },
+  "multisig_configs": {
+    "0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060": {
+      "lock_code_hash": "0x36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29",
+      "sighash_addresses": [
+        "ckt1qyqvrx6g0yzqdvnnl0uhpzepzwal2ga3qursk3np7g",
+        "ckt1qyqd7trh790ytqu08xpnn8ak83a4c4m26hlqacnq2c",
+        "ckt1qyqgnyvfzpr0zq4t5eqakc89n8ve3cjy50lq82mfxw"
+      ],
+      "require_first_n": 1,
+      "threshold": 2
+    }
+  },
+  "signatures": {
+    "0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060": [
+      "0x82449810c31a0e7b18f37715787a497297d17677ede8e865425cb8f2c4ee027362d565817c06e02fcbd6bee255f98d9a83ffb3df44bb2c7afc4c9478956a603101",
+      "0x00d62fe6a1a2af9804d17fd21c412dc0d5a516713e0bc1b4e495fd44756705c37de9b75551593a371ba80dc3ebbb105fba79cf5dcde567a2a95c3a6203eb31dc00",
+      "0x64a6c26e461848e730896b9ee662df051c8b184b0f6be508f6cf081338a6ff4e10f59f82312e9a807179a72c3d78ec1116806a0a8cede439a7fbc1623827a2e800"
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+--- a/src/services/transaction-sender.ts
++++ b/src/services/transaction-sender.ts
+@@ -397,6 +397,9 @@
+         return serializeWitnessArgs(args.toSDK())
+       })
+       let witnesses: (string | WitnessArgs)[] = []
++      const extraWitnesses = tx.witnesses
++        .slice(tx.inputs.length)
++        .map(w => (typeof w === 'string' ? w : serializeWitnessArgs(w.toSDK())))
+       const serializedMultiSign: string = Multisig.serialize(
+         multisigConfig.blake160s,
+         multisigConfig.r,
+@@ -405,7 +408,7 @@
+       )
+       witnesses = await TransactionSender.signSingleMultiSignScript(
+         privateKey!,
+-        serializedWitnesses,
++        [...serializedWitnesses, ...extraWitnesses],
+         txHash,
+         serializedMultiSign,
+         wallet,
+@@ -440,7 +443,10 @@
+         witnessesArgs[i].witness = witnesses[i] as string
+       }
+     }
+-    tx.witnesses = witnessSigningEntries.map(w => w.witness)
++    tx.witnesses = [
++      ...witnessSigningEntries.map(w => w.witness),
++      ...tx.witnesses.slice(tx.inputs.length).map(w => (typeof w === 'string' ? w : serializeWitnessArgs(w.toSDK()))),
++    ]
+     tx.hash = txHash
+ 
+     return tx
+--- /dev/null
++++ b/src/utils/sigsheet.ts
+@@ -0,0 +1,145 @@
++// Sigsheet (path C), design-stage patch for experiment X6: read a shared multisig file into Neuron's models, and write
++// the signatures Neuron's own signMultisig adds back into it. Throwaway experiment code, not a proposal to Neuron.
++import Transaction from '../models/chain/transaction'
++import Input from '../models/chain/input'
++import Output from '../models/chain/output'
++import OutPoint from '../models/chain/out-point'
++import CellDep, { DepType } from '../models/chain/cell-dep'
++import Script, { ScriptHashType } from '../models/chain/script'
++import WitnessArgs from '../models/chain/witness-args'
++import MultisigConfigModel from '../models/multisig-config'
++
++type RpcScript = { code_hash: string; hash_type: string; args: string }
++type RpcOutput = { capacity: string; lock: RpcScript; type: RpcScript | null }
++type RpcRawTx = {
++  version: string
++  cell_deps: { out_point: { tx_hash: string; index: string }; dep_type: string }[]
++  header_deps: string[]
++  inputs: { since: string; previous_output: { tx_hash: string; index: string } }[]
++  outputs: RpcOutput[]
++  outputs_data: string[]
++}
++export type SigsheetJson = {
++  version: '0x1'
++  transaction: RpcRawTx & { witnesses: string[] }
++  context: Record<string, RpcRawTx>
++  multisig_configs: Record<string, { public_key_hashes: string[]; require_first_n: number; threshold: number }>
++  signatures: Record<string, Record<string, string>>
++}
++
++const N = BigInt('0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141')
++const TOP = ['context', 'multisig_configs', 'signatures', 'transaction', 'version']
++
++export const sigsheetCanonicalJson = (v: unknown): string => {
++  if (v === null || typeof v !== 'object') return JSON.stringify(v)
++  if (Array.isArray(v)) return `[${v.map(sigsheetCanonicalJson).join(',')}]`
++  const o = v as Record<string, unknown>
++  return `{${Object.keys(o)
++    .sort()
++    .map(k => `${JSON.stringify(k)}:${sigsheetCanonicalJson(o[k])}`)
++    .join(',')}}`
++}
++
++export const parseSigsheet = (text: string): SigsheetJson => {
++  const doc = JSON.parse(text)
++  if (Object.keys(doc).sort().join() !== TOP.join() || doc.version !== '0x1') throw new Error('Not a Sigsheet v1 file')
++  if (sigsheetCanonicalJson(doc) !== text) throw new Error('Sigsheet file not in canonical form')
++  return doc
++}
++
++const scriptFrom = (s: RpcScript) =>
++  Script.fromObject({ codeHash: s.code_hash, args: s.args, hashType: s.hash_type as ScriptHashType })
++
++const txFrom = (t: RpcRawTx, witnesses: (string | WitnessArgs)[], spent?: RpcOutput[]) =>
++  Transaction.fromObject({
++    version: t.version,
++    cellDeps: t.cell_deps.map(d =>
++      CellDep.fromObject({
++        outPoint: OutPoint.fromObject({ txHash: d.out_point.tx_hash, index: d.out_point.index }),
++        depType: d.dep_type === 'dep_group' ? DepType.DepGroup : DepType.Code,
++      })
++    ),
++    headerDeps: t.header_deps,
++    inputs: t.inputs.map((i, k) =>
++      Input.fromObject({
++        previousOutput: OutPoint.fromObject({ txHash: i.previous_output.tx_hash, index: i.previous_output.index }),
++        since: i.since,
++        lock: spent ? scriptFrom(spent[k].lock) : undefined,
++        capacity: spent ? BigInt(spent[k].capacity).toString() : undefined,
++      })
++    ),
++    outputs: t.outputs.map(o =>
++      Output.fromObject({
++        capacity: BigInt(o.capacity).toString(),
++        lock: scriptFrom(o.lock),
++        type: o.type ? scriptFrom(o.type) : null,
++      })
++    ),
++    outputsData: t.outputs_data,
++    witnesses,
++  })
++
++// A WitnessArgs template (Neuron's deserialize misreads absent fields, so this reads the table directly).
++const templateWitness = (hex: string): string | WitnessArgs => {
++  if (hex === '0x') return hex
++  const b = Buffer.from(hex.slice(2), 'hex')
++  const offs = [b.readUInt32LE(4), b.readUInt32LE(8), b.readUInt32LE(12), b.readUInt32LE(0)]
++  const field = (i: number) =>
++    offs[i] === offs[i + 1] ? undefined : '0x' + b.subarray(offs[i] + 4, offs[i + 1]).toString('hex')
++  return WitnessArgs.fromObject({ lock: field(0), inputType: field(1), outputType: field(2) })
++}
++
++/** Neuron's models for a Sigsheet file: the transaction with every input's cell (from the carried previous
++ * transactions, checked by hash), the previous transactions in input order (for a Ledger), and the configs. */
++export const sigsheetToNeuron = (doc: SigsheetJson, walletId: string) => {
++  const spent = doc.transaction.inputs.map(i => {
++    const prev = doc.context[i.previous_output.tx_hash]
++    if (!prev || txFrom(prev, []).computeHash() !== i.previous_output.tx_hash) {
++      throw new Error('A previous transaction is missing or does not match its hash')
++    }
++    return prev.outputs[parseInt(i.previous_output.index, 16)]
++  })
++  const n = doc.transaction.inputs.length
++  const tx = txFrom(doc.transaction, doc.transaction.witnesses.map((w, i) => (i < n ? templateWitness(w) : w)), spent)
++  const context = doc.transaction.inputs.map(i => ({ ...doc.context[i.previous_output.tx_hash], witnesses: [] }))
++  const configs: MultisigConfigModel[] = []
++  spent.forEach(o => {
++    const cfg = doc.multisig_configs[o.lock.args.slice(0, 42)]
++    if (!cfg || configs.some(c => c.getLockHash() === scriptFrom(o.lock).computeHash())) return
++    configs.push(
++      MultisigConfigModel.fromObject({
++        walletId,
++        r: cfg.require_first_n,
++        m: cfg.threshold,
++        n: cfg.public_key_hashes.length,
++        blake160s: cfg.public_key_hashes,
++        lockCodeHash: o.lock.code_hash,
++      })
++    )
++  })
++  return { tx, context, configs }
++}
++
++const lowS = (sig: string) => {
++  const s = BigInt('0x' + sig.slice(66, 130))
++  if (s <= N / BigInt(2)) return sig
++  const v = (parseInt(sig.slice(130, 132), 16) ^ 1).toString(16).padStart(2, '0')
++  return sig.slice(0, 66) + (N - s).toString(16).padStart(64, '0') + v
++}
++
++/** Put the signatures Neuron's signMultisig appended (after the multisig script) into the file. */
++export const addNeuronSignatures = (doc: SigsheetJson, signed: Transaction): SigsheetJson => {
++  const out: SigsheetJson = JSON.parse(JSON.stringify(doc))
++  Object.entries(signed.signatures).forEach(([lockHash, signers]) => {
++    const first = signed.inputs.findIndex(i => i.lockHash === lockHash)
++    const w = signed.witnesses[first]
++    const lock = w instanceof WitnessArgs ? w.lock! : templateWitness(w) instanceof WitnessArgs ? (templateWitness(w) as WitnessArgs).lock! : ''
++    const n = doc.multisig_configs[signed.inputs[first].lock!.args.slice(0, 42)].public_key_hashes.length
++    const sigs = lock.slice(2 + 2 * (4 + 20 * n))
++    signers.forEach((blake160, k) => {
++      const box = (out.signatures[lockHash] ??= {})
++      box[blake160] = lowS('0x' + sigs.slice(130 * k, 130 * (k + 1)))
++    })
++  })
++  return out
++}

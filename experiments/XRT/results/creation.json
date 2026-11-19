@@ -1,0 +1,118 @@
+{
+ "funding_tx": "0x5d33bbe5225465e0df1f57d97bb0e41eb3ac31cb7db18fcdd3a057eee956095b",
+ "lock_args": "0x8eca3e6f24015ae4a6282cef069f220b964cc2c9",
+ "C1_ckb_cli_creates": {
+  "build_and_create": [
+   {
+    "cmd": "ckb-cli --url http://127.0.0.1:8114/ tx ...",
+    "exit": 0,
+    "seconds": 0.02,
+    "stdout": "",
+    "stderr": "status: success"
+   },
+   {
+    "cmd": "ckb-cli --url http://127.0.0.1:8114/ tx ...",
+    "exit": 0,
+    "seconds": 0.02,
+    "stdout": "",
+    "stderr": "status: success"
+   },
+   {
+    "cmd": "ckb-cli --url http://127.0.0.1:8114/ tx ...",
+    "exit": 0,
+    "seconds": 0.05,
+    "stdout": "",
+    "stderr": "status: success"
+   },
+   {
+    "cmd": "ckb-cli --url http://127.0.0.1:8114/ tx ...",
+    "exit": 0,
+    "seconds": 0.02,
+    "stdout": "",
+    "stderr": "status: success"
+   },
+   {
+    "cmd": "experiments/XRT/ckb-cli-src/target/debug/ckb-cli --url http://127.0.0.1:8114/ tx ...",
+    "exit": 0,
+    "seconds": 0.02,
+    "stdout": "created: experiments/XRT/results/creation/c1-0-created-by-ckb-cli.json\ninputs: 1",
+    "stderr": ""
+   }
+  ],
+  "created_file": {
+   "bytes": 1931,
+   "sha256": "088787718e9173e8682d78ac18df2024de24e9477f7eaafd157ef502df1553ea",
+   "strict_reader": "accepted"
+  },
+  "ccc_sign_x0": {
+   "cmd": "experiments/X6/ccc/harness/node_modules/.bin/tsx sigsheet-ccc.ts sign experiments/XRT/results/creation/c1-0-created-by-ckb-cli.json ...",
+   "exit": 0,
+   "seconds": 0.97,
+   "stdout": "{\"cmd\":\"sign\",\"added\":1,\"ms\":61}",
+   "stderr": "(node:1090220) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+  },
+  "ckbcli_sign_x1": {
+   "cmd": "experiments/XRT/ckb-cli-src/target/debug/ckb-cli --url http://127.0.0.1:8114/ tx ...",
+   "exit": 0,
+   "seconds": 0.03,
+   "stdout": "signatures_added: 1",
+   "stderr": ""
+  },
+  "strict_reader_on_signed": "accepted",
+  "ckbcli_send": {
+   "cmd": "experiments/XRT/ckb-cli-src/target/debug/ckb-cli --url http://127.0.0.1:8114/ tx ...",
+   "exit": 0,
+   "seconds": 0.03,
+   "stdout": "0xbd095ca923b1a93e9bb3e219f268757e84ea1b9565a7460c838008ecf0ac34e2",
+   "stderr": ""
+  },
+  "committed": "0xbd095ca923b1a93e9bb3e219f268757e84ea1b9565a7460c838008ecf0ac34e2"
+ },
+ "C3_same_transaction": {
+  "ccc_create": {
+   "cmd": "experiments/X6/ccc/harness/node_modules/.bin/tsx experiments/XRT/ccc-create/run.ts create experiments/XRT/results/creation/c3-spec.json ...",
+   "exit": 0,
+   "seconds": 0.95,
+   "stdout": "{\"cmd\":\"create\",\"out\":\"experiments/XRT/results/creation/c3-created-by-ccc.json\",\"inputs\":1,\"ms\":57}",
+   "stderr": "(node:1090975) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+  },
+  "byte_identical_to_ckb_cli_file": true
+ },
+ "C2_ccc_creates": {
+  "ccc_create": {
+   "cmd": "experiments/X6/ccc/harness/node_modules/.bin/tsx experiments/XRT/ccc-create/run.ts create experiments/XRT/results/creation/c2-spec.json ...",
+   "exit": 0,
+   "seconds": 0.94,
+   "stdout": "{\"cmd\":\"create\",\"out\":\"experiments/XRT/results/creation/c2-0-created-by-ccc.json\",\"inputs\":1,\"ms\":56}",
+   "stderr": "(node:1091118) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+  },
+  "created_file": {
+   "bytes": 1931,
+   "sha256": "5eb265f059003d3794dc6169c90b1465402605d2eca4ac961ce793908cc1ff89",
+   "strict_reader": "accepted"
+  },
+  "ckbcli_sign_x0": {
+   "cmd": "experiments/XRT/ckb-cli-src/target/debug/ckb-cli --url http://127.0.0.1:8114/ tx ...",
+   "exit": 0,
+   "seconds": 0.02,
+   "stdout": "signatures_added: 1",
+   "stderr": ""
+  },
+  "ccc_sign_x2": {
+   "cmd": "experiments/X6/ccc/harness/node_modules/.bin/tsx sigsheet-ccc.ts sign experiments/XRT/results/creation/c2-1-ckb-cli-x0.json ...",
+   "exit": 0,
+   "seconds": 0.95,
+   "stdout": "{\"cmd\":\"sign\",\"added\":1,\"ms\":64}",
+   "stderr": "(node:1091387) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+  },
+  "strict_reader_on_signed": "accepted",
+  "ccc_send": {
+   "cmd": "experiments/X6/ccc/harness/node_modules/.bin/tsx sigsheet-ccc.ts send experiments/XRT/results/creation/c2-2-ccc-x2.json ...",
+   "exit": 0,
+   "seconds": 1.05,
+   "stdout": "{\"cmd\":\"send\",\"sent\":\"0xf6f0ab8cc6160ad1af60728844252125509af646da6a75b85eac0144c7761dd9\",\"ms\":96}",
+   "stderr": "(node:1091530) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+  },
+  "committed": "0xf6f0ab8cc6160ad1af60728844252125509af646da6a75b85eac0144c7761dd9"
+ }
+}

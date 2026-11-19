@@ -1,0 +1,15 @@
+{
+ "job": "experiments/XQ14/results/runs/2024-member/job.json",
+ "kind": "transaction",
+ "screens": [],
+ "presses": {
+  "right": 0,
+  "both": 0
+ },
+ "annotated_bytes": 3091,
+ "annotated_sha256": "e5feaabe110da651fd59024fb0318583705efc2b74ba4373dd53602ac5c077bf",
+ "apdus": 14,
+ "result": "error",
+ "error": "DisconnectedDeviceDuringOperation",
+ "seconds": 0.283
+}

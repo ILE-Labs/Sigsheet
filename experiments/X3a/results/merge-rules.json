@@ -1,0 +1,64 @@
+{
+ "trials": 2000,
+ "pool": {
+  "real_signatures": 5,
+  "malleated_twins": 5,
+  "junk": 3
+ },
+ "rules": {
+  "reference": {
+   "same_result_both_orders": 2000,
+   "different_results": 0,
+   "trials_where_a_merge_failed": 0,
+   "invalid_final_locks": 0
+  },
+  "first_seen": {
+   "same_result_both_orders": 1285,
+   "different_results": 715,
+   "trials_where_a_merge_failed": 0,
+   "invalid_final_locks": 0
+  },
+  "strict": {
+   "same_result_both_orders": 2000,
+   "different_results": 0,
+   "trials_where_a_merge_failed": 1531,
+   "invalid_final_locks": 0
+  },
+  "ccc_like": {
+   "same_result_both_orders": 456,
+   "different_results": 1544,
+   "trials_where_a_merge_failed": 0,
+   "invalid_final_locks": 0
+  }
+ },
+ "rules_with_only_real_signatures": {
+  "reference": {
+   "same_result_both_orders": 2000,
+   "different_results": 0
+  },
+  "first_seen": {
+   "same_result_both_orders": 2000,
+   "different_results": 0
+  },
+  "strict": {
+   "same_result_both_orders": 2000,
+   "different_results": 0
+  },
+  "ccc_like": {
+   "same_result_both_orders": 364,
+   "different_results": 1636
+  }
+ },
+ "reference_idempotent_trials": 2000,
+ "require_first_n_test": {
+  "config": "R=2, M=3, N=5 (fresh test keys)",
+  "all_five_signed: final": true,
+  "all_five_signed: lock valid under the lock rule": true,
+  "all_five_signed: chosen members": [
+   0,
+   1,
+   2
+  ],
+  "member_0_missing (four others signed): final": false
+ }
+}

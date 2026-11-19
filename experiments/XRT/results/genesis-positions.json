@@ -1,0 +1,11339 @@
+{
+ "funding_tx": "0xe8f34651a9184b6e994549557ac26ffc713a434db7d263fb433bb5cc77580a3f",
+ "keys": "keys/xrt/keys.json (fresh, outside the repository)",
+ "configs": [
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 1,
+   "n": 13,
+   "sets": [
+    {
+     "indices": [
+      0
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 2,
+   "n": 13,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      2
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 3,
+   "n": 13,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 5,
+   "n": 13,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 8,
+   "n": 13,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 10,
+   "n": 13,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 11,
+   "n": 13,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 12,
+   "n": 13,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 1,
+   "n": 16,
+   "sets": [
+    {
+     "indices": [
+      0
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 2,
+   "n": 16,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      2
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 3,
+   "n": 16,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 5,
+   "n": 16,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 8,
+   "n": 16,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 10,
+   "n": 16,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 11,
+   "n": 16,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 12,
+   "n": 16,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 16,
+   "n": 16,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 1,
+   "n": 20,
+   "sets": [
+    {
+     "indices": [
+      0
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      18
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      18
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 2,
+   "n": 20,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      2
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 3,
+   "n": 20,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 5,
+   "n": 20,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 8,
+   "n": 20,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 10,
+   "n": 20,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 11,
+   "n": 20,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 12,
+   "n": 20,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 16,
+   "n": 20,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 1,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      18
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      18
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      20
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      21
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      22
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      23
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 2,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      2
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      20
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      21
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      22
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      23
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 3,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      20
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      21
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      22
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      23
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 5,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      20
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      21
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      22
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      23
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 8,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      20
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      21
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      22
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      23
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 10,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      20
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      21
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      22
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      23
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 11,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      20
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      21
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      22
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      23
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 12,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      21
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      22
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      23
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    }
+   ]
+  },
+  {
+   "deployment": "genesis",
+   "r": 0,
+   "m": 16,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      21
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      22
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      23
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    }
+   ]
+  },
+  {
+   "deployment": "v2",
+   "r": 0,
+   "m": 1,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      1
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      2
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      3
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      4
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      6
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      7
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      8
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      10
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      20
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      21
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      22
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      23
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "deployment": "v2",
+   "r": 0,
+   "m": 10,
+   "n": 24,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      15
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      15
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      16
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      16
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      17
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      17
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      18
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      18
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      19
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      19
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      20
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      20
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      21
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      21
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      22
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      22
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      23
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      23
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  }
+ ],
+ "conditions": "local devnet, ckb 0.210.0; test_tx_pool_accept (full verification, not committed)",
+ "repeated_key_2_of_3": "not run in --positions mode",
+ "seconds": 14.1
+}

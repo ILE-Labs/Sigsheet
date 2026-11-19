@@ -1,0 +1,276 @@
+{
+ "date": "2026-11-18 21:55 UTC",
+ "base_case": "R2-dao-payout (2-of-3 genesis, two real signatures)",
+ "honest": {
+  "C": [
+   "accepted",
+   {
+    "warnings": [],
+    "dropped": 0,
+    "ready": true,
+    "final_passes_lock_rules": true,
+    "final_tx_hash": "0x63a7f3a52fc91c52939186ca9c1064238ccdfe498d3398f25707537f591bbaa4"
+   }
+  ],
+  "B+w": [
+   "accepted",
+   {
+    "warnings": [],
+    "dropped": 0,
+    "ready": true,
+    "final_passes_lock_rules": true,
+    "final_tx_hash": "0x63a7f3a52fc91c52939186ca9c1064238ccdfe498d3398f25707537f591bbaa4"
+   }
+  ],
+  "A": [
+   "accepted",
+   {
+    "warnings": [],
+    "dropped": 0,
+    "ready": true,
+    "final_passes_lock_rules": true,
+    "final_tx_hash": "0x63a7f3a52fc91c52939186ca9c1064238ccdfe498d3398f25707537f591bbaa4"
+   }
+  ]
+ },
+ "attacks": [
+  {
+   "attack": "1 falsified input cell (BIP-174's fee attack)",
+   "results": {
+    "C": {
+     "outcome": "refused",
+     "detail": "SigsheetError: previous transaction 0x1565338fd5... doesn't hash to its key"
+    },
+    "B+w": {
+     "outcome": "refused",
+     "detail": "SigsheetError: input 0: previous transaction 0x1565338fd5... not in the file"
+    },
+    "A": {
+     "outcome": "refused",
+     "detail": "SigsheetError: input 0: previous transaction 0x1565338fd5... not in the file"
+    }
+   }
+  },
+  {
+   "attack": "1b A only: resolved_inputs raised, input_transactions intact",
+   "results": {
+    "A": {
+     "outcome": "refused",
+     "detail": "SigsheetError: profile: resolved_inputs.outputs[0] differs from the carried previous transaction"
+    }
+   },
+   "profile_unaware_reader_fee_shannons": 100000000001186
+  },
+  {
+   "attack": "2-3 swapped transaction / altered outputs (signatures from the original)",
+   "results": {
+    "C": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0x78f1756751... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member",
+       "dropped signature 0xeba26ea396... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member"
+      ],
+      "dropped": 2,
+      "ready": false
+     }
+    },
+    "B+w": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0x78f1756751... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member",
+       "dropped signature 0xeba26ea396... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member"
+      ],
+      "dropped": 2,
+      "ready": false
+     }
+    },
+    "A": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0x78f1756751... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member",
+       "dropped signature 0xeba26ea396... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member"
+      ],
+      "dropped": 2,
+      "ready": false
+     }
+    }
+   }
+  },
+  {
+   "attack": "4 signature from a non-member",
+   "results": {
+    "C": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0xc996005276... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member"
+      ],
+      "dropped": 1,
+      "ready": false
+     }
+    },
+    "B+w": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0x831b36bea4... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member"
+      ],
+      "dropped": 1,
+      "ready": false
+     }
+    },
+    "A": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0x64c7a75c6f... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member"
+      ],
+      "dropped": 1,
+      "ready": false
+     }
+    }
+   }
+  },
+  {
+   "attack": "5 junk: random bytes, a high-s twin, a signature under the wrong member",
+   "results": {
+    "C": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0x1111111111... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member",
+       "dropped signature 0xb041f711d0... in group 0x44ae79810b...: signed by 0xeba26ea396858428ca40e057ecd8d160143b365c, not by the key it's filed under"
+      ],
+      "dropped": 2,
+      "ready": true,
+      "final_passes_lock_rules": true,
+      "final_tx_hash": "0x63a7f3a52fc91c52939186ca9c1064238ccdfe498d3398f25707537f591bbaa4"
+     }
+    },
+    "B+w": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0xb041f711d0... in group 0x44ae79810b...: signed by 0xeba26ea396858428ca40e057ecd8d160143b365c, not by the key it's filed under"
+      ],
+      "dropped": 1,
+      "ready": true,
+      "final_passes_lock_rules": true,
+      "final_tx_hash": "0x63a7f3a52fc91c52939186ca9c1064238ccdfe498d3398f25707537f591bbaa4"
+     }
+    },
+    "A": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0xb041f711d0... in group 0x44ae79810b...: signed by 0xeba26ea396858428ca40e057ecd8d160143b365c, not by the key it's filed under"
+      ],
+      "dropped": 1,
+      "ready": true,
+      "final_passes_lock_rules": true,
+      "final_tx_hash": "0x63a7f3a52fc91c52939186ca9c1064238ccdfe498d3398f25707537f591bbaa4"
+     }
+    }
+   }
+  },
+  {
+   "attack": "7 swapped multisig config",
+   "results": {
+    "C": {
+     "outcome": "refused",
+     "detail": "SigsheetError: multisig config 0x31a2b2498e... doesn't hash to its key"
+    },
+    "B+w": {
+     "outcome": "refused",
+     "detail": "KeyError: '0x31a2b2498ea428bfad41a6963298f7422f017b4f'"
+    },
+    "A": {
+     "outcome": "refused",
+     "detail": "SigsheetError: no multisig config for 0x31a2b2498ea428bfad41a6963298f7422f017b4f"
+    }
+   }
+  },
+  {
+   "attack": "10 a covered witness changed after signing",
+   "results": {
+    "C": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0x78f1756751... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member",
+       "dropped signature 0xeba26ea396... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member"
+      ],
+      "dropped": 2,
+      "ready": false
+     }
+    },
+    "B+w": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0x78f1756751... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member",
+       "dropped signature 0xeba26ea396... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member"
+      ],
+      "dropped": 2,
+      "ready": false
+     }
+    },
+    "A": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [
+       "dropped signature 0x78f1756751... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member",
+       "dropped signature 0xeba26ea396... in group 0x44ae79810b...: doesn't verify against the group's message, or not a member"
+      ],
+      "dropped": 2,
+      "ready": false
+     }
+    }
+   }
+  },
+  {
+   "attack": "9 display field (description, CoBuild message or change_output)",
+   "results": {
+    "C": {
+     "outcome": "refused",
+     "detail": "SigsheetError: top-level fields must be exactly ['context', 'multisig_configs', 'signatures', 'transaction', 'version']"
+    },
+    "B+w": {
+     "outcome": "refused",
+     "detail": "SigsheetError: not in canonical form"
+    },
+    "A": {
+     "outcome": "refused",
+     "detail": "SigsheetError: profile: change_output must be None"
+    }
+   }
+  },
+  {
+   "attack": "6c B's network id changed",
+   "results": {
+    "B+w": {
+     "outcome": "accepted",
+     "detail": {
+      "warnings": [],
+      "dropped": 0,
+      "ready": true,
+      "final_passes_lock_rules": true,
+      "final_tx_hash": "0x63a7f3a52fc91c52939186ca9c1064238ccdfe498d3398f25707537f591bbaa4"
+     }
+    }
+   }
+  }
+ ],
+ "honest_fee_shannons": 1186,
+ "merge_honest_with_swapped_tx": "refused: files describe different unsigned transactions",
+ "merge_honest_with_junk": {
+  "signers_kept": [
+   "0x78f1756751058aff5271a149b71f56474450d4c0",
+   "0xeba26ea396858428ca40e057ecd8d160143b365c"
+  ],
+  "equals_honest": true
+ }
+}

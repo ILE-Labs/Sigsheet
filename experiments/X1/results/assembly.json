@@ -1,0 +1,246 @@
+{
+ "rpc": "http://127.0.0.1:8114/",
+ "runs": [
+  {
+   "case": "S4N-v2-first-R-missing-required",
+   "kind": "negative",
+   "plan": {
+    "VR": [
+     [
+      "k1",
+      "python"
+     ],
+     [
+      "k2",
+      "ckb-cli"
+     ]
+    ]
+   },
+   "accepted": false,
+   "error": "TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: ValidationFailure: see error code -52 on page https://nervosnetwork.github.io/ckb-script-error-codes/by-data-hash/36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29.html#-52 })"
+  },
+  {
+   "case": "S9-extra-witness",
+   "kind": "negative",
+   "plan": {
+    "V": [
+     [
+      "k2",
+      "neuron"
+     ],
+     [
+      "k3",
+      "ccc"
+     ]
+    ]
+   },
+   "accepted": false,
+   "error": "TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: ValidationFailure: see error code -52 on page https://nervosnetwork.github.io/ckb-script-error-codes/by-data-hash/36c971b8d41fbd94aabca77dc75e826729ac98447b46f91e00796155dddb0d29.html#-52 })"
+  },
+  {
+   "case": "S9-extra-witness",
+   "kind": "neuron's own transaction (extra witness dropped), dry run",
+   "accepted": true,
+   "error": ""
+  },
+  {
+   "case": "S1-genesis-2of3",
+   "kind": "finalized and sent by ckb-cli tx send",
+   "signatures": {
+    "k1": "neuron",
+    "k2": "ccc"
+   },
+   "tx_hash": "0xee7aabc3dada86628989b18233270118c870820442cb69020ac2fca3b9cd9405",
+   "committed_block": 1122,
+   "log": [
+    {
+     "note": "already committed in an earlier run"
+    }
+   ]
+  },
+  {
+   "case": "S2-2024-2of3",
+   "kind": "mixed tools, sent",
+   "plan": {
+    "B": [
+     [
+      "k1",
+      "ccc"
+     ],
+     [
+      "k3",
+      "python"
+     ]
+    ]
+   },
+   "tx_hash": "0x2d8b5331c0a511ba6b412f66340f121568a54b82b87730a2380a09bd4d6a9ba7",
+   "committed_block": 1126,
+   "note": "committed in an earlier run of this script"
+  },
+  {
+   "case": "S3-v2-2of3-two-inputs",
+   "kind": "mixed tools, sent",
+   "plan": {
+    "V": [
+     [
+      "k2",
+      "neuron"
+     ],
+     [
+      "k3",
+      "ckb-cli"
+     ]
+    ]
+   },
+   "tx_hash": "0xc72eeeb7b1b18e9c3dd3d87efe7118349e5e591108e6b998576b887988377c18",
+   "committed_block": 1130,
+   "note": "committed in an earlier run of this script"
+  },
+  {
+   "case": "S4-v2-first-R",
+   "kind": "mixed tools, sent",
+   "plan": {
+    "VR": [
+     [
+      "k4",
+      "ccc"
+     ],
+     [
+      "k2",
+      "ckb-cli"
+     ]
+    ]
+   },
+   "tx_hash": "0x6c360671324b8bd9f49633c1b2d4c1d27ec1a92e8c407586bb16d00adb5dcb53",
+   "committed_block": 1134,
+   "note": "committed in an earlier run of this script"
+  },
+  {
+   "case": "S5-v2-since-in-args",
+   "kind": "mixed tools, sent",
+   "plan": {
+    "VS": [
+     [
+      "k1",
+      "ckb-cli"
+     ],
+     [
+      "k3",
+      "ccc"
+     ]
+    ]
+   },
+   "tx_hash": "0x89375fd7199d92039986a242fce326945a32dd81d374dae273bcdc388e95f6bd",
+   "committed_block": 1138,
+   "note": "committed in an earlier run of this script"
+  },
+  {
+   "case": "S6-two-multisig-groups",
+   "kind": "mixed tools, sent",
+   "plan": {
+    "G": [
+     [
+      "k1",
+      "neuron"
+     ],
+     [
+      "k2",
+      "ckb-cli"
+     ]
+    ],
+    "V35": [
+     [
+      "k1",
+      "ccc"
+     ],
+     [
+      "k3",
+      "ckb-cli"
+     ],
+     [
+      "k5",
+      "neuron"
+     ]
+    ]
+   },
+   "dry_run": {
+    "cycles": "0x72cedc",
+    "fee": "0x186a0"
+   },
+   "tx_hash": "0xc5df611ab8a7843fa26e5d6dc42dbf4d173a15b239c5247c92e437eceebe7a18",
+   "committed_block": 1226
+  },
+  {
+   "case": "S7-multisig-plus-single-key",
+   "kind": "mixed tools, sent",
+   "plan": {
+    "V": [
+     [
+      "k1",
+      "ccc"
+     ],
+     [
+      "k2",
+      "neuron"
+     ]
+    ],
+    "k7": [
+     [
+      "k7",
+      "ckb-cli"
+     ]
+    ]
+   },
+   "dry_run": {
+    "cycles": "0x482a5b",
+    "fee": "0x186a0"
+   },
+   "tx_hash": "0x5dc1d6ad4a0149cf3cdfcfba1212afbbd4c166ecadf44a18c683a230a10ad625",
+   "committed_block": 1230
+  },
+  {
+   "case": "S8-neuron-export",
+   "kind": "mixed tools, sent",
+   "plan": {
+    "V": [
+     [
+      "k1",
+      "neuron-export"
+     ],
+     [
+      "k3",
+      "ckb-cli"
+     ]
+    ]
+   },
+   "dry_run": {
+    "cycles": "0x2f4cc3",
+    "fee": "0x186a0"
+   },
+   "tx_hash": "0xaaeb866bcc26568a9c49caa4f9628114ab92228f2bcbb99f3dd9f6dcda03d77e",
+   "committed_block": 1234
+  },
+  {
+   "case": "S9-extra-witness",
+   "kind": "mixed tools, sent",
+   "plan": {
+    "V": [
+     [
+      "k2",
+      "ckb-cli"
+     ],
+     [
+      "k3",
+      "ccc"
+     ]
+    ]
+   },
+   "dry_run": {
+    "cycles": "0x2f8b08",
+    "fee": "0x186a0"
+   },
+   "tx_hash": "0x7ecdcb5bf9f572a521d3dc9b33842349404eb9e98d087d16eb3d1d57ffb857d6",
+   "committed_block": 1238
+  }
+ ]
+}

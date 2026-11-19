@@ -1,0 +1,2 @@
+{"group":"dao-payout-multisig","message":"0x18b6bdfc4ba77165d41c4225edc66a6cdaadbb2b35c801720e05500fdff2dc40","path":"ckb-cli v2.0.0 build_signature"}
+{"error":"message 0x18b6bdfc4ba77165d41c4225edc66a6cdaadbb2b35c801720e05500fdff2dc40 computed, then sign_tx failed: there already too many signatures in current WitnessArgs.lock field (old_count + new_count > threshold)","group":"dao-payout-multisig","path":"ckb-sdk 5.0.0 ScriptSigner::sign_tx"}

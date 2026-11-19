@@ -1,0 +1,15 @@
+{
+ "job": "experiments/XQ14/results/runs/multisig-plus-single-key/job.json",
+ "kind": "transaction",
+ "screens": [],
+ "presses": {
+  "right": 0,
+  "both": 0
+ },
+ "annotated_bytes": 5727,
+ "annotated_sha256": "f03ebbc574d529b1431a7489d3f539db00ebc02e9a7296e040ac3defd0e110a4",
+ "apdus": 25,
+ "result": "error",
+ "error": "DisconnectedDeviceDuringOperation",
+ "seconds": 0.301
+}

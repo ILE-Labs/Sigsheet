@@ -1,0 +1,7 @@
+R1-fiber-scripts-pr34 {'C': 50, 'B+w': 50, 'A': 50}
+S6-two-multisig-groups {'C': 200, 'B+w': 200, 'A': 200}
+S7-multisig-plus-single-key {'C': 200, 'B+w': 200, 'A': 200}
+S10-same-script-two-deployments {'C': 200, 'B+w': 200, 'A': 200}
+S11-same-script-20-and-28-byte-args {'C': 200, 'B+w': 200, 'A': 200}
+R1-35-first-member-required {'C': 200, 'B+w': 200, 'A': 200}
+exit=0

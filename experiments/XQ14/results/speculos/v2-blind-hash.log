@@ -1,0 +1,22 @@
+root: Parsing binary 'experiments/XQ14/bin/nervos-0.6.3-8c50034-nanos2.elf'
+speculos: Api level detected from metadata: 26
+root: Parsing binary 'experiments/XQ14/bin/nervos-0.6.3-8c50034-nanos2.elf'
+speculos: Found C_nbgl_fonts in sharedlib nanosp-api-level-shared-26.elf at 0x812E34 (12 bytes)
+
+root: Parsing binary 'experiments/XQ14/bin/nervos-0.6.3-8c50034-nanos2.elf'
+speculos: Found C_bagl_fonts in app nervos-0.6.3-8c50034-nanos2.elf at 0xC0DE98F8 (12 bytes)
+
+root: Parsing binary 'experiments/XQ14/bin/nervos-0.6.3-8c50034-nanos2.elf'
+apdu: Server started on 127.0.0.1:9999
+[*] speculos launcher revision: 
+[*] using API_LEVEL version 26 on nanosp
+[*] loading CXLIB from "refs/_ledger/venv/lib/python3.14/site-packages/speculos/sharedlib/nanosp-api-level-shared-26.elf"
+[*] patching svc instruction at 0x8125dc
+[*] patching svc instruction at 0x80f184
+[*] Seed initialized from environment
+[*] Env app name: 'Nervos'
+[*] Env app version: '0.6.3'
+apdu: > 8007000015058000002c80000135800000000000000000000000
+apdu: < 9000
+apdu: > 80078000206a23fbe47672be8a243e87685a15395faa65235458d23fc675cf97ad4437fda3
+apdu: < 35d4a0caf1df6cbdc8904404ee62f6fee0b3d1f876fa5040b3dd82ae69d5dc99442308f55cd066f213b718397b837c498c736c4cd321eb7faffb8da279d4c45e019000

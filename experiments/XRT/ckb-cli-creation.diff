@@ -1,0 +1,116 @@
+--- a/src/subcommands/tx.rs
++++ b/src/subcommands/tx.rs
+@@ -250,6 +250,10 @@
+                     .arg(Arg::with_name("output").long("output").takes_value(true))
+                     .arg(arg::privkey_path().required_unless(arg::from_account().get_name()))
+                     .arg(arg::from_account().required_unless(arg::privkey_path().get_name())),
++                App::new("sigsheet-new")
++                    .about("Create a Sigsheet file from a ckb-cli tx file, fetching the input transactions (sigsheet prototype)")
++                    .arg(arg_tx_file.clone().required(true))
++                    .arg(Arg::with_name("output").long("output").takes_value(true).required(true)),
+                 App::new("sigsheet-merge")
+                     .about("Merge Sigsheet files (sigsheet prototype)")
+                     .arg(Arg::with_name("sigsheet").long("sigsheet").takes_value(true).multiple(true).required(true))
+@@ -296,6 +300,32 @@
+                 fs::write(m.value_of("output").unwrap_or(file), sheet.to_text()).map_err(|e| e.to_string())?;
+                 Ok(Output::new_output(serde_json::json!({ "signatures_added": added })))
+             }
++            "sigsheet-new" => {
++                let file = fs::File::open(m.value_of("tx-file").unwrap()).map_err(|e| e.to_string())?;
++                let repr: ReprTxHelper = serde_json::from_reader(&file).map_err(|e| e.to_string())?;
++                let helper = TxHelper::try_from(repr)?;
++                let configs = helper
++                    .multisig_configs()
++                    .iter()
++                    .map(|(k, c)| {
++                        (k.clone(), crate::utils::sigsheet::Config {
++                            public_key_hashes: c.sighash_addresses().clone(),
++                            require_first_n: c.require_first_n(),
++                            threshold: c.threshold(),
++                        })
++                    })
++                    .collect();
++                let transaction = json_types::Transaction::from(helper.transaction().data());
++                let rpc = &mut *self.rpc_client;
++                let mut fetch = |h: &H256| -> Result<ckb_types::packed::Transaction, String> {
++                    let got = rpc.get_packed_transaction(h.clone())?;
++                    let bytes = got.transaction.ok_or("previous transaction not found on the node")?;
++                    ckb_types::packed::Transaction::from_slice(bytes.as_bytes()).map_err(|e| e.to_string())
++                };
++                let sheet = Sigsheet::create(transaction, configs, &mut fetch)?;
++                fs::write(m.value_of("output").unwrap(), sheet.to_text()).map_err(|e| e.to_string())?;
++                Ok(Output::new_output(serde_json::json!({ "created": m.value_of("output").unwrap(), "inputs": sheet.transaction.inputs.len() })))
++            }
+             "sigsheet-merge" => {
+                 let sheets = m.values_of("sigsheet").unwrap().map(read).collect::<Result<Vec<_>, _>>()?;
+                 let merged = sheets[0].merge(&sheets[1..])?;
+--- a/src/utils/sigsheet.rs
++++ b/src/utils/sigsheet.rs
+@@ -140,6 +140,67 @@
+         Ok(sheet)
+     }
+ 
++    /// Creation inside ckb-cli (experiment XRT-4): a Sigsheet file for the transaction in ckb-cli's own `tx` file,
++    /// with each input's previous transaction (raw part) fetched from the node (the one step that needs it), the
++    /// first witness of each group it signs written as a template, and the multisig configs the groups use.
++    pub fn create(
++        transaction: json_types::Transaction,
++        configs: Vec<(H160, Config)>,
++        fetch: &mut dyn FnMut(&H256) -> Result<packed::Transaction, String>,
++    ) -> Result<Sigsheet, String> {
++        let mut context = BTreeMap::new();
++        for input in &transaction.inputs {
++            let h = input.previous_output.tx_hash.clone();
++            if context.contains_key(&h) {
++                continue;
++            }
++            let prev = json_types::Transaction::from(fetch(&h)?);
++            context.insert(h, RawTx {
++                cell_deps: prev.cell_deps,
++                header_deps: prev.header_deps,
++                inputs: prev.inputs,
++                outputs: prev.outputs,
++                outputs_data: prev.outputs_data,
++                version: prev.version,
++            });
++        }
++        let mut sheet = Sigsheet {
++            context,
++            multisig_configs: configs.into_iter().collect(),
++            signatures: BTreeMap::new(),
++            transaction,
++            version: "0x1".to_string(),
++        };
++        while sheet.transaction.witnesses.len() < sheet.transaction.inputs.len() {
++            sheet.transaction.witnesses.push(JsonBytes::default());
++        }
++        let groups = sheet.groups()?;
++        for g in &groups {
++            let i = g.idxs[0];
++            let w = sheet.transaction.witnesses[i].as_bytes().to_vec();
++            if w.is_empty() {
++                continue;
++            }
++            let wa = WitnessArgs::from_slice(&w).map_err(|e| e.to_string())?;
++            let tpl = wa.as_builder().lock(packed::BytesOpt::default()).build();
++            sheet.transaction.witnesses[i] = if tpl.input_type().is_none() && tpl.output_type().is_none() {
++                JsonBytes::default()
++            } else {
++                JsonBytes::from_bytes(tpl.as_bytes())
++            };
++        }
++        let used: HashSet<H160> = groups
++            .iter()
++            .filter(|g| matches!(g.kind, Kind::Multisig(_)))
++            .map(|g| H160::from_slice(&g.args[0..20]).unwrap())
++            .collect();
++        sheet.multisig_configs.retain(|k, _| used.contains(k));
++        for g in groups.iter().filter(|g| matches!(g.kind, Kind::Multisig(_))) {
++            sheet.config(g)?;
++        }
++        Ok(sheet)
++    }
++
+     pub fn to_text(&self) -> String {
+         let mut out = String::new();
+         canonical(&serde_json::to_value(self).unwrap(), &mut out);

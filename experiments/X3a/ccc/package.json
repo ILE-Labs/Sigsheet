@@ -1,0 +1,9 @@
+{
+  "name": "x3a-ccc-harness",
+  "private": true,
+  "type": "module",
+  "description": "X3a: CCC aggregateTransactions on PR #34 partials in every order, at a pinned version",
+  "dependencies": {
+    "@ckb-ccc/core": "1.23.1"
+  }
+}

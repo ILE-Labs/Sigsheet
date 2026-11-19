@@ -1,0 +1,649 @@
+warning: `package.homepage` is redundant with `package.repository`
+ --> ckb-signer/Cargo.toml:7:12
+  |
+7 | homepage = "https://github.com/nervosnetwork/ckb-cli"
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8 | repository = "https://github.com/nervosnetwork/ckb-cli"
+  |              ------------------------------------------
+  |
+  = note: `cargo::redundant_homepage` is set to `warn` by default
+help: consider removing `package.homepage`
+warning: `ckb-signer` (manifest) generated 1 warning
+    Updating crates.io index
+    Updating git repository `https://github.com/rust-bitcoin/rust-bitcoin`
+ Downloading crates ...
+  Downloaded atty v0.2.14
+  Downloaded autocfg v0.1.8
+  Downloaded arrayref v0.3.8
+  Downloaded aes-ctr v0.6.0
+  Downloaded ansi_term v0.11.0
+  Downloaded base64 v0.9.3
+  Downloaded aes-soft v0.6.4
+  Downloaded bech32 v0.11.0
+  Downloaded block-buffer v0.7.3
+  Downloaded blake2 v0.8.1
+  Downloaded aho-corasick v1.1.3
+  Downloaded bytes v0.4.12
+  Downloaded bs58 v0.2.5
+  Downloaded byte-tools v0.3.1
+  Downloaded cassowary v0.3.0
+  Downloaded block-padding v0.1.5
+  Downloaded cfg_aliases v0.1.1
+  Downloaded chrono v0.4.38
+  Downloaded bstr v1.9.1
+  Downloaded cipher v0.2.5
+  Downloaded cfg-if v0.1.10
+  Downloaded bitcoinconsensus v0.106.0+26.0
+  Downloaded ckb-channel v1.0.0
+  Downloaded ckb-build-info v1.0.0
+  Downloaded crypto-mac v0.7.0
+  Downloaded ctrlc v3.4.4
+  Downloaded ctr v0.6.0
+  Downloaded jsonrpc-derive v18.0.0
+  Downloaded proc-macro-crate v0.1.5
+  Downloaded rand_hc v0.1.0
+  Downloaded rand_os v0.1.3
+  Downloaded sha3 v0.8.2
+  Downloaded tokio-util v0.6.10
+  Downloaded termion v1.5.6
+  Downloaded subtle v1.0.0
+  Downloaded termcolor v1.4.1
+  Downloaded tiny-keccak v1.5.0
+  Downloaded unicase v2.7.0
+  Downloaded unsigned-varint v0.2.3
+  Downloaded textwrap v0.11.0
+  Downloaded iovec v0.1.4
+  Downloaded vec_map v0.8.2
+  Downloaded endian-type v0.1.2
+  Downloaded indexmap v1.9.3
+  Downloaded yaml-rust v0.4.5
+  Downloaded uuid v0.7.4
+  Downloaded fd-lock v4.0.2
+  Downloaded tui v0.6.2
+  Downloaded iana-time-zone v0.1.60
+  Downloaded native-tls v0.2.12
+  Downloaded parking_lot v0.11.2
+  Downloaded rand_core v0.3.1
+  Downloaded hex-conservative v0.3.0
+  Downloaded parking_lot v0.12.3
+  Downloaded url v1.7.2
+  Downloaded unicode-segmentation v1.11.0
+  Downloaded dirs v1.0.5
+  Downloaded home v0.5.9
+  Downloaded http-body v0.4.6
+  Downloaded instant v0.1.13
+  Downloaded ipnetwork v0.14.0
+  Downloaded jsonrpc-pubsub v18.0.0
+  Downloaded digest v0.8.1
+  Downloaded heck v0.4.1
+  Downloaded os_str_bytes v2.4.0
+  Downloaded dtoa v0.4.8
+  Downloaded env_logger v0.6.2
+  Downloaded fake-simd v0.1.2
+  Downloaded generic-array v0.12.4
+  Downloaded itertools v0.8.2
+  Downloaded jsonrpc-client-transports v18.0.0
+  Downloaded nibble_vec v0.1.0
+  Downloaded num-traits v0.2.19
+  Downloaded numtoa v0.1.0
+  Downloaded regex-syntax v0.8.4
+  Downloaded shell-words v0.1.0
+  Downloaded jsonrpc-core-client v18.0.0
+  Downloaded clap_derive v3.2.25
+  Downloaded jsonrpc-http-server v18.0.0
+  Downloaded matches v0.1.10
+  Downloaded opaque-debug v0.2.3
+  Downloaded opaque-debug v0.3.1
+  Downloaded crunchy v0.2.2
+  Downloaded parity-multiaddr v0.4.1
+  Downloaded rand_isaac v0.1.1
+  Downloaded rand_chacha v0.1.1
+  Downloaded parking_lot_core v0.8.6
+  Downloaded openssl-sys v0.9.107
+  Downloaded linked-hash-map v0.5.6
+  Downloaded net2 v0.2.39
+  Downloaded num_cpus v1.16.0
+  Downloaded openssl-probe v0.1.5
+  Downloaded percent-encoding v1.0.1
+  Downloaded rand_xorshift v0.1.1
+  Downloaded rustyline-derive v0.10.0
+  Downloaded serde_yaml v0.8.26
+  Downloaded strsim v0.10.0
+  Downloaded http v0.2.12
+  Downloaded safemem v0.3.3
+  Downloaded data-encoding v2.6.0
+  Downloaded is-terminal v0.4.12
+  Downloaded rand v0.5.6
+  Downloaded sha-1 v0.8.2
+  Downloaded hmac v0.7.1
+  Downloaded hyper v0.14.30
+  Downloaded jsonrpc-server-utils v18.0.0
+  Downloaded nix v0.28.0
+  Downloaded rand v0.6.5
+  Downloaded regex v1.10.5
+  Downloaded futures v0.1.31
+  Downloaded humantime v1.3.0
+  Downloaded openssl v0.10.72
+  Downloaded radix_trie v0.2.1
+  Downloaded rand_jitter v0.1.4
+  Downloaded clap v3.0.0-beta.1
+  Downloaded colored v1.9.4
+  Downloaded globset v0.4.14
+  Downloaded httpdate v1.0.3
+  Downloaded lazy_static v1.5.0
+  Downloaded quick-error v1.2.3
+  Downloaded crossbeam-utils v0.8.20
+  Downloaded console v0.15.8
+  Downloaded rand_pcg v0.1.2
+  Downloaded crossbeam-channel v0.5.15
+  Downloaded sha2 v0.8.2
+  Downloaded pkg-config v0.3.30
+  Downloaded rustyline v14.0.0
+  Downloaded idna v0.1.5
+  Downloaded rand_core v0.4.2
+  Downloaded regex-automata v0.4.7
+  Downloaded openssl-src v300.3.1+3.3.1
+  Downloaded clap_generate v3.0.0-beta.1
+  Downloaded parity-multihash v0.1.3
+  Downloaded scrypt v0.2.0
+  Downloaded pbkdf2 v0.3.0
+  Downloaded rpassword v3.0.2
+  Downloaded ckb-util v1.0.0
+   Compiling proc-macro2 v1.0.86
+   Compiling unicode-ident v1.0.12
+   Compiling libc v0.2.155
+   Compiling quote v1.0.40
+   Compiling syn v2.0.87
+   Compiling cfg-if v1.0.0
+   Compiling serde v1.0.204
+   Compiling autocfg v1.3.0
+   Compiling getrandom v0.1.16
+   Compiling cc v1.1.6
+   Compiling version_check v0.9.4
+   Compiling ppv-lite86 v0.2.17
+   Compiling syn v1.0.109
+   Compiling serde_derive v1.0.204
+   Compiling itoa v1.0.11
+   Compiling rand_core v0.5.1
+   Compiling ryu v1.0.18
+   Compiling thiserror v1.0.63
+   Compiling rand_pcg v0.2.1
+   Compiling rand_chacha v0.2.2
+   Compiling bytes v1.6.1
+   Compiling thiserror-impl v1.0.63
+   Compiling serde_json v1.0.120
+   Compiling typenum v1.17.0
+   Compiling rand v0.7.3
+   Compiling pin-project-lite v0.2.14
+   Compiling faster-hex v0.6.1
+   Compiling siphasher v0.3.11
+   Compiling memchr v2.7.4
+   Compiling blake2b-rs v0.2.0
+   Compiling futures-core v0.3.30
+   Compiling heapsize v0.4.2
+   Compiling log v0.4.22
+   Compiling cty v0.2.2
+   Compiling once_cell v1.19.0
+   Compiling numext-constructor v0.1.6
+   Compiling smallvec v1.13.2
+   Compiling serde_derive_internals v0.26.0
+   Compiling ckb_schemars v0.8.22
+   Compiling futures-sink v0.3.30
+   Compiling ckb_schemars_derive v0.8.22
+   Compiling slab v0.4.9
+   Compiling dyn-clone v1.0.17
+   Compiling numext-fixed-uint-core v0.1.6
+   Compiling ckb-fixed-hash-core v1.0.0
+   Compiling futures-channel v0.3.30
+   Compiling ckb-occupied-capacity-core v1.0.0
+   Compiling futures-macro v0.3.30
+   Compiling synstructure v0.13.2
+   Compiling unicode-xid v0.2.6
+   Compiling pin-utils v0.1.0
+   Compiling futures v0.1.31
+   Compiling siphasher v1.0.1
+   Compiling futures-task v0.3.30
+   Compiling futures-io v0.3.30
+   Compiling numext-fixed-uint-hack v0.1.6
+   Compiling anyhow v1.0.86
+   Compiling futures-util v0.3.30
+   Compiling phf_shared v0.12.1
+   Compiling derive_more-impl v1.0.0
+   Compiling ckb-occupied-capacity-macros v1.0.0
+   Compiling ckb-fixed-hash-macros v1.0.0
+   Compiling generic-array v0.14.7
+   Compiling fastrand v2.1.0
+   Compiling paste v1.0.15
+   Compiling heck v0.5.0
+   Compiling strum_macros v0.27.2
+   Compiling phf_generator v0.12.1
+   Compiling ckb-fixed-hash v1.0.0
+   Compiling ckb-occupied-capacity v1.0.0
+   Compiling derive_more v1.0.0
+   Compiling zerofrom-derive v0.1.6
+   Compiling phf_shared v0.8.0
+   Compiling tokio-macros v2.4.0
+   Compiling mio v1.0.1
+   Compiling socket2 v0.5.7
+   Compiling blake2b-ref v0.3.1
+   Compiling tokio v1.42.1
+   Compiling ckb-hash v1.0.0
+   Compiling zerofrom v0.1.6
+   Compiling strum v0.27.2
+   Compiling ckb-error v1.0.0
+   Compiling phf_macros v0.12.1
+   Compiling yoke-derive v0.8.0
+   Compiling molecule v0.8.0
+   Compiling getrandom v0.2.16
+   Compiling stable_deref_trait v1.2.0
+   Compiling byteorder v1.5.0
+   Compiling bitflags v2.6.0
+   Compiling adler v1.0.2
+   Compiling seq-macro v0.3.6
+   Compiling miniz_oxide v0.7.4
+   Compiling yoke v0.8.0
+   Compiling phf v0.12.1
+   Compiling crc32fast v1.4.2
+   Compiling same-file v1.0.6
+   Compiling arrayvec v0.7.4
+   Compiling walkdir v2.5.0
+   Compiling flate2 v1.0.30
+   Compiling ckb-constant v1.0.0
+   Compiling phf_generator v0.8.0
+   Compiling golomb-coded-set v0.2.1
+   Compiling zerovec-derive v0.11.1
+   Compiling ckb-merkle-mountain-range v0.5.2
+   Compiling merkle-cbt v0.3.2
+   Compiling bit-vec v0.6.3
+   Compiling rand_core v0.4.2
+   Compiling zerovec v0.11.4
+   Compiling phf_codegen v0.8.0
+   Compiling displaydoc v0.2.5
+   Compiling includedir_codegen v0.6.0
+   Compiling generic-array v0.12.4
+   Compiling numext-fixed-uint v0.1.6
+   Compiling autocfg v0.1.8
+   Compiling num_cpus v1.16.0
+   Compiling unicode-width v0.1.13
+   Compiling tinyvec_macros v0.1.1
+   Compiling fnv v1.0.7
+   Compiling tinyvec v1.8.0
+   Compiling futures-executor v0.3.30
+   Compiling ckb-gen-types v1.0.0
+   Compiling ckb-rational v1.0.0
+   Compiling openssl-src v300.3.1+3.3.1
+   Compiling lock_api v0.4.12
+   Compiling vcpkg v0.2.15
+   Compiling pkg-config v0.3.30
+   Compiling openssl-sys v0.9.107
+   Compiling unicode-normalization v0.1.23
+   Compiling futures v0.3.30
+   Compiling tinystr v0.8.1
+   Compiling rand_core v0.3.1
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.6
+   Compiling writeable v0.6.1
+   Compiling litemap v0.8.0
+   Compiling unicode-bidi v0.3.15
+   Compiling rustix v0.38.34
+   Compiling scopeguard v1.2.0
+   Compiling icu_locale_core v2.0.0
+   Compiling ckb-types v1.0.0
+   Compiling digest v0.10.7
+   Compiling zerotrie v0.2.2
+   Compiling potential_utf v0.1.2
+   Compiling phf v0.8.0
+   Compiling ahash v0.7.8
+   Compiling linux-raw-sys v0.4.14
+   Compiling byte-tools v0.3.1
+   Compiling icu_normalizer_data v2.0.0
+   Compiling icu_properties_data v2.0.1
+   Compiling httparse v1.9.4
+   Compiling includedir v0.6.0
+   Compiling icu_collections v2.0.0
+   Compiling icu_provider v2.0.0
+   Compiling digest v0.8.1
+   Compiling ckb-system-scripts v0.5.4
+   Compiling rand_core v0.6.4
+   Compiling proc-macro-error-attr v1.0.4
+   Compiling secp256k1-sys v0.10.0
+   Compiling cpufeatures v0.2.12
+   Compiling bitcoin-internals v0.4.0 (https://github.com/rust-bitcoin/rust-bitcoin?rev=436de8ef12ab371aab6e9f6fbfb098238b42657d#436de8ef)
+   Compiling try-lock v0.2.5
+   Compiling lazy_static v1.5.0
+   Compiling want v0.3.1
+   Compiling rand_chacha v0.3.1
+   Compiling block-padding v0.1.5
+   Compiling http v1.3.1
+   Compiling hex-conservative v0.3.0
+   Compiling hex-conservative v0.2.1
+   Compiling tracing-core v0.1.32
+   Compiling proc-macro-error v1.0.4
+   Compiling tower-service v0.3.2
+   Compiling opaque-debug v0.2.3
+   Compiling openssl v0.10.72
+   Compiling foreign-types-shared v0.1.1
+   Compiling subtle v1.0.0
+   Compiling bitcoin-io v0.1.2
+   Compiling parking_lot_core v0.8.6
+   Compiling percent-encoding v2.3.1
+   Compiling bitcoin_hashes v0.14.0
+   Compiling crypto-mac v0.7.0
+   Compiling foreign-types v0.3.2
+   Compiling tracing v0.1.40
+   Compiling http-body v1.0.1
+   Compiling block-buffer v0.7.3
+   Compiling icu_properties v2.0.1
+   Compiling icu_normalizer v2.0.0
+   Compiling hashbrown v0.12.3
+   Compiling rand v0.8.5
+   Compiling jsonrpc-core v18.0.0
+   Compiling rand_pcg v0.1.2
+   Compiling rand_chacha v0.1.1
+   Compiling tokio-stream v0.1.15
+   Compiling scroll_derive v0.10.5
+   Compiling pin-project-internal v1.1.10
+   Compiling miette-derive v5.10.0
+   Compiling openssl-macros v0.1.1
+   Compiling instant v0.1.13
+   Compiling convert_case v0.4.0
+   Compiling native-tls v0.2.12
+   Compiling powerfmt v0.2.0
+   Compiling either v1.13.0
+   Compiling parking_lot_core v0.9.10
+   Compiling num-conv v0.1.0
+   Compiling time-core v0.1.4
+   Compiling time-macros v0.2.22
+   Compiling deranged v0.4.0
+   Compiling derive_more v0.99.18
+   Compiling miette v5.10.0
+   Compiling pin-project v1.1.10
+   Compiling scroll v0.10.2
+   Compiling secp256k1 v0.30.0
+   Compiling ckb-resource v1.0.0
+   Compiling idna_adapter v1.2.1
+   Compiling form_urlencoded v1.2.1
+   Compiling sha-1 v0.10.1
+   Compiling sha2 v0.10.8
+   Compiling ckb-jsonrpc-types v1.0.0
+   Compiling rand v0.6.5
+   Compiling aho-corasick v1.1.3
+   Compiling toml v0.5.11
+   Compiling cookie v0.18.1
+   Compiling xxhash-rust v0.8.11
+   Compiling fake-simd v0.1.2
+   Compiling regex-syntax v0.8.4
+   Compiling hex v0.4.3
+   Compiling openssl-probe v0.1.5
+   Compiling keccak v0.1.5
+   Compiling base64 v0.21.7
+   Compiling utf8_iter v1.0.4
+   Compiling plain v0.2.3
+   Compiling tower-layer v0.3.3
+   Compiling tower v0.4.13
+   Compiling idna v1.1.0
+   Compiling ssri v9.2.0
+   Compiling regex-automata v0.4.7
+   Compiling tempfile v3.10.1
+   Compiling parking_lot v0.11.2
+   Compiling time v0.3.41
+   Compiling hyper v1.6.0
+   Compiling bitcoin_hashes v0.16.0 (https://github.com/rust-bitcoin/rust-bitcoin?rev=436de8ef12ab371aab6e9f6fbfb098238b42657d#436de8ef)
+   Compiling sha1 v0.10.6
+   Compiling reflink-copy v0.1.19
+   Compiling ckb-traits v1.0.0
+   Compiling idna v0.5.0
+   Compiling rand_xorshift v0.1.1
+   Compiling rand_isaac v0.1.1
+   Compiling rand_hc v0.1.0
+   Compiling rand_os v0.1.3
+   Compiling rand_jitter v0.1.4
+   Compiling ckb-vm v0.24.14
+   Compiling indexmap v1.9.3
+   Compiling memmap2 v0.5.10
+   Compiling bitflags v1.3.2
+   Compiling psl-types v2.0.11
+   Compiling matches v0.1.10
+   Compiling eaglesong v0.1.0
+   Compiling cfg_aliases v0.1.1
+   Compiling litrs v0.4.2
+   Compiling document-features v0.2.11
+   Compiling nix v0.28.0
+   Compiling ckb-pow v1.0.0
+   Compiling idna v0.1.5
+   Compiling publicsuffix v2.3.0
+   Compiling cacache v13.1.0
+   Compiling url v2.5.2
+   Compiling hyper-util v0.1.7
+   Compiling goblin v0.4.0
+   Compiling goblin v0.2.3
+   Compiling sha2 v0.8.2
+   Compiling ckb-crypto v1.0.0
+   Compiling http-body-util v0.1.3
+   Compiling ckb-dao-utils v1.0.0
+   Compiling ckb-system-scripts v0.6.0
+   Compiling ckb-vm-definitions v0.24.14
+   Compiling cipher v0.2.5
+   Compiling ckb-logger v1.0.0
+   Compiling unicase v2.7.0
+   Compiling num-traits v0.2.19
+   Compiling crunchy v0.2.2
+   Compiling percent-encoding v1.0.1
+   Compiling ckb-script v1.0.0
+   Compiling rustls-pki-types v1.11.0
+   Compiling crossbeam-utils v0.8.20
+   Compiling rustls-pemfile v2.2.0
+   Compiling url v1.7.2
+   Compiling ckb-chain-spec v1.0.0
+   Compiling cookie_store v0.21.1
+   Compiling serde_urlencoded v0.7.1
+   Compiling bitcoin-units v0.2.0 (https://github.com/rust-bitcoin/rust-bitcoin?rev=436de8ef12ab371aab6e9f6fbfb098238b42657d#436de8ef)
+   Compiling http v0.2.12
+   Compiling sync_wrapper v1.0.2
+   Compiling bstr v1.9.1
+   Compiling linked-hash-map v0.5.6
+   Compiling atty v0.2.14
+   Compiling iovec v0.1.4
+   Compiling mime v0.3.17
+   Compiling base64 v0.22.1
+   Compiling hashbrown v0.14.5
+   Compiling termcolor v1.4.1
+   Compiling safemem v0.3.3
+   Compiling heck v0.4.1
+   Compiling ipnet v2.9.0
+   Compiling opaque-debug v0.3.1
+   Compiling aes-soft v0.6.4
+   Compiling clap_derive v3.2.25
+   Compiling base64 v0.9.3
+   Compiling dashmap v5.5.3
+   Compiling bytes v0.4.12
+   Compiling globset v0.4.14
+   Compiling http-body v0.4.6
+   Compiling bitcoin-primitives v0.101.0 (https://github.com/rust-bitcoin/rust-bitcoin?rev=436de8ef12ab371aab6e9f6fbfb098238b42657d#436de8ef)
+   Compiling ctr v0.6.0
+   Compiling ckb-mock-tx-types v1.0.0
+   Compiling base58ck v0.2.0 (https://github.com/rust-bitcoin/rust-bitcoin?rev=436de8ef12ab371aab6e9f6fbfb098238b42657d#436de8ef)
+   Compiling bitcoin-io v0.2.0 (https://github.com/rust-bitcoin/rust-bitcoin?rev=436de8ef12ab371aab6e9f6fbfb098238b42657d#436de8ef)
+   Compiling jsonrpc-pubsub v18.0.0
+   Compiling sha3 v0.8.2
+   Compiling sha3 v0.10.8
+   Compiling sha-1 v0.8.2
+   Compiling enum-repr-derive v0.2.0
+   Compiling lru v0.7.8
+   Compiling blake2 v0.8.1
+   Compiling hmac v0.7.1
+   Compiling pbkdf2 v0.3.0
+   Compiling rand v0.5.6
+   Compiling textwrap v0.11.0
+   Compiling tokio-util v0.6.10
+   Compiling tokio-util v0.7.11
+   Compiling nibble_vec v0.1.0
+   Compiling derive-getters v0.2.1
+   Compiling async-trait v0.1.88
+   Compiling async-iterator v2.3.0
+   Compiling httpdate v1.0.3
+   Compiling iana-time-zone v0.1.60
+   Compiling ckb-build-info v1.0.0
+   Compiling strsim v0.10.0
+   Compiling unsigned-varint v0.2.3
+   Compiling bech32 v0.11.0
+   Compiling bech32 v0.8.1
+   Compiling endian-type v0.1.2
+   Compiling unicode-segmentation v1.11.0
+   Compiling os_str_bytes v2.4.0
+   Compiling vec_map v0.8.2
+   Compiling cfg-if v0.1.10
+   Compiling numtoa v0.1.0
+   Compiling quick-error v1.2.3
+   Compiling humantime v1.3.0
+   Compiling termion v1.5.6
+   Compiling net2 v0.2.39
+   Compiling clap v3.0.0-beta.1
+   Compiling radix_trie v0.2.1
+   Compiling bitcoin v0.33.0-alpha.0 (https://github.com/rust-bitcoin/rust-bitcoin?rev=436de8ef12ab371aab6e9f6fbfb098238b42657d#436de8ef)
+   Compiling parity-multihash v0.1.3
+   Compiling ckb-cli v2.0.0 (experiments/X6/ckb-cli/src-copy)
+   Compiling chrono v0.4.38
+   Compiling hyper v0.14.30
+   Compiling jsonrpc-server-utils v18.0.0
+   Compiling scrypt v0.2.0
+   Compiling jsonrpc-client-transports v18.0.0
+   Compiling aes-ctr v0.6.0
+   Compiling crossbeam-channel v0.5.15
+   Compiling tiny-keccak v1.5.0
+   Compiling yaml-rust v0.4.5
+   Compiling uuid v0.7.4
+   Compiling parking_lot v0.12.3
+   Compiling regex v1.10.5
+   Compiling proc-macro-crate v0.1.5
+   Compiling itertools v0.8.2
+   Compiling fd-lock v4.0.2
+   Compiling is-terminal v0.4.12
+   Compiling data-encoding v2.6.0
+   Compiling home v0.5.9
+   Compiling utf8parse v0.2.2
+   Compiling bs58 v0.2.5
+   Compiling arrayref v0.3.8
+   Compiling cassowary v0.3.0
+   Compiling tui v0.6.2
+   Compiling parity-multiaddr v0.4.1
+   Compiling rustyline v14.0.0
+   Compiling colored v1.9.4
+   Compiling jsonrpc-derive v18.0.0
+   Compiling env_logger v0.6.2
+   Compiling ckb-util v1.0.0
+   Compiling serde_yaml v0.8.26
+   Compiling ckb-channel v1.0.0
+   Compiling jsonrpc-core-client v18.0.0
+   Compiling jsonrpc-http-server v18.0.0
+   Compiling clap_generate v3.0.0-beta.1
+   Compiling ctrlc v3.4.4
+   Compiling ckb-cli-plugin-protocol v1.3.1 (experiments/X6/ckb-cli/src-copy/plugin-protocol)
+   Compiling console v0.15.8
+   Compiling ipnetwork v0.14.0
+   Compiling rustyline-derive v0.10.0
+   Compiling rpassword v3.0.2
+   Compiling dirs v1.0.5
+   Compiling shell-words v0.1.0
+   Compiling ansi_term v0.11.0
+   Compiling dtoa v0.4.8
+   Compiling tokio-native-tls v0.3.1
+   Compiling hyper-tls v0.6.0
+   Compiling reqwest v0.12.9
+   Compiling ckb-sdk v5.0.0
+   Compiling ckb-signer v0.4.1 (experiments/X6/ckb-cli/src-copy/ckb-signer)
+warning: unused import: `prelude::*`
+   --> src/utils/arg_parser.rs:579:69
+    |
+579 | ...:ScriptHashType, h160, h256, prelude::*};
+    |                                 ^^^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `ScriptIdParser` is never constructed
+   --> src/utils/arg_parser.rs:518:12
+    |
+518 | pub struct ScriptIdParser;
+    |            ^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: enum `Either` is never used
+   --> src/utils/rpc/types.rs:364:10
+    |
+364 | pub enum Either<L, R> {
+    |          ^^^^^^
+
+warning: struct `ResponseFormat` is never constructed
+   --> src/utils/rpc/types.rs:379:12
+    |
+379 | pub struct ResponseFormat<V> {
+    |            ^^^^^^^^^^^^^^
+
+warning: struct `TransactionWithStatusResponse` is never constructed
+   --> src/utils/rpc/types.rs:462:12
+    |
+462 | pub struct TransactionWithStatusResponse {
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> src/utils/config.rs:51:16
+   |
+51 |     pub fn get(&self, key: Option<&str>) -> KV {
+   |                ^^^^^                        ^^ the same lifetime is hidden here
+   |                |
+   |                the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+   |
+51 |     pub fn get(&self, key: Option<&str>) -> KV<'_> {
+   |                                               ++++
+
+warning: `ckb-cli` (bin "ckb-cli" test) generated 6 warnings (run `cargo fix --bin "ckb-cli" -p ckb-cli --tests` to apply 2 suggestions)
+warning: unused dependency `ckb-util`
+  --> Cargo.toml:18:1
+   |
+18 | ckb-util = "1.0"
+   | ^^^^^^^^^^^^^^^^
+   |
+   = note: `cargo::unused_dependencies` is set to `warn` by default
+help: consider removing the dependency on `ckb-util`
+warning: unused dependency `console`
+  --> Cargo.toml:49:1
+   |
+49 | console = "0.15.0"
+   | ^^^^^^^^^^^^^^^^^^
+   |
+help: consider removing the dependency on `console`
+warning: unused dependency `ctrlc`
+  --> Cargo.toml:50:1
+   |
+50 | ctrlc = "3.2.3"
+   | ^^^^^^^^^^^^^^^
+   |
+help: consider removing the dependency on `ctrlc`
+warning: unused dependency `tui`
+  --> Cargo.toml:71:1
+   |
+71 | tui = "0.6.0"
+   | ^^^^^^^^^^^^^
+   |
+help: consider removing the dependency on `tui`
+warning: `ckb-cli` (manifest) generated 4 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 9m 06s
+     Running unittests src/main.rs (target/debug/…/ckb-cli/0ed54665b41ff29b/out/ckb_cli-0ed54665b41ff29b)
+
+running 7 tests
+test subcommands::util::test::test_gen_multisig_addr ... ok
+test utils::arg_parser::tests::test_fixed_hash ... ok
+test utils::arg_parser::tests::test_from_str ... ok
+test utils::arg_parser::tests::test_hex ... ok
+test utils::arg_parser::tests::test_address ... ok
+test utils::tx_helper::tests::test_check_lock_script ... ok
+test utils::mock_tx_helper::test::test_verify ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+exit=0

@@ -1,0 +1,274 @@
+{
+ "date": "2026-11-18 21:38 UTC",
+ "trials_per_case_and_format": 200,
+ "cases": {
+  "R1-fiber-scripts-pr34": {
+   "C": {
+    "trials": 50,
+    "same_bytes_all_three_merges": 50,
+    "idempotent": 50,
+    "junk_free": 50,
+    "ready": 20,
+    "finalized_pass_lock_rules": 20,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "B+w": {
+    "trials": 50,
+    "same_bytes_all_three_merges": 50,
+    "idempotent": 50,
+    "junk_free": 50,
+    "ready": 29,
+    "finalized_pass_lock_rules": 29,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "A": {
+    "trials": 50,
+    "same_bytes_all_three_merges": 50,
+    "idempotent": 50,
+    "junk_free": 50,
+    "ready": 24,
+    "finalized_pass_lock_rules": 24,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 2
+   },
+   "different_transaction_refused": true,
+   "pool_size": 19,
+   "valid_in_pool": 12
+  },
+  "S6-two-multisig-groups": {
+   "C": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 20,
+    "finalized_pass_lock_rules": 20,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "B+w": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 25,
+    "finalized_pass_lock_rules": 25,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "A": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 23,
+    "finalized_pass_lock_rules": 23,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 2
+   },
+   "different_transaction_refused": true,
+   "pool_size": 26,
+   "valid_in_pool": 14
+  },
+  "S7-multisig-plus-single-key": {
+   "C": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 74,
+    "finalized_pass_lock_rules": 74,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "B+w": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 75,
+    "finalized_pass_lock_rules": 75,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "A": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 80,
+    "finalized_pass_lock_rules": 80,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 2
+   },
+   "different_transaction_refused": true,
+   "pool_size": 20,
+   "valid_in_pool": 9
+  },
+  "S10-same-script-two-deployments": {
+   "C": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 74,
+    "finalized_pass_lock_rules": 74,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "B+w": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 90,
+    "finalized_pass_lock_rules": 90,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "A": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 87,
+    "finalized_pass_lock_rules": 87,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 2
+   },
+   "different_transaction_refused": true,
+   "pool_size": 28,
+   "valid_in_pool": 16
+  },
+  "S11-same-script-20-and-28-byte-args": {
+   "C": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 100,
+    "finalized_pass_lock_rules": 100,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "B+w": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 84,
+    "finalized_pass_lock_rules": 84,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "A": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 98,
+    "finalized_pass_lock_rules": 98,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 2
+   },
+   "different_transaction_refused": true,
+   "pool_size": 28,
+   "valid_in_pool": 16
+  },
+  "R1-35-first-member-required": {
+   "C": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 133,
+    "finalized_pass_lock_rules": 133,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "B+w": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 130,
+    "finalized_pass_lock_rules": 130,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 0
+   },
+   "A": {
+    "trials": 200,
+    "same_bytes_all_three_merges": 200,
+    "idempotent": 200,
+    "junk_free": 200,
+    "ready": 140,
+    "finalized_pass_lock_rules": 140,
+    "first_failures": [],
+    "pool_entries_the_format_cannot_hold": 1
+   },
+   "different_transaction_refused": true,
+   "pool_size": 17,
+   "valid_in_pool": 12
+  }
+ },
+ "devnet": {
+  "S10-same-script-two-deployments": {
+   "dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x5d91b2",
+     "fee": "0x5f5e100"
+    }
+   },
+   "tx_hash": "0x0c18da2db7569db58d7b5aecad54796f47c251b6fa5878cb18e0f258d4c75fe7",
+   "committed_block": 19045
+  },
+  "S11-same-script-20-and-28-byte-args": {
+   "dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x5f37aa",
+     "fee": "0x5f5e100"
+    }
+   },
+   "tx_hash": "0x7c0658fea5e89094a0fe7cc9e6473a0ef08c66e7430bc261ef49bfe4e1e4f5ce",
+   "committed_block": 19049
+  },
+  "R1-35-first-member-required": {
+   "dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x44e0c9",
+     "fee": "0x5f5e100"
+    }
+   },
+   "tx_hash": "0x39e188886a76739252aea02da07765c8375731e54278a2c245f864899a6bc0d9",
+   "committed_block": 19053
+  }
+ },
+ "S10_keyed_by_args": {
+  "0x138a59f226114c69f66ba918fa3ea4269057a9bf": 6
+ },
+ "S10_keyed_by_lock_hash": {
+  "0xaad182486751061fb86049d980852801482bb790f181103dfa9d93350323e6d6": 3,
+  "0x648a0721a76b40c7af8206528ef82c3341c4ea20148c355a9650b501fb885863": 3
+ },
+ "S10_args_identical_across_groups": true,
+ "first_r": {
+  "ready_without_s1": false,
+  "signers_without_s1": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "finalize_without_s1": "refused: group 0xc22c4f82e6... not ready: needs the first 1 and 3 in all",
+  "picked_member_indices": [
+   0,
+   1,
+   2
+  ]
+ }
+}

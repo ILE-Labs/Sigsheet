@@ -1,0 +1,15 @@
+Get:1 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64v3 qemu-user amd64 1:10.2.1+ds-1ubuntu3.3 [14.8 MB]
+Fetched 14.8 MB in 0s (88.5 MB/s)
+Get:1 http://archive.ubuntu.com/ubuntu resolute/universe amd64v3 lld-21 amd64 1:21.1.8-6ubuntu1 [1542 kB]
+Fetched 1542 kB in 0s (16.6 MB/s)
+Get:1 http://archive.ubuntu.com/ubuntu resolute/universe amd64v3 liblld-21 amd64 1:21.1.8-6ubuntu1 [1988 kB]
+Fetched 1988 kB in 0s (6005 kB/s)
+Get:1 http://archive.ubuntu.com/ubuntu resolute/universe amd64v3 libnewlib-arm-none-eabi all 4.6.0.20260123-1 [48.5 MB]
+Fetched 48.5 MB in 1s (96.5 MB/s)
+Get:1 http://archive.ubuntu.com/ubuntu resolute/universe amd64v3 libnewlib-dev all 4.6.0.20260123-1 [142 kB]
+Fetched 142 kB in 0s (1822 kB/s)
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+speculos 0.27.6 requires pygame<3.0.0,>=2.6.1, which is not installed.
+speculos 0.27.6 requires pyqt6<7.0.0,>=6.4.0, which is not installed.
+setup done
+exit=0

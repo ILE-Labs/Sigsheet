@@ -1,0 +1,62 @@
+{
+ "R1-fiber-scripts-pr34.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 367378,
+  "decode_checks": "ok"
+ },
+ "R2-dao-payout.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 2037,
+  "decode_checks": "ok"
+ },
+ "S1-genesis-2of3.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 3244,
+  "decode_checks": "ok"
+ },
+ "S2-2024-2of3.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 3244,
+  "decode_checks": "ok"
+ },
+ "S3-v2-2of3-two-inputs.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 3405,
+  "decode_checks": "ok"
+ },
+ "S4-v2-first-R.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 3244,
+  "decode_checks": "ok"
+ },
+ "S4N-v2-first-R-missing-required.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 2037,
+  "decode_checks": "ok"
+ },
+ "S5-v2-since-in-args.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 3260,
+  "decode_checks": "ok"
+ },
+ "S6-two-multisig-groups.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 4786,
+  "decode_checks": "ok"
+ },
+ "S7-multisig-plus-single-key.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 3636,
+  "decode_checks": "ok"
+ },
+ "S8-neuron-export.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 3244,
+  "decode_checks": "ok"
+ },
+ "S9-extra-witness.c.json": {
+  "same_bytes_as_python": true,
+  "bytes": 3256,
+  "decode_checks": "ok"
+ }
+}

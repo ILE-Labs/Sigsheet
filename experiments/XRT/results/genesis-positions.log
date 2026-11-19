@@ -1,0 +1,37 @@
+genesis  R=0 M= 1 N=13: 23/25 accepted
+genesis  R=0 M= 2 N=13: 21/23 accepted
+genesis  R=0 M= 3 N=13: 19/21 accepted
+genesis  R=0 M= 5 N=13: 15/17 accepted
+genesis  R=0 M= 8 N=13: 9/11 accepted
+genesis  R=0 M=10 N=13: 5/7 accepted
+genesis  R=0 M=11 N=13: 5/5 accepted
+genesis  R=0 M=12 N=13: 3/3 accepted
+genesis  R=0 M= 1 N=16: 29/31 accepted
+genesis  R=0 M= 2 N=16: 27/29 accepted
+genesis  R=0 M= 3 N=16: 25/27 accepted
+genesis  R=0 M= 5 N=16: 21/23 accepted
+genesis  R=0 M= 8 N=16: 15/17 accepted
+genesis  R=0 M=10 N=16: 11/13 accepted
+genesis  R=0 M=11 N=16: 11/11 accepted
+genesis  R=0 M=12 N=16: 9/9 accepted
+genesis  R=0 M=16 N=16: 1/1 accepted
+genesis  R=0 M= 1 N=20: 35/39 accepted
+genesis  R=0 M= 2 N=20: 35/37 accepted
+genesis  R=0 M= 3 N=20: 33/35 accepted
+genesis  R=0 M= 5 N=20: 29/31 accepted
+genesis  R=0 M= 8 N=20: 23/25 accepted
+genesis  R=0 M=10 N=20: 19/21 accepted
+genesis  R=0 M=11 N=20: 19/19 accepted
+genesis  R=0 M=12 N=20: 17/17 accepted
+genesis  R=0 M=16 N=20: 9/9 accepted
+genesis  R=0 M= 1 N=24: 43/47 accepted
+genesis  R=0 M= 2 N=24: 39/45 accepted
+genesis  R=0 M= 3 N=24: 37/43 accepted
+genesis  R=0 M= 5 N=24: 33/39 accepted
+genesis  R=0 M= 8 N=24: 27/33 accepted
+genesis  R=0 M=10 N=24: 23/29 accepted
+genesis  R=0 M=11 N=24: 23/27 accepted
+genesis  R=0 M=12 N=24: 21/25 accepted
+genesis  R=0 M=16 N=24: 13/17 accepted
+v2       R=0 M= 1 N=24: 47/47 accepted
+v2       R=0 M=10 N=24: 29/29 accepted

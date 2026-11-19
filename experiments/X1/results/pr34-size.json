@@ -1,0 +1,35 @@
+{
+ "file": "data/fiber-scripts-34/mainnet.json",
+ "measured": "2026-11-18 07:29 UTC",
+ "sha256": "8563ba8dcd0d051822dd0cc21db995dc8e6a2984e900d3500068f0185a07b51e",
+ "sha256_matches_the_pinned_file": true,
+ "file_bytes": 904588,
+ "field_value_bytes_in_file": {
+  "deployment": 1580,
+  "last_recipe": 1136,
+  "new_recipe": 1136,
+  "used_input_txs": 735190,
+  "cell_tx": 164490,
+  "cell_tx_signatures": 404,
+  "cell_changes": 428,
+  "dep_group_tx": 4,
+  "dep_group_tx_signatures": 2,
+  "dep_group_changes": 2
+ },
+ "used_input_txs_share_of_file": 0.8127,
+ "cell_tx_share_of_file": 0.1818,
+ "used_input_txs_count": 2,
+ "used_input_txs_entry_bytes_in_file": {
+  "0x95006eee7b4c0c8ad66e0514c88ed0ae43fc8db27793427de86a348ec720b9d6": 570410,
+  "0x4396de69818bd88b7fce64797ccec25d1294912d56846432f29fd192120992ee": 164624
+ },
+ "cell_tx_input_tx_hashes": [
+  "0x95006eee7b4c0c8ad66e0514c88ed0ae43fc8db27793427de86a348ec720b9d6"
+ ],
+ "bytes_proving_cell_tx_inputs": 570410,
+ "share_proving_cell_tx_inputs": 0.6306,
+ "used_input_txs_outputs_data_bytes_decoded": {
+  "0x95006eee7b4c0c8ad66e0514c88ed0ae43fc8db27793427de86a348ec720b9d6": 283056,
+  "0x4396de69818bd88b7fce64797ccec25d1294912d56846432f29fd192120992ee": 80936
+ }
+}

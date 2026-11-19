@@ -1,0 +1,13 @@
+[package]
+name = "xc4-idl-harness"
+version = "0.1.0"
+edition = "2024"
+publish = false
+description = "XC4: can CKB IDL 0.1.0 describe, decode and bind the existing multisig witness lock?"
+
+[dependencies]
+# ckb-idl-client at the pinned commit e7d8124 (refs-manifest.md), by path.
+ckb-idl-client = { path = "../../../refs/ckb-idl/ckb-idl-client" }
+serde_json = "1"
+serde_json_canonicalizer = "0.3.2"
+hex = "0.4"

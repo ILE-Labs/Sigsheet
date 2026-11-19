@@ -1,0 +1,887 @@
+ts-jest[versions] (WARN) Version 27.5.1 of jest installed has not been tested with ts-jest. If you're experiencing issues, consider using a supported version (>=29.0.0 <30.0.0-0). Please do not report issues in ts-jest if you are using unsupported versions.
+(node:3352315) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+PASS Unit Tests tests/services/tx/transaction-sender.test.ts (18.463 s)
+  ● Console
+
+    console.debug
+      [2026-11-18T21:51:02.914Z] [debug] withdrawFromDao fee: 468
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+PASS Unit Tests tests/controllers/multisig.test.ts
+PASS Unit Tests tests/controllers/offline-sign.test.ts
+PASS Unit Tests tests/models/offline-sign.test.ts
+PASS Unit Tests tests/services/offline-sign.test.ts
+PASS Unit Tests tests/services/hardware.test.ts (9.395 s)
+  ● Console
+
+    console.info
+      [2026-11-18T21:51:14.231Z] [info]  Find devices:	 [
+        [
+          {
+            isBluetooth: false,
+            descriptor: '@LedgerNanoS',
+            vendorId: '10086',
+            manufacturer: 'Ledger',
+            product: 'Nano S',
+            addressIndex: 0,
+            addressType: 0
+          }
+        ]
+      ]
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:16.260Z] [info]  Find devices:	 [
+        [
+          {
+            isBluetooth: false,
+            descriptor: '@LedgerNanoS',
+            vendorId: '10086',
+            manufacturer: 'Ledger',
+            product: 'Nano S',
+            addressIndex: 0,
+            addressType: 0
+          }
+        ]
+      ]
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+PASS Unit Tests tests/services/hardware/ledger.test.ts
+  ● Console
+
+    console.info
+      [2026-11-18T21:51:16.919Z] [info]  Connect device:	 {}
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:16.933Z] [info]  Connect device:	 {}
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+FAIL Unit Tests tests/services/multisig.test.ts
+  ● multisig service › save multisig config › has exist
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › save multisig config › has exist
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › save multisig config › save success
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › save multisig config › save success
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › update config › update config is not exist
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › update config › update config is not exist
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › update config › update config success
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › update config › update config success
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › update config › only update startBlockNumber and original data should not be change
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › update config › only update startBlockNumber and original data should not be change
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › test get config › has config wallet
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › test get config › has config wallet
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › test delete config › delete success
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › test delete config › delete success
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › getLiveCells › params is empty
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › getLiveCells › params is empty
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › getLiveCells › no live cell
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › getLiveCells › no live cell
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › getLiveCells › a live cell
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › getLiveCells › a live cell
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › getLiveCells › filter cell with type
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › getLiveCells › filter cell with type
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › removeDulpicateConfig › exist duplicate config
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › removeDulpicateConfig › exist duplicate config
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › removeDulpicateConfig › non-exist duplicate config
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › removeDulpicateConfig › non-exist duplicate config
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › saveLiveMultisigOutput › no live cell save
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › saveLiveMultisigOutput › no live cell save
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › saveLiveMultisigOutput › with live cell save
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › saveLiveMultisigOutput › with live cell save
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › getMultisigTransactionHashList › params is empty
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › getMultisigTransactionHashList › params is empty
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › getMultisigTransactionHashList › no Transaction
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › getMultisigTransactionHashList › no Transaction
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › getMultisigTransactionHashList › a Transaction
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › getMultisigTransactionHashList › a Transaction
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › deleteDeadMultisigOutput › no transaction
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › deleteDeadMultisigOutput › no transaction
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › deleteDeadMultisigOutput › no delete transaction
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › deleteDeadMultisigOutput › no delete transaction
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › deleteDeadMultisigOutput › delete a transaction
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › deleteDeadMultisigOutput › delete a transaction
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › deleteRemovedMultisigOutput › delete cell thats config not in db
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › deleteRemovedMultisigOutput › delete cell thats config not in db
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › syncMultisigOutput › success
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › syncMultisigOutput › success
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+  ● multisig service › saveSentMultisigOutput › success
+
+    DriverPackageNotInstalledError: SQLite package has not been found installed. Try to install it: npm install sqlite3 --save
+
+      at SqliteDriver.loadDependencies (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:199:19)
+      at new SqliteDriver (../../../../../refs/neuron-x1/src/driver/sqlite/SqliteDriver.ts:44:14)
+      at DriverFactory.create (../../../../../refs/neuron-x1/src/driver/DriverFactory.ts:44:24)
+      at new DataSource (../../../../../refs/neuron-x1/src/data-source/DataSource.ts:145:43)
+      at initConnectionWithType (src/database/chain/ormconfig.ts:222:32)
+      at initConnection (src/database/chain/ormconfig.ts:255:3)
+      at tests/services/multisig.test.ts:86:5
+
+  ● multisig service › saveSentMultisigOutput › success
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at getConnection (tests/setupAndTeardown/index.ts:17:29)
+      at Object.<anonymous> (tests/services/multisig.test.ts:100:37)
+
+
+  ● Test suite failed to run
+
+    The connection full should be initialized before use
+
+      10 |   const connection = dataSource[connectionName]
+      11 |   if (!connection) {
+    > 12 |     throw new Error(`The connection ${connectionName} should be initialized before use`)
+         |           ^
+      13 |   }
+      14 |   return connection
+      15 | }
+
+      at getConnection (src/database/chain/connection.ts:12:11)
+      at closeConnection (tests/setupAndTeardown/index.ts:13:29)
+      at tests/services/multisig.test.ts:90:26
+
+PASS Unit Tests tests/controllers/hardware.test.ts
+  ● Console
+
+    console.info
+      [2026-11-18T21:51:19.884Z] [info]  Connect device:	 {
+        descriptor: '@LedgerNanoS',
+        vendorId: '10086',
+        product: 'Nano S',
+        isBluetooth: false,
+        manufacturer: 'Ledger',
+        addressType: 0,
+        addressIndex: 0
+      }
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:19.893Z] [info]  Connect device:	 {
+        descriptor: '@LedgerNanoS',
+        vendorId: '10086',
+        product: 'Nano S',
+        isBluetooth: false,
+        manufacturer: 'Ledger',
+        addressType: 0,
+        addressIndex: 0
+      }
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:19.897Z] [info]  Connect device:	 {
+        descriptor: '@LedgerNanoS',
+        vendorId: '10086',
+        product: 'Nano S',
+        isBluetooth: false,
+        manufacturer: 'Ledger',
+        addressType: 0,
+        addressIndex: 0
+      }
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:19.898Z] [info]  Connect device:	 {
+        descriptor: '@throw me a error',
+        vendorId: '10086',
+        product: 'Nano S',
+        isBluetooth: false,
+        manufacturer: 'Ledger',
+        addressType: 0,
+        addressIndex: 0
+      }
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:19.908Z] [info]  Connect device:	 {
+        descriptor: '@LedgerNanoS',
+        vendorId: '10086',
+        product: 'Nano S',
+        isBluetooth: false,
+        manufacturer: 'Ledger',
+        addressType: 0,
+        addressIndex: 0
+      }
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:19.916Z] [info]  Connect device:	 {
+        descriptor: '@LedgerNanoS',
+        vendorId: '10086',
+        product: 'Nano S',
+        isBluetooth: false,
+        manufacturer: 'Ledger',
+        addressType: 0,
+        addressIndex: 0
+      }
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:19.940Z] [info]  Connect device:	 {
+        descriptor: '@LedgerNanoS',
+        vendorId: '10086',
+        product: 'Nano S',
+        isBluetooth: false,
+        manufacturer: 'Ledger',
+        addressType: 0,
+        addressIndex: 0
+      }
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:19.947Z] [info]  Connect device:	 {
+        descriptor: '@LedgerNanoS',
+        vendorId: '10086',
+        product: 'Nano S',
+        isBluetooth: false,
+        manufacturer: 'Ledger',
+        addressType: 0,
+        addressIndex: 0
+      }
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+    console.info
+      [2026-11-18T21:51:21.952Z] [info]  Find devices:	 [
+        [
+          {
+            isBluetooth: false,
+            descriptor: '@LedgerNanoS',
+            vendorId: '10086',
+            manufacturer: 'Ledger',
+            product: 'Nano S',
+            addressIndex: 0,
+            addressType: 0
+          }
+        ]
+      ]
+
+      at consoleLog (../../../../../refs/neuron-x1/node_modules/electron-log/src/transports/console.js:100:17)
+
+PASS Unit Tests tests/utils/multisig.test.ts
+
+Test Suites: 1 failed, 9 passed, 10 total
+Tests:       24 failed, 1 skipped, 103 passed, 128 total
+Snapshots:   0 total
+Time:        36.95 s, estimated 41 s
+Ran all test suites matching /tests\/controllers\/multisig.test.ts|tests\/controllers\/hardware.test.ts|tests\/controllers\/offline-sign.test.ts|tests\/models\/offline-sign.test.ts|tests\/services\/multisig.test.ts|tests\/services\/hardware.test.ts|tests\/services\/offline-sign.test.ts|tests\/services\/tx\/transaction-sender.test.ts|tests\/utils\/multisig.test.ts|tests\/services\/hardware\/ledger.test.ts/i.
+exit=1

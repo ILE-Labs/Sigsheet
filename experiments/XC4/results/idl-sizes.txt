@@ -1,0 +1,6 @@
+generic.json           551 bytes    0 union variants     6 field entries
+fixed-2of3.json        591 bytes    0 union variants     7 field entries
+fixed-3of5.json        683 bytes    0 union variants     8 field entries
+union-n3.json         4670 bytes   16 union variants    47 field entries
+union-n5.json        18372 bytes   50 union variants   191 field entries
+union-n6.json        31534 bytes   77 union variants   330 field entries

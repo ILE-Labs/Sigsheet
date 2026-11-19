@@ -1,0 +1,10 @@
+{
+  "name": "xq14-client",
+  "private": true,
+  "description": "XQ14: drives the Ledger Nervos app in Speculos with the host library Neuron uses",
+  "type": "commonjs",
+  "dependencies": {
+    "@magickbase/hw-app-ckb": "0.2.0-alpha.0",
+    "@ledgerhq/hw-transport-node-speculos": "6.34.7"
+  }
+}

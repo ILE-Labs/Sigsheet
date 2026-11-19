@@ -1,0 +1,67 @@
+{
+ "measured": "2026-11-18",
+ "cases": {
+  "R1-fiber-scripts-pr34": {
+   "transaction": {
+    "molecule_transaction": 81889,
+    "json_compact": 163901,
+    "outputs_data_bytes": 80936
+   },
+   "previous_transactions": {
+    "0x95006eee7b4c0c8ad66e0514c88ed0ae43fc8db27793427de86a348ec720b9d6": {
+     "molecule_transaction": 284468,
+     "molecule_raw_transaction_only": 284008,
+     "json_compact": 569132,
+     "json_compact_without_witnesses": 568285,
+     "outputs_data_bytes": 283056,
+     "witnesses_bytes": 404
+    }
+   },
+   "spent_cells_data_bytes": 79880,
+   "tx_plus_proof_with_proof_witnesses": {
+    "binary": 366357,
+    "hex_json": 733033,
+    "hex_json_over_binary_bytes": 366676,
+    "ratio": 2.001
+   },
+   "tx_plus_proof_raw_only": {
+    "binary": 365897,
+    "hex_json": 732186,
+    "hex_json_over_binary_bytes": 366289,
+    "ratio": 2.001
+   },
+   "previous_witness_bytes_a_raw_only_proof_saves": 460
+  },
+  "R2-dao-payout": {
+   "transaction": {
+    "molecule_transaction": 589,
+    "json_compact": 1214,
+    "outputs_data_bytes": 0
+   },
+   "previous_transactions": {
+    "0x1565338fd543a257906e5debe6b4b5cedbe4cff86af47ec620e18a3bfb838b9a": {
+     "molecule_transaction": 589,
+     "molecule_raw_transaction_only": 351,
+     "json_compact": 1213,
+     "json_compact_without_witnesses": 766,
+     "outputs_data_bytes": 0,
+     "witnesses_bytes": 214
+    }
+   },
+   "spent_cells_data_bytes": 0,
+   "tx_plus_proof_with_proof_witnesses": {
+    "binary": 1178,
+    "hex_json": 2427,
+    "hex_json_over_binary_bytes": 1249,
+    "ratio": 2.06
+   },
+   "tx_plus_proof_raw_only": {
+    "binary": 940,
+    "hex_json": 1980,
+    "hex_json_over_binary_bytes": 1040,
+    "ratio": 2.106
+   },
+   "previous_witness_bytes_a_raw_only_proof_saves": 238
+  }
+ }
+}

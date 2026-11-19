@@ -1,0 +1,156 @@
+{
+ "conditions": "local devnet, ckb 0.210.0, epoch length 10 blocks; fresh test keys keys/xrtb/ (outside the repository)",
+ "multisig": {
+  "deployment": "v2",
+  "r": 0,
+  "m": 2,
+  "n": 3,
+  "lock_args": "0x5521915d5a63ce78b4f36370f47d6c1f19e97c8a"
+ },
+ "deposits": [
+  {
+   "tx": "0xdc8b9fdc5baac7ca138b85f26e495709442ed09965528589526e1ae4a4edb152",
+   "block": "0x2fe083f6eaf9b8fbbbba5d79141b01720c07e8604c4a1b3ae7190c9855e6e9f5",
+   "capacity": 2000
+  },
+  {
+   "tx": "0x3ac486f7203b544ee0b7d2767c014b4e741fc512fcbf722fa80a2d182c4daff6",
+   "block": "0xaa8918fd47696d536b43d46a954b28625bba5e6830bbd02bd7630cabd1afc9d8",
+   "capacity": 3000
+  }
+ ],
+ "phase1": [
+  {
+   "tx": "0xfa7c7bb8a5515612ce0ed0039f0a81b16e1ab63f8fd71e3c43628674d7f6a9f0",
+   "block": "0x9cda80413fcde16727a044e38c5e0e8f1551e666d50f50e1db0a2eb8276399d4"
+  },
+  {
+   "tx": "0xc59b5cb3d4c4ec7d217c4c67ca4fee6fcb353a040cab8d8afc3df8f57c7411c0",
+   "block": "0x55886db14d1bf3de02a9e4438acf6b3633565b4bf3a6e05c12661ca55bac4d53"
+  }
+ ],
+ "phase2": {
+  "header_deps": [
+   "0x2fe083f6eaf9b8fbbbba5d79141b01720c07e8604c4a1b3ae7190c9855e6e9f5",
+   "0xaa8918fd47696d536b43d46a954b28625bba5e6830bbd02bd7630cabd1afc9d8",
+   "0x9cda80413fcde16727a044e38c5e0e8f1551e666d50f50e1db0a2eb8276399d4",
+   "0x55886db14d1bf3de02a9e4438acf6b3633565b4bf3a6e05c12661ca55bac4d53"
+  ],
+  "tx": "0xcf852daf2177ce8ed0ae14bf84b8b139e38a78791186a34b40fffdf01d178735",
+  "block": "0x3fca443f44119400d64c96229fd2a40a2e14395148240212ffee07a3a2c1a016",
+  "node_fee_test_tx_pool_accept": 100000,
+  "cycles": "0x302676",
+  "fees_by_rule": {
+   "naive": -712522788,
+   "v2_bound": 463600414,
+   "v3_proof": 100000,
+   "per_input": [
+    {
+     "input": 0,
+     "capacity": 200000000000,
+     "candidates": 3,
+     "v2_bound": 200466292110,
+     "v3_proof": 200002791696,
+     "node_max_withdraw": 200002791696,
+     "minimal_since_from_proof": "0x20000a0000001922",
+     "since_in_tx": "0x20000a0000001922"
+    },
+    {
+     "input": 1,
+     "capacity": 300000000000,
+     "candidates": 3,
+     "v2_bound": 300709831092,
+     "v3_proof": 300709831092,
+     "node_max_withdraw": 300709831092,
+     "minimal_since_from_proof": "0x20000a0003001922",
+     "since_in_tx": "0x20000a0003001922"
+    }
+   ]
+  },
+  "proofs_verify_offline": {
+   "0xfa7c7bb8a5515612ce0ed0039f0a81b16e1ab63f8fd71e3c43628674d7f6a9f0": true,
+   "0xc59b5cb3d4c4ec7d217c4c67ca4fee6fcb353a040cab8d8afc3df8f57c7411c0": true
+  },
+  "forged_block_hash_with_real_proof_verifies": false,
+  "transaction_proofs": {
+   "0xfa7c7bb8a5515612ce0ed0039f0a81b16e1ab63f8fd71e3c43628674d7f6a9f0": {
+    "block_hash": "0x9cda80413fcde16727a044e38c5e0e8f1551e666d50f50e1db0a2eb8276399d4",
+    "proof": {
+     "indices": [
+      "0x2"
+     ],
+     "lemmas": [
+      "0x9d64d9cb704b1cf4ee88c49e6cc0d701550599012a2aee667b075787f0d4b1e7"
+     ]
+    },
+    "witnesses_root": "0xb6c4330b8c1e0ab5de6abe389c2a68a7c5b1dfe76c1bace4bc3b8be1d14d7d8d"
+   },
+   "0xc59b5cb3d4c4ec7d217c4c67ca4fee6fcb353a040cab8d8afc3df8f57c7411c0": {
+    "block_hash": "0x55886db14d1bf3de02a9e4438acf6b3633565b4bf3a6e05c12661ca55bac4d53",
+    "proof": {
+     "indices": [
+      "0x2"
+     ],
+     "lemmas": [
+      "0xcf4f6137f5d0de8a8c100a14ba51abc4e244ac7b9d5b4d75fc8ccc808d1406d4"
+     ]
+    },
+    "witnesses_root": "0xf9976bae705c9b37caec31e2d4252e8688d8acb1fea9530ea0736d689d1ab260"
+   }
+  }
+ },
+ "phase2_cut_output": {
+  "dry_run": true,
+  "node_fee_test_tx_pool_accept": 712722788,
+  "error": null,
+  "fees_by_rule": {
+   "naive": 100000,
+   "v2_bound": 1176223202,
+   "v3_proof": 712722788,
+   "per_input": [
+    {
+     "input": 0,
+     "capacity": 200000000000,
+     "candidates": 3,
+     "v2_bound": 200466292110,
+     "v3_proof": 200002791696,
+     "node_max_withdraw": 200002791696,
+     "minimal_since_from_proof": "0x20000a0000001922",
+     "since_in_tx": "0x20000a0000001922"
+    },
+    {
+     "input": 1,
+     "capacity": 300000000000,
+     "candidates": 3,
+     "v2_bound": 300709831092,
+     "v3_proof": 300709831092,
+     "node_max_withdraw": 300709831092,
+     "minimal_since_from_proof": "0x20000a0003001922",
+     "since_in_tx": "0x20000a0003001922"
+    }
+   ]
+  }
+ },
+ "headers": {
+  "0x2fe083f6eaf9b8fbbbba5d79141b01720c07e8604c4a1b3ae7190c9855e6e9f5": {
+   "number": 62540,
+   "epoch": 10995116284014,
+   "ar": 12745947736790686
+  },
+  "0xaa8918fd47696d536b43d46a954b28625bba5e6830bbd02bd7630cabd1afc9d8": {
+   "number": 62543,
+   "epoch": 10995166615662,
+   "ar": 12746041475526831
+  },
+  "0x9cda80413fcde16727a044e38c5e0e8f1551e666d50f50e1db0a2eb8276399d4": {
+   "number": 62546,
+   "epoch": 10995216947310,
+   "ar": 12746135212108692
+  },
+  "0x55886db14d1bf3de02a9e4438acf6b3633565b4bf3a6e05c12661ca55bac4d53": {
+   "number": 63546,
+   "epoch": 10995216947410,
+   "ar": 12777261408378828
+  }
+ }
+}

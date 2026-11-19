@@ -1,0 +1,57 @@
+{
+ "run": "two-inputs-one-group",
+ "expectation": "two inputs of the same multisig: one input source",
+ "date": "2026-11-18 21:30:53 UTC",
+ "same_device_job_from_C_Bw_A": true,
+ "file_bytes": {
+  "C": 6006,
+  "B+w": 11455,
+  "A": 4107
+ },
+ "device": {
+  "result": "signed",
+  "error": null,
+  "status_code": null,
+  "presses": {
+   "right": 6,
+   "both": 1
+  },
+  "seconds": 2.095,
+  "annotated_bytes": 5698,
+  "annotated_sha256": "bfb16d4936ebff2c432938a767cc3fe17fc48f0d08cb553b7667d336307e5c63",
+  "apdus": 25
+ },
+ "screens": [
+  "Confirm | Transaction",
+  "Amount | 1999",
+  "Fee | 1",
+  "Destination (1/2) | ckb1qzda0cr08m85hc | 8jlnfp3zer7xulejywt4 | 9kt2rr0vthywaa50xws",
+  "Destination (2/2) | qduttp4q2sphy5e4w | q6j9m6p7gh8z75qvq | n6e95f",
+  "Reject",
+  "Accept"
+ ],
+ "node_stdout": "{\"result\":\"signed\",\"screens\":7,\"presses\":{\"right\":6,\"both\":1},\"seconds\":2.095,\"annotated_bytes\":5698}",
+ "node_stderr": "",
+ "emulator": {
+  "app_exited": false,
+  "exit_line": [],
+  "still_listening": true
+ },
+ "speculos_log": "results/speculos/two-inputs-one-group.log",
+ "signature_recovers_to": "0xe5260d839a786ac2a909181df9a423f1efbe863d",
+ "recovered_key": "0xe5260d839a786ac2a909181df9a423f1efbe863d",
+ "device_key": "0xe5260d839a786ac2a909181df9a423f1efbe863d",
+ "signature_valid_for_the_lock_message": true,
+ "lock_rules_python": {
+  "0xdbfcdc3c39376568e8e03b22fe5ab5de5c0b664756751034fed634b7bc560b97": true
+ },
+ "devnet_dry_run": {
+  "ok": true,
+  "result": {
+   "cycles": "0x2e45ba",
+   "fee": "0x5f5e100"
+  }
+ },
+ "committed_tx": "0x7f91b994f69be7a673f74e314d45efc50cc0c95b6846646e6c1dc333909bf928",
+ "committed_block": 15758
+}

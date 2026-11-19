@@ -1,0 +1,15 @@
+{"name": "probe-0-x1", "result": "signed", "seconds": 2.103, "apdus": 5}
+{"name": "probe-16000-x1", "result": "signed", "seconds": 2.205, "apdus": 74}
+{"name": "probe-64000-x1", "result": "signed", "seconds": 2.417, "apdus": 283}
+{"name": "probe-128000-x1", "result": "signed", "seconds": 2.614, "apdus": 561}
+{"name": "probe-283000-x1", "result": "signed", "seconds": 3.136, "apdus": 1235}
+{"name": "probe-400000-x1", "result": "signed", "seconds": 3.546, "apdus": 1744}
+{"name": "probe-1000000-x1", "result": "signed", "seconds": 5.604, "apdus": 4353}
+{"name": "probe-0-x2", "result": "signed", "seconds": 2.105, "apdus": 7}
+{"name": "probe-16000-x2", "result": "signed", "seconds": 2.302, "apdus": 146}
+{"name": "probe-64000-x2", "result": "signed", "seconds": 2.616, "apdus": 564}
+{"name": "probe-128000-x2", "result": "signed", "seconds": 3.04, "apdus": 1120}
+{"name": "probe-283000-x2", "result": "signed", "seconds": 4.175, "apdus": 2468}
+{"name": "probe-400000-x2", "result": "signed", "seconds": 4.89, "apdus": 3485}
+{"name": "probe-1000000-x2", "result": "signed", "seconds": 8.606, "apdus": 8703}
+exit=0

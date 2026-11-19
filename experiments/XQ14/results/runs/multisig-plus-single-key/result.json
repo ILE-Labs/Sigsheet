@@ -1,0 +1,35 @@
+{
+ "run": "multisig-plus-single-key",
+ "expectation": "refused: a multisig input next to another input source",
+ "date": "2026-11-18 21:30:49 UTC",
+ "same_device_job_from_C_Bw_A": true,
+ "file_bytes": {
+  "C": 6139,
+  "B+w": 11366,
+  "A": 4144
+ },
+ "device": {
+  "result": "error",
+  "error": "DisconnectedDeviceDuringOperation",
+  "status_code": null,
+  "presses": {
+   "right": 0,
+   "both": 0
+  },
+  "seconds": 0.301,
+  "annotated_bytes": 5727,
+  "annotated_sha256": "f03ebbc574d529b1431a7489d3f539db00ebc02e9a7296e040ac3defd0e110a4",
+  "apdus": 25
+ },
+ "screens": [],
+ "node_stdout": "{\"result\":\"error\",\"error\":\"DisconnectedDeviceDuringOperation\",\"screens\":0,\"presses\":{\"right\":0,\"both\":0},\"seconds\":0.301,\"annotated_bytes\":5727}",
+ "node_stderr": "",
+ "emulator": {
+  "app_exited": true,
+  "exit_line": [
+   "[*] exit called (255)"
+  ],
+  "still_listening": false
+ },
+ "speculos_log": "results/speculos/multisig-plus-single-key.log"
+}

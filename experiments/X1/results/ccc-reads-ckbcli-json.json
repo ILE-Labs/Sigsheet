@@ -1,0 +1,5 @@
+{
+ "expected_hash": "0xc72eeeb7b1b18e9c3dd3d87efe7118349e5e591108e6b998576b887988377c18",
+ "parsed": false,
+ "error": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))"
+}

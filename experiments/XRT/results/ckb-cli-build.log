@@ -1,0 +1,85 @@
+warning: `package.homepage` is redundant with `package.repository`
+ --> ckb-signer/Cargo.toml:7:12
+  |
+7 | homepage = "https://github.com/nervosnetwork/ckb-cli"
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8 | repository = "https://github.com/nervosnetwork/ckb-cli"
+  |              ------------------------------------------
+  |
+  = note: `cargo::redundant_homepage` is set to `warn` by default
+help: consider removing `package.homepage`
+warning: `ckb-signer` (manifest) generated 1 warning
+   Compiling ckb-cli v2.0.0 (experiments/XRT/ckb-cli-src)
+warning: struct `ScriptIdParser` is never constructed
+   --> src/utils/arg_parser.rs:518:12
+    |
+518 | pub struct ScriptIdParser;
+    |            ^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: enum `Either` is never used
+   --> src/utils/rpc/types.rs:364:10
+    |
+364 | pub enum Either<L, R> {
+    |          ^^^^^^
+
+warning: struct `ResponseFormat` is never constructed
+   --> src/utils/rpc/types.rs:379:12
+    |
+379 | pub struct ResponseFormat<V> {
+    |            ^^^^^^^^^^^^^^
+
+warning: struct `TransactionWithStatusResponse` is never constructed
+   --> src/utils/rpc/types.rs:462:12
+    |
+462 | pub struct TransactionWithStatusResponse {
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> src/utils/config.rs:51:16
+   |
+51 |     pub fn get(&self, key: Option<&str>) -> KV {
+   |                ^^^^^                        ^^ the same lifetime is hidden here
+   |                |
+   |                the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+   |
+51 |     pub fn get(&self, key: Option<&str>) -> KV<'_> {
+   |                                               ++++
+
+warning: `ckb-cli` (bin "ckb-cli") generated 5 warnings (run `cargo fix --bin "ckb-cli" -p ckb-cli` to apply 1 suggestion)
+warning: unused dependency `ckb-util`
+  --> Cargo.toml:18:1
+   |
+18 | ckb-util = "1.0"
+   | ^^^^^^^^^^^^^^^^
+   |
+   = note: `cargo::unused_dependencies` is set to `warn` by default
+help: consider removing the dependency on `ckb-util`
+warning: unused dependency `console`
+  --> Cargo.toml:49:1
+   |
+49 | console = "0.15.0"
+   | ^^^^^^^^^^^^^^^^^^
+   |
+help: consider removing the dependency on `console`
+warning: unused dependency `ctrlc`
+  --> Cargo.toml:50:1
+   |
+50 | ctrlc = "3.2.3"
+   | ^^^^^^^^^^^^^^^
+   |
+help: consider removing the dependency on `ctrlc`
+warning: unused dependency `tui`
+  --> Cargo.toml:71:1
+   |
+71 | tui = "0.6.0"
+   | ^^^^^^^^^^^^^
+   |
+help: consider removing the dependency on `tui`
+warning: `ckb-cli` (manifest) generated 4 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 25.29s

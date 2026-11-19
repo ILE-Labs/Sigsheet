@@ -1,0 +1,6 @@
+idl/fixed-2of3.json exit=0 :: status=valid idl_sha256=0x058b79c9e569ef8906b24e4f73fb41f098aaf0aae11a14ebe8a5abb52744079b bytes=591 
+idl/fixed-3of5.json exit=0 :: status=valid idl_sha256=0xc4815aa6e71bec0cac62afda667221468706b54f3f8a076961467c725b0c38c5 bytes=683 
+idl/generic.json exit=0 :: status=valid idl_sha256=0x051837c7e5c21249fc24956d47a04d3c0f388054a82d9d050b404775f19fce10 bytes=551 
+idl/union-n3.json exit=0 :: status=valid idl_sha256=0x3c7fd0a71f6fe15e8e6f37b7724421b5f2f268328974f9ef0623ef03d0febfca bytes=4670 
+idl/union-n5.json exit=0 :: status=valid idl_sha256=0x5611da25ce2ca2b2b21a96955f29a6e95a0aab778460c9face5aafc19364b879 bytes=18372 
+idl/union-n6.json exit=0 :: status=valid idl_sha256=0xdd08b6ea46f3ed625279438e18f54c2bd14fbeda32762bd5b0327830d23d86b0 bytes=31534 

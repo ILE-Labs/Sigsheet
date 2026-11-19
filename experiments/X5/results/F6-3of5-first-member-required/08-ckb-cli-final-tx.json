@@ -1,0 +1,39 @@
+{
+  "version": "0x0",
+  "cell_deps": [
+    {
+      "out_point": {
+        "tx_hash": "0x2d7768b94bfd7d6b8f0baa8d2b4c80aaecd17968cec09929f6655e766597ab1e",
+        "index": "0x3"
+      },
+      "dep_type": "dep_group"
+    }
+  ],
+  "header_deps": [],
+  "inputs": [
+    {
+      "since": "0x0",
+      "previous_output": {
+        "tx_hash": "0xfb1016d09591205c5494089658a6ad823da843edf6aec6750da3f6463e7d029d",
+        "index": "0xc"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "capacity": "0x1742810700",
+      "lock": {
+        "code_hash": "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+        "hash_type": "type",
+        "args": "0xbc5ac3502a01b9299ab81a9177a0f91738bd4030"
+      },
+      "type": null
+    }
+  ],
+  "outputs_data": [
+    "0x"
+  ],
+  "witnesses": [
+    "0x3f010000100000003f0100003f0100002b0100000001030582c7122268028c6c28199cb8600b32665ebb4371567a7b972ad55dbc588c41c0d7d5cecd53d8ca3717a001f1daefc1b47d6977c649052eeeaa3ae72955008b44f3f683331d44985c9c1eca46b40028aa5d5823ec559a842795b9446a1288a2859cb6ac5822a4189369444f734c776520edf70d98ecda256ca8b878b89a24a652e2f7425557d97d784d287c9659344c9e88ec412c7ea8ded875a2e9115a73cf18f4b206a900c133bf42acb583c1091db68e44f6958c9115815be90014ef94617f2c3922d2a84d55c639dec281ede2f29e7b4836140491e83acb67a60f88e5c4fb1759d6dbd8006291c3d3fb73bbcc93e81e8928c10e960314a70cb9c33da09a2a555ee76fcf165d6e5a3f3f64c9175a2c215fa9a4303ecf30ee0fa179e2490c24188bafa4a3b600"
+  ]
+}

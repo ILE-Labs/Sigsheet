@@ -1,0 +1,3 @@
+multisig-genesis.bin exit=4 :: category=invalid_trailer path= message="magic bytes do not match Binding Trailer 1" 
+multisig-2024.bin exit=4 :: category=invalid_trailer path= message="magic bytes do not match Binding Trailer 1" 
+multisig-v2.bin exit=4 :: category=invalid_trailer path= message="magic bytes do not match Binding Trailer 1" 

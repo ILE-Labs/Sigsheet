@@ -1,0 +1,4 @@
+{"group":"V","message":"0xc09b79415e14f2829cebd4e90747aacda0f45a838a1c4eb09f385685913fe7a9","path":"ckb-cli v2.0.0 build_signature"}
+{"group":"V","message":"0xc09b79415e14f2829cebd4e90747aacda0f45a838a1c4eb09f385685913fe7a9","path":"ckb-sdk 5.0.0 ScriptSigner::sign_tx"}
+{"group":"k7","message":"0xaa8fd670ceb02b8b78a721bcf800187b0bb02f28b0cae32345a032824ee318d1","path":"ckb-cli v2.0.0 build_signature"}
+{"group":"k7","message":"0xaa8fd670ceb02b8b78a721bcf800187b0bb02f28b0cae32345a032824ee318d1","path":"ckb-sdk 5.0.0 ScriptSigner::sign_tx"}

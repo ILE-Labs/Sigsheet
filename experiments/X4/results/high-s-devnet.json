@@ -1,0 +1,117 @@
+{
+ "date": "2026-11-18 21:26 UTC",
+ "rpc": "http://127.0.0.1:8114/",
+ "runs": {
+  "genesis": {
+   "cell": {
+    "tx_hash": "0x280cc0c93554e9d486b69ccf1311e3f872c839b4283818c6cd907cf487db54d0",
+    "index": "0x5"
+   },
+   "tx_hash": "0xc2e31b41652f0a5b0a27307f715f1416b08083e75c465a39255b02b97792da6d",
+   "low_s_signatures": true,
+   "control_low_s_dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x2d26a9",
+     "fee": "0x5f5e100"
+    }
+   },
+   "twin_is_high_s": true,
+   "twin_passes_python_lock_rules": true,
+   "both_twins_dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x2d2731",
+     "fee": "0x5f5e100"
+    }
+   },
+   "twin_dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x2d2733",
+     "fee": "0x5f5e100"
+    }
+   },
+   "twin_sent": {
+    "ok": true,
+    "result": "0xc2e31b41652f0a5b0a27307f715f1416b08083e75c465a39255b02b97792da6d"
+   },
+   "twin_committed_in_block": "0x3c7e",
+   "committed_witness_equals_twin": true
+  },
+  "2024": {
+   "cell": {
+    "tx_hash": "0x280cc0c93554e9d486b69ccf1311e3f872c839b4283818c6cd907cf487db54d0",
+    "index": "0xe"
+   },
+   "tx_hash": "0x0d20e97b4d3fd704e6d77dc859c0dd304968b8788339acf13de20ede68c90211",
+   "low_s_signatures": true,
+   "control_low_s_dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x2e4a96",
+     "fee": "0x5f5e100"
+    }
+   },
+   "twin_is_high_s": true,
+   "twin_passes_python_lock_rules": true,
+   "both_twins_dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x2e4ace",
+     "fee": "0x5f5e100"
+    }
+   },
+   "twin_dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x2e4adc",
+     "fee": "0x5f5e100"
+    }
+   },
+   "twin_sent": {
+    "ok": true,
+    "result": "0x0d20e97b4d3fd704e6d77dc859c0dd304968b8788339acf13de20ede68c90211"
+   },
+   "twin_committed_in_block": "0x3c81",
+   "committed_witness_equals_twin": true
+  },
+  "v2": {
+   "cell": {
+    "tx_hash": "0x280cc0c93554e9d486b69ccf1311e3f872c839b4283818c6cd907cf487db54d0",
+    "index": "0xa"
+   },
+   "tx_hash": "0x30e59afdb28dd7bad69f1b85b713a67da3243a27a2064f828435e18a9eb67cbb",
+   "low_s_signatures": true,
+   "control_low_s_dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x2fc434",
+     "fee": "0x5f5e100"
+    }
+   },
+   "twin_is_high_s": true,
+   "twin_passes_python_lock_rules": true,
+   "both_twins_dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x2fc3e4",
+     "fee": "0x5f5e100"
+    }
+   },
+   "twin_dry_run": {
+    "ok": true,
+    "result": {
+     "cycles": "0x2fc3d6",
+     "fee": "0x5f5e100"
+    }
+   },
+   "twin_sent": {
+    "ok": true,
+    "result": "0x30e59afdb28dd7bad69f1b85b713a67da3243a27a2064f828435e18a9eb67cbb"
+   },
+   "twin_committed_in_block": "0x3c85",
+   "committed_witness_equals_twin": true
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "run": "v2-member-contract-data",
+ "expectation": "with 'Allow contract data' on: does the device sign the right message for v2?",
+ "date": "2026-11-18 21:31:35 UTC",
+ "same_device_job_from_C_Bw_A": true,
+ "file_bytes": {
+  "C": 5872,
+  "B+w": 6045,
+  "A": 3946
+ },
+ "device": {
+  "result": "signed",
+  "error": null,
+  "status_code": null,
+  "presses": {
+   "right": 7,
+   "both": 1
+  },
+  "seconds": 2.36,
+  "annotated_bytes": 3091,
+  "annotated_sha256": "065f0cf58b514eddd71f825f99a5a11475f788f3a2f4d6de2cef90cca03b0e62",
+  "apdus": 14
+ },
+ "screens": [
+  "Confirm | Transaction",
+  "Amount | 999",
+  "Fee | 1",
+  "Destination (1/2) | ckb1qzda0cr08m85hc | 8jlnfp3zer7xulejywt4 | 9kt2rr0vthywaa50xws",
+  "Destination (2/2) | qduttp4q2sphy5e4w | q6j9m6p7gh8z75qvq | n6e95f",
+  "Contract | Not Present",
+  "Reject",
+  "Accept"
+ ],
+ "node_stdout": "{\"result\":\"signed\",\"screens\":8,\"presses\":{\"right\":7,\"both\":1},\"seconds\":2.36,\"annotated_bytes\":3091}",
+ "node_stderr": "",
+ "emulator": {
+  "app_exited": false,
+  "exit_line": [],
+  "still_listening": true
+ },
+ "speculos_log": "results/speculos/v2-member-contract-data.log",
+ "settings_changed": [
+  "Configuration",
+  "Allow contract data | On",
+  "Nervos | 0.6.3"
+ ],
+ "signature_recovers_to": null,
+ "recovered_key": "0x5d7eeed5d93a0c35d506ee38dd470f24901dfd53",
+ "device_key": "0xe5260d839a786ac2a909181df9a423f1efbe863d",
+ "signature_valid_for_the_lock_message": false
+}

@@ -1,0 +1,35 @@
+{
+ "run": "six-outputs",
+ "expectation": "refused: more than five non-change outputs",
+ "date": "2026-11-18 21:31:00 UTC",
+ "same_device_job_from_C_Bw_A": true,
+ "file_bytes": {
+  "C": 7101,
+  "B+w": 7371,
+  "A": 4600
+ },
+ "device": {
+  "result": "error",
+  "error": "DisconnectedDeviceDuringOperation",
+  "status_code": null,
+  "presses": {
+   "right": 0,
+   "both": 0
+  },
+  "seconds": 0.292,
+  "annotated_bytes": 3745,
+  "annotated_sha256": "bd6c0682ca1e6f8abaa8568d009ff4c6444bacdbe87019fcf5e5398f259450d7",
+  "apdus": 17
+ },
+ "screens": [],
+ "node_stdout": "{\"result\":\"error\",\"error\":\"DisconnectedDeviceDuringOperation\",\"screens\":0,\"presses\":{\"right\":0,\"both\":0},\"seconds\":0.292,\"annotated_bytes\":3745}",
+ "node_stderr": "",
+ "emulator": {
+  "app_exited": true,
+  "exit_line": [
+   "[*] exit called (255)"
+  ],
+  "still_listening": false
+ },
+ "speculos_log": "results/speculos/six-outputs.log"
+}

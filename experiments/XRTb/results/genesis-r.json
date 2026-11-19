@@ -1,0 +1,202 @@
+{
+ "funding_tx": "0x31ad2efa352835adfe70ea7174fc2ac6157bbd469157590795fb97a14b99e8b2",
+ "conditions": "local devnet, ckb 0.210.0; test_tx_pool_accept (nothing committed)",
+ "configs": [
+  {
+   "case": "A",
+   "deployment": "genesis",
+   "r": 11,
+   "m": 11,
+   "n": 12,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "B",
+   "deployment": "genesis",
+   "r": 0,
+   "m": 2,
+   "n": 12,
+   "sets": [
+    {
+     "indices": [
+      5,
+      10
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      5,
+      10
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      10,
+      11
+     ],
+     "order": "member",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      10,
+      11
+     ],
+     "order": "descending",
+     "accepted": false,
+     "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+    },
+    {
+     "indices": [
+      5,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      5,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "C1",
+   "deployment": "genesis",
+   "r": 10,
+   "m": 10,
+   "n": 12,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "C2",
+   "deployment": "genesis",
+   "r": 0,
+   "m": 11,
+   "n": 12,
+   "sets": [
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "member",
+     "accepted": true,
+     "error": null
+    },
+    {
+     "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+     ],
+     "order": "descending",
+     "accepted": true,
+     "error": null
+    }
+   ]
+  }
+ ]
+}

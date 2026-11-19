@@ -1,0 +1,35 @@
+{
+ "run": "v2-member",
+ "expectation": "refused: the v2 lock isn't one the app knows",
+ "date": "2026-11-18 21:30:39 UTC",
+ "same_device_job_from_C_Bw_A": true,
+ "file_bytes": {
+  "C": 5872,
+  "B+w": 6045,
+  "A": 3946
+ },
+ "device": {
+  "result": "error",
+  "error": "DisconnectedDeviceDuringOperation",
+  "status_code": null,
+  "presses": {
+   "right": 0,
+   "both": 0
+  },
+  "seconds": 0.297,
+  "annotated_bytes": 3091,
+  "annotated_sha256": "065f0cf58b514eddd71f825f99a5a11475f788f3a2f4d6de2cef90cca03b0e62",
+  "apdus": 14
+ },
+ "screens": [],
+ "node_stdout": "{\"result\":\"error\",\"error\":\"DisconnectedDeviceDuringOperation\",\"screens\":0,\"presses\":{\"right\":0,\"both\":0},\"seconds\":0.297,\"annotated_bytes\":3091}",
+ "node_stderr": "",
+ "emulator": {
+  "app_exited": true,
+  "exit_line": [
+   "[*] exit called (255)"
+  ],
+  "still_listening": false
+ },
+ "speculos_log": "results/speculos/v2-member.log"
+}

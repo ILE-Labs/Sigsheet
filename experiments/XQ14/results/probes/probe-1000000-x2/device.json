@@ -1,0 +1,23 @@
+{
+ "job": "experiments/XQ14/results/probes/probe-1000000-x2/job.json",
+ "kind": "transaction",
+ "screens": [
+  "Confirm | Transaction",
+  "Amount | 1999",
+  "Fee | 1",
+  "Destination (1/2) | ckb1qzda0cr08m85hc | 8jlnfp3zer7xulejywt4 | 9kt2rr0vthywaa50xws",
+  "Destination (2/2) | qduttp4q2sphy5e4w | q6j9m6p7gh8z75qvq | n6e95f",
+  "Reject",
+  "Accept"
+ ],
+ "presses": {
+  "right": 6,
+  "both": 1
+ },
+ "annotated_bytes": 2001540,
+ "annotated_sha256": "1d9c10e00bc028153bc071cce124d269dc6278e313d9f47609faa3f673ce4ade",
+ "apdus": 8703,
+ "signature": "9fcb82d895df7a3c15aa32131e4238d0117372af3473c4f30126b4c5c9a387a833891e05526347bc90d725039a234e86a731f8799990ff169f63a67f5e4f8e7101",
+ "result": "signed",
+ "seconds": 8.606
+}

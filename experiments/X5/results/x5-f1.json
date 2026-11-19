@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-18 21:56 UTC",
+ "flows": {
+  "F1-pass-along-2of3-v2": [
+   {
+    "step": 1,
+    "tool": "python prototype",
+    "action": "create",
+    "file": "results/F1-pass-along-2of3-v2/01-unsigned.json",
+    "sha256": "23d2a35f05b6f7863cf264ec9c9e472a2736b992c3e65f3a55d1d5f2f329fb2d",
+    "signed_members": {
+     "0x648a0721": []
+    }
+   },
+   {
+    "step": 2,
+    "tool": "ckb-cli (patched)",
+    "action": "sign with s1",
+    "file": "results/F1-pass-along-2of3-v2/02-ckb-cli-s1.json",
+    "sha256": "7834405927dd7ab675aaf0eee7a55154ff98b9658936f1736a1682672818c1fd",
+    "signed_members": {
+     "0x648a0721": [
+      0
+     ]
+    },
+    "stdout": "signatures_added: 1",
+    "stderr": "",
+    "seconds": 0.13
+   },
+   {
+    "step": 3,
+    "tool": "CCC (patched)",
+    "action": "sign with s2",
+    "file": "results/F1-pass-along-2of3-v2/03-ccc-s2.json",
+    "sha256": "a541f7540c05dcc1a4fa41e6da287d4c6370b637803d7a9bcadb6500d1badca4",
+    "signed_members": {
+     "0x648a0721": [
+      0,
+      1
+     ]
+    },
+    "stdout": "{\"cmd\":\"sign\",\"added\":1,\"ms\":229}",
+    "seconds": 4.68
+   },
+   {
+    "step": 4,
+    "tool": "ccc",
+    "action": "finalize and send",
+    "file": "results/F1-pass-along-2of3-v2/04-ccc-final-tx.json",
+    "sha256": "cb9e248f19e76ee81fdba3288efdd77e6e249f342a60c25a92911c6555270984",
+    "decode_error": "top-level fields must be exactly ['context', 'multisig_configs', 'signatures', 'transaction', 'version']",
+    "lock_rules_python": true,
+    "send": {
+     "ok": true,
+     "result": "0xe59840d59f37a707904b4b39f098960ca9dc2411915a835c0d49fbee03588a8a"
+    },
+    "committed_tx": "0xe59840d59f37a707904b4b39f098960ca9dc2411915a835c0d49fbee03588a8a",
+    "block": 17310
+   }
+  ]
+ }
+}

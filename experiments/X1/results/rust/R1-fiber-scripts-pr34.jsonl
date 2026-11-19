@@ -1,0 +1,4 @@
+{"group":"fiber-deploy-multisig","message":"0xba2c497aaed7cf9f786c84103df23d8d88566892500e76b96e088a9f62ce0348","path":"ckb-cli v2.0.0 build_signature"}
+{"group":"fiber-deploy-multisig","message":"0xba2c497aaed7cf9f786c84103df23d8d88566892500e76b96e088a9f62ce0348","path":"ckb-sdk 5.0.0 ScriptSigner::sign_tx"}
+{"group":"fee-payer-single-key","message":"0x48152c74d6f9f96f990cdb27ff00eae0e0e24ee198d86f15f3704353139752de","path":"ckb-cli v2.0.0 build_signature"}
+{"group":"fee-payer-single-key","message":"0x48152c74d6f9f96f990cdb27ff00eae0e0e24ee198d86f15f3704353139752de","path":"ckb-sdk 5.0.0 ScriptSigner::sign_tx"}

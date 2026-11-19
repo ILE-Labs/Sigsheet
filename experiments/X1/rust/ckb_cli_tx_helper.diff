@@ -1,0 +1,40 @@
+--- base/ckb_cli_tx_helper.rs
++++ src/ckb_cli_tx_helper.rs
+@@ -1,10 +1,31 @@
+-    pub fn init_witnesses(&self) -> Vec<packed::Bytes> {
+-        let mut witnesses: Vec<packed::Bytes> = self.transaction.witnesses().into_iter().collect();
+-        while witnesses.len() < self.transaction.inputs().len() {
+-            witnesses.push(Bytes::new().pack());
+-        }
+-        witnesses
++// ckb-cli v2.0.0's own signing-message code, copied verbatim so X1 runs exactly that code path.
++//
++// Source: https://github.com/nervosnetwork/ckb-cli/blob/80efc21c30e9fc7847407a217034681b6e46c763/src/utils/tx_helper.rs
++//   - init_witnesses: lines 218-224 (a TxHelper method; here a free function over the transaction)
++//   - build_signature: lines 507-566, unchanged
++// ckb-cli's `tx sign-inputs` and `deploy sign-txs` call build_signature through TxHelper::sign_inputs
++// (lines 226-294), passing self.init_witnesses().
++#![allow(clippy::all)]
++use ckb_hash::new_blake2b;
++use ckb_jsonrpc_types as rpc_types;
++use ckb_sdk::constants::SECP_SIGNATURE_SIZE;
++use ckb_sdk::unlock::MultisigConfig;
++use ckb_types::{
++    bytes::{Bytes, BytesMut},
++    core::TransactionView,
++    packed::{self, WitnessArgs},
++    prelude::*,
++    H256,
++};
++
++pub fn init_witnesses(transaction: &TransactionView) -> Vec<packed::Bytes> {
++    let mut witnesses: Vec<packed::Bytes> = transaction.witnesses().into_iter().collect();
++    while witnesses.len() < transaction.inputs().len() {
++        witnesses.push(Bytes::new().pack());
+     }
++    witnesses
++}
++
+ pub fn build_signature<
+     S: FnMut(&H256, &rpc_types::Transaction) -> Result<[u8; SECP_SIGNATURE_SIZE], String>,
+ >(

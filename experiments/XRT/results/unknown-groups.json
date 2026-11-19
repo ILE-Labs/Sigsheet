@@ -1,0 +1,50 @@
+{
+ "funding_tx": "0x585f49979d549e4b5abd4dab0beb4a82ce5a06221e63015198f3b9c1fa1e5103",
+ "A_partial_finalize": {
+  "v1_status": {
+   "0x981c55474c": {
+    "kind": "multisig",
+    "signed": [
+     0,
+     1
+    ],
+    "m": 2,
+    "r": 0,
+    "ready": true
+   },
+   "0x3e75778791": {
+    "kind": "unknown",
+    "ready": false
+   }
+  },
+  "v1_full_finalize": "refused: group 0x3e75778791... has a lock kind Sigsheet v1 doesn't sign",
+  "multisig_witness_written": true,
+  "other_group_witness_left_as_template": true,
+  "after_other_signer": {
+   "dry_run_ok": true,
+   "error": null,
+   "tx": "0x0942c9cffd43070e38d85e4338737e51e45232515780b57b406b9dbfb6388984"
+  }
+ },
+ "B_carry": {
+  "todays_v1_merge_keeps_other_group_signature": false,
+  "candidate_rule_keeps_it": true,
+  "v02_finalize_after_candidate_merge": {
+   "dry_run_ok": true,
+   "error": null,
+   "tx": "0xe887f919b8132be4865c1c1cd8da0661f1921f6db5fb8a8090a246062ebc92f2"
+  }
+ },
+ "C_since_genesis_20_byte_args": {
+  "input_since": "0x8000000000000001",
+  "prototype_warnings": [],
+  "dry_run_with_since": {
+   "ok": false,
+   "error": "test_tx_pool_accept: {'code': -302, 'message': 'TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: Va"
+  },
+  "control_since_0": {
+   "ok": true,
+   "error": null
+  }
+ }
+}

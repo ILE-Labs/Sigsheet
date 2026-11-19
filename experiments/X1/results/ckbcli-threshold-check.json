@@ -1,0 +1,50 @@
+{
+ "case": "S4N-v2-first-R-missing-required",
+ "three_signatures_refused": true,
+ "three_signatures_message": "Invalid multisig signature length for lock_arg: 0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060, got: 3, expected: 2",
+ "exact_two_sent": true,
+ "tx_hash": "0x04b11ddb103b69b40eeede8ac4c4013dcb9b824e88c5fb37dc4748fa5b3ebd38",
+ "committed_block": 2978,
+ "log": [
+  {
+   "command": "ckb-cli --url http://127.0.0.1:8114/ tx sign-inputs --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required-threshold.json --privkey-path <keys/x1>/k4.privkey --output-format json",
+   "exit": 0,
+   "out": "[\n  {\n    \"lock-arg\": \"0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060\",\n    \"signature\": \"0x00d62fe6a1a2af9804d17fd21c412dc0d5a516713e0bc1b4e495fd44756705c37de9b75551593a371ba80dc3ebbb105fba79cf5dcde567a2a95c3a6203eb31dc00\"\n  }\n]"
+  },
+  {
+   "command": "ckb-cli --url http://127.0.0.1:8114/ tx add-signature --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required-threshold.json --lock-arg 0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060 --signature 0x00d62fe6a1a2af9804d17fd21c412dc0d5a516713e0bc1b4e495fd44756705c37de9b75551593a371ba80dc3ebbb105fba79cf5dcde567a2a95c3a6203eb31dc00",
+   "exit": 0,
+   "out": "status: success"
+  },
+  {
+   "command": "ckb-cli --url http://127.0.0.1:8114/ tx add-signature --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required-threshold.json --lock-arg 0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060 --signature 0x64a6c26e461848e730896b9ee662df051c8b184b0f6be508f6cf081338a6ff4e10f59f82312e9a807179a72c3d78ec1116806a0a8cede439a7fbc1623827a2e800",
+   "exit": 0,
+   "out": "status: success"
+  },
+  {
+   "command": "ckb-cli --url http://127.0.0.1:8114/ tx add-signature --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required-threshold.json --lock-arg 0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060 --signature 0x82449810c31a0e7b18f37715787a497297d17677ede8e865425cb8f2c4ee027362d565817c06e02fcbd6bee255f98d9a83ffb3df44bb2c7afc4c9478956a603101",
+   "exit": 0,
+   "out": "status: success"
+  },
+  {
+   "command": "ckb-cli --url http://127.0.0.1:8114/ tx send --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required-threshold.json",
+   "exit": 1,
+   "out": "Invalid multisig signature length for lock_arg: 0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060, got: 3, expected: 2"
+  },
+  {
+   "command": "ckb-cli --url http://127.0.0.1:8114/ tx add-signature --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required-exact.json --lock-arg 0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060 --signature 0x00d62fe6a1a2af9804d17fd21c412dc0d5a516713e0bc1b4e495fd44756705c37de9b75551593a371ba80dc3ebbb105fba79cf5dcde567a2a95c3a6203eb31dc00",
+   "exit": 0,
+   "out": "status: success"
+  },
+  {
+   "command": "ckb-cli --url http://127.0.0.1:8114/ tx add-signature --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required-exact.json --lock-arg 0x3fb8b1b4263c8afbb694bf1a870bd88bfdbe6060 --signature 0x82449810c31a0e7b18f37715787a497297d17677ede8e865425cb8f2c4ee027362d565817c06e02fcbd6bee255f98d9a83ffb3df44bb2c7afc4c9478956a603101",
+   "exit": 0,
+   "out": "status: success"
+  },
+  {
+   "command": "ckb-cli --url http://127.0.0.1:8114/ tx send --tx-file experiments/X1/results/ckb-cli/S4N-v2-first-R-missing-required-exact.json",
+   "exit": 0,
+   "out": "0x04b11ddb103b69b40eeede8ac4c4013dcb9b824e88c5fb37dc4748fa5b3ebd38"
+  }
+ ]
+}
