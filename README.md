@@ -12,7 +12,7 @@ A Sigsheet is one canonical JSON file per transaction. It carries:
 
 Each signer checks the file offline, adds a signature and passes the file on, or shares a copy. Anyone can merge copies: any order gives the same bytes. Anyone can finalize the transaction once enough members have signed.
 
-> **Status: v0.1 in progress.**
+> **Status: the MVP is complete, and the rest of v0.1 is planned.**
 > - **Published:** the [specification draft](spec/sigsheet.md) (version 0.1) and its [test vectors](vectors/), checked on Linux, macOS and Windows.
 > - **Next:** a TypeScript library on CCC, ckb-cli commands and Neuron support (see the [roadmap](#roadmap)).
 > - **Not yet:** no wallet release reads Sigsheet files.
@@ -232,11 +232,12 @@ Each version is tracked as milestones in this repository.
 
 | Milestone | Delivers | State |
 |---|---|---|
-| [v0.1 · Week 1](https://github.com/ILE-Labs/Sigsheet/milestone/1) | Specification draft and test vectors | Merged in [#48](https://github.com/ILE-Labs/Sigsheet/pull/48) |
-| [v0.1 · Week 2](https://github.com/ILE-Labs/Sigsheet/milestone/2) | The TypeScript reference implementation on CCC | Next |
-| [v0.1 · Week 3](https://github.com/ILE-Labs/Sigsheet/milestone/3) | ckb-cli commands in Rust | Planned |
-| [v0.1 · Week 4](https://github.com/ILE-Labs/Sigsheet/milestone/4) | Neuron, and a demo on testnet | Planned |
-| [v0.1 · Week 5](https://github.com/ILE-Labs/Sigsheet/milestone/5) | Specification v0.1, pull requests to the upstream projects, and the v0.1.0 release | Planned |
+| [MVP](https://github.com/ILE-Labs/Sigsheet/milestone/9) | The specification draft, the test vectors with their generator and an independent check, and the checks on Linux, macOS and Windows | Complete: merged in [#48](https://github.com/ILE-Labs/Sigsheet/pull/48) and [#49](https://github.com/ILE-Labs/Sigsheet/pull/49) |
+| [v0.1 · Week 1](https://github.com/ILE-Labs/Sigsheet/milestone/1) | The TypeScript reference implementation on CCC | Next |
+| [v0.1 · Week 2](https://github.com/ILE-Labs/Sigsheet/milestone/2) | ckb-cli commands in Rust | Planned |
+| [v0.1 · Week 3](https://github.com/ILE-Labs/Sigsheet/milestone/3) | Neuron support | Planned |
+| [v0.1 · Week 4](https://github.com/ILE-Labs/Sigsheet/milestone/4) | A demo on testnet, with all three tools | Planned |
+| [v0.1 · Week 5](https://github.com/ILE-Labs/Sigsheet/milestone/5) | Specification v0.1, the benchmarks re-run on the implementations, and the v0.1.0 release | Planned |
 | [v0.2](https://github.com/ILE-Labs/Sigsheet/milestone/6) | Neuron's screens, more locks and more ways to move a file | Later |
 | [v1.0](https://github.com/ILE-Labs/Sigsheet/milestone/7) | A stable standard, with a conformance suite and a CKB RFC | Later |
 
