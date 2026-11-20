@@ -17,6 +17,13 @@ PYTHONPATH=generator python -m sigsheet_vectors build           # rewrite every 
 PYTHONPATH=generator python -m sigsheet_vectors fetch-mainnet   # fetch R1 and R2 read-only and check them
 ```
 
+In Windows PowerShell, set the variable first, then run the same commands:
+
+```powershell
+$env:PYTHONPATH = "generator"
+python -m sigsheet_vectors check
+```
+
 `build` and `check` read only this folder. `index.json` lists every vector with its kind, its chain, the experiment
 it comes from, and the SHA-256 of each of its files.
 

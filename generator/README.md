@@ -15,6 +15,9 @@ From the repository root (or from this folder, without `PYTHONPATH`):
 | `PYTHONPATH=generator python -m sigsheet_vectors fetch-mainnet [--rpc URL]` | CKB mainnet JSON-RPC (`https://mainnet.ckb.dev/` by default) and GitHub, read-only; `vectors/mainnet/` | only `vectors/mainnet/.fetched/` |
 | `PYTHONPATH=generator python -m sigsheet_vectors.author` | `vectors/` | the `input.json` of any synthetic case or attack that doesn't have one yet; never one that exists |
 
+In Windows PowerShell, set the variable once with `$env:PYTHONPATH = "generator"`, then run the same `python -m …`
+commands.
+
 `build` and `check` use no randomness, clock, network or environment variable, so they give the same bytes on every
 run. `fetch-mainnet` checks every transaction hash it fetches and the SHA-256 of every GitHub file
 (`vectors/mainnet/inputs.sha256`), rebuilds R1 and R2, and compares each rebuilt file's SHA-256 and the cases' messages,
@@ -30,6 +33,13 @@ dropped, and the attacks' random bytes. Only key hashes and signatures are writt
 PYTHONPATH=generator python -m unittest discover -s generator/tests
 ruff format --check --config generator/ruff.toml generator check/locks
 ruff check --config generator/ruff.toml generator check/locks
+```
+
+In Windows PowerShell:
+
+```powershell
+$env:PYTHONPATH = "generator"
+python -m unittest discover -s generator/tests
 ```
 
 One test file per module, and `test_rebuild.py`, which runs `check` on the committed vectors. The merge test merges
