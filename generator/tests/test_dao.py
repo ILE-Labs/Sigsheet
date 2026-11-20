@@ -12,7 +12,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[2] / "vectors"
 
 class DaoTest(unittest.TestCase):
     def setUp(self):
-        inp = json.loads((ROOT / "cases/dao-two-deposits/input.json").read_text())
+        inp = json.loads((ROOT / "cases/dao-two-deposits/input.json").read_bytes())
         self.inp = inp
         self.tx = rpc_json.transaction_from(inp["transaction"], "tx")
         node = inp["node"]

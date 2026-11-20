@@ -55,7 +55,7 @@ def _get(url: str) -> bytes:
 
 
 def _rpc(url: str, method: str, params: list):
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
+    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode("ascii")
     headers = {"Content-Type": "application/json", "User-Agent": USER_AGENT}
     req = urllib.request.Request(url, data=body, headers=headers)
     with urllib.request.urlopen(req, timeout=120) as r:
@@ -68,7 +68,7 @@ def _rpc(url: str, method: str, params: list):
 
 def pinned_digests(root: pathlib.Path) -> dict[str, str]:
     out = {}
-    for line in (root / "mainnet" / "inputs.sha256").read_text().splitlines():
+    for line in (root / "mainnet" / "inputs.sha256").read_text(encoding="utf-8").splitlines():
         if line.strip() and not line.startswith("#"):
             digest, name = line.split()
             out[name] = digest
@@ -90,13 +90,13 @@ def _file(inputs: pathlib.Path, name: str, digest: str, fetch) -> bytes:
 def _transaction(inputs: pathlib.Path, rpc: str, h: str) -> dict:
     """A transaction in RPC JSON without its hash, which must hash to `h`."""
     path = inputs / "rpc" / f"{h}.json"
-    tx = json.loads(path.read_text()) if path.exists() else _rpc(rpc, "get_transaction", [h])["transaction"]
+    tx = json.loads(path.read_bytes()) if path.exists() else _rpc(rpc, "get_transaction", [h])["transaction"]
     raw = rpc_json.transaction_from({k: v for k, v in tx.items() if k != "hash"}, h).raw
     if rpc_json.fmt_bytes(molecule.transaction_hash(raw)) != h or tx.get("hash") != h:
         raise FetchError(f"transaction {h} doesn't hash to itself")
     if not path.exists():
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(tx, sort_keys=True))
+        path.write_bytes(json.dumps(tx, sort_keys=True).encode("ascii"))
     return {k: v for k, v in tx.items() if k != "hash"}
 
 
@@ -174,9 +174,9 @@ def r1_input(inputs: pathlib.Path, digests: dict[str, str], rpc: str) -> dict:
                     _get(f"{GITHUB_API}/repos/nervosnetwork/fiber-scripts/issues/34/comments?per_page=100")
                 )
                 comments = {c["id"]: c for c in listed}
-            return comments[cid]["body"].replace("\r\n", "\n").encode()
+            return comments[cid]["body"].replace("\r\n", "\n").encode("utf-8")
 
-        texts.append(_file(inputs, name, digests[name], fetch_comment).decode())
+        texts.append(_file(inputs, name, digests[name], fetch_comment).decode("utf-8"))
     tx = deploy["cell_tx"]
     context = {}
     for i in tx["inputs"]:

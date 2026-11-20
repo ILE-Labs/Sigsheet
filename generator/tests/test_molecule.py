@@ -10,7 +10,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[2] / "vectors"
 
 
 def load(path: str):
-    return json.loads((ROOT / path).read_text())
+    return json.loads((ROOT / path).read_bytes())
 
 
 class RoundTripTest(unittest.TestCase):

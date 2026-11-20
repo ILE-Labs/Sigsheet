@@ -13,7 +13,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[2] / "vectors"
 
 class RecoveryTest(unittest.TestCase):
     def setUp(self):
-        inp = json.loads((ROOT / "cases/S1-genesis-2of3/input.json").read_text())
+        inp = json.loads((ROOT / "cases/S1-genesis-2of3/input.json").read_bytes())
         (self.message,) = (bytes.fromhex(m[2:]) for m in inp["recorded"]["messages"].values())
         self.entries = [(bytes.fromhex(e["signer"][2:]), bytes.fromhex(e["signature"][2:])) for e in inp["signatures"]]
 

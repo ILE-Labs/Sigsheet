@@ -42,7 +42,7 @@ class CbmtTest(unittest.TestCase):
 
 class TransactionProofTest(unittest.TestCase):
     def setUp(self):
-        node = json.loads((ROOT / "cases/dao-two-deposits/input.json").read_text())["node"]
+        node = json.loads((ROOT / "cases/dao-two-deposits/input.json").read_bytes())["node"]
         self.headers = {h: rpc_json.header_view_from(v, h) for h, v in node["get_header"].items()}
         self.proofs = {h: rpc_json.proof_from(p, h) for h, p in node["get_transaction_proof"].items()}
 

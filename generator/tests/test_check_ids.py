@@ -26,7 +26,7 @@ class CheckIdsTest(unittest.TestCase):
         )
         used = set()
         for path in (PACKAGE / "sigsheet").glob("*.py"):
-            used |= set(pattern.findall(path.read_text()))
+            used |= set(pattern.findall(path.read_text(encoding="utf-8")))
         self.assertTrue(used)
         self.assertLessEqual(used, set(check_ids.IDS))
 
