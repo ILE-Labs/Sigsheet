@@ -254,7 +254,7 @@ It also has a runner that re-runs the design-stage benchmarks on your machine: `
 
 The branch is never merged into `main`, and its numbers are labelled design-stage.
 
-A file without Nervos DAO data or carried locks maps losslessly onto a profile of CoBuild's building packet ([spec Annex A](spec/sigsheet.md#annex-a-informative-the-cobuild-profile)). Sigsheet complements CKB IDL instead of duplicating it ([spec Annex B](spec/sigsheet.md#annex-b-informative-the-boundary-with-ckb-idl)).
+A file that has at least one multisig group, and no header deps or carried locks, maps losslessly onto a profile of CoBuild's building packet ([spec Annex A](spec/sigsheet.md#annex-a-informative-the-cobuild-profile)). Sigsheet complements CKB IDL instead of duplicating it ([spec Annex B](spec/sigsheet.md#annex-b-informative-the-boundary-with-ckb-idl)).
 
 ## Contributing
 
