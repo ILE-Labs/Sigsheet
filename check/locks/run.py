@@ -14,6 +14,7 @@ Binaries are fetched read-only from mainnet once and kept in check/locks/.work/;
 import argparse
 import json
 import pathlib
+import shutil
 import subprocess
 import sys
 
@@ -47,11 +48,13 @@ def witness_with_lock(lock: bytes) -> str:
 def run(debugger: str, mock_tx: dict, input_index: int, name: str) -> tuple[bool, str]:
     WORK.mkdir(parents=True, exist_ok=True)
     path = WORK / f"{name}.json"
-    path.write_text(json.dumps(mock_tx))
+    path.write_bytes(json.dumps(mock_tx).encode("ascii"))
     p = subprocess.run(
         [debugger, "--tx-file", str(path), "--script", f"input.{input_index}.lock"],
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         timeout=600,
     )
     line = next((x for x in p.stdout.splitlines() if x.startswith("Run result:")), (p.stdout + p.stderr).strip()[-200:])
@@ -95,6 +98,13 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--rpc", default="https://mainnet.ckb.dev/")
     parser.add_argument("folders", nargs="+", type=pathlib.Path)
     args = parser.parse_args(argv)
+    # The debugger by its full path: `shutil.which` also finds `ckb-debugger.exe` on Windows from a name without it,
+    # and a relative path works the same on every system.
+    found = shutil.which(args.debugger)
+    if found is None:
+        print(f"locks: no ckb-debugger at {args.debugger}")
+        return 1
+    args.debugger = str(pathlib.Path(found).resolve())
     cells = CodeCells(HERE / "code-cells.json", WORK / "binaries", args.rpc)
     problems, ran, controls = [], 0, 0
     for folder in [f for root in args.folders for f in vector_folders(root)]:

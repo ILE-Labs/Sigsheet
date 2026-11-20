@@ -26,14 +26,16 @@ def key(out_point: dict) -> tuple[str, int]:
 
 class CodeCells:
     def __init__(self, path: pathlib.Path, work: pathlib.Path, rpc: str):
-        self.cells = {key(c["out_point"]): c for c in json.loads(path.read_text())["cells"]}
+        self.cells = {key(c["out_point"]): c for c in json.loads(path.read_bytes())["cells"]}
         self.work = work
         self.rpc = rpc
         self._fetched: dict[str, dict] = {}
 
     def _transaction(self, tx_hash: str) -> dict:
         if tx_hash not in self._fetched:
-            body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "get_transaction", "params": [tx_hash]}).encode()
+            body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "get_transaction", "params": [tx_hash]}).encode(
+                "ascii"
+            )
             req = urllib.request.Request(
                 self.rpc, data=body, headers={"Content-Type": "application/json", "User-Agent": USER_AGENT}
             )
