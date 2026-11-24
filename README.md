@@ -14,7 +14,7 @@ Each signer checks the file offline, adds a signature and passes the file on, or
 
 > **Status: the MVP is complete, and the rest of v0.1 is planned.**
 > - **Published:** the [specification draft](spec/sigsheet.md) (version 0.1) and its [test vectors](vectors/), checked on Linux, macOS and Windows.
-> - **Next:** a TypeScript library on CCC, ckb-cli commands and a Neuron connector (see the [roadmap](#roadmap)).
+> - **Next:** a TypeScript library on CCC, a Rust library, and one Sigsheet tool that signs with the official ckb-cli and Neuron (see the [roadmap](#roadmap)).
 > - **Not yet:** no wallet release reads Sigsheet files.
 
 ## Contents
@@ -79,7 +79,7 @@ Two limits apply until the wallets change:
 
 ### What is Sigsheet for wallet developers?
 
-Two libraries, one in TypeScript, on `@ckb-ccc/core`, and one in Rust ([Weeks 1 to 4](https://github.com/ILE-Labs/Sigsheet/milestone/1)). Each implements the whole specification:
+Two libraries, one in TypeScript, on `@ckb-ccc/core`, and one in Rust ([Weeks 1 to 4](https://github.com/ILE-Labs/Sigsheet/milestones)). Each implements the whole specification:
 - read and check a file, and show what a signer is shown;
 - compute each lock's signing message, and add a signature;
 - merge and finalize;
@@ -285,9 +285,9 @@ Each version is tracked as milestones in this repository.
 | [MVP](https://github.com/ILE-Labs/Sigsheet/milestone/9) | The specification draft, the test vectors with their generator and an independent check, and the checks on Linux, macOS and Windows | Complete: merged in [#48](https://github.com/ILE-Labs/Sigsheet/pull/48) and [#49](https://github.com/ILE-Labs/Sigsheet/pull/49) |
 | [v0.1 · Week 1](https://github.com/ILE-Labs/Sigsheet/milestone/1) | The TypeScript reference implementation on CCC: read, check and show | Next |
 | [v0.1 · Week 2](https://github.com/ILE-Labs/Sigsheet/milestone/10) | The TypeScript reference implementation on CCC: sign, merge, finalize, create and send | Planned |
-| [v0.1 · Week 3](https://github.com/ILE-Labs/Sigsheet/milestone/2) | ckb-cli commands in Rust: check and show | Planned |
-| [v0.1 · Week 4](https://github.com/ILE-Labs/Sigsheet/milestone/11) | ckb-cli commands in Rust: sign, merge, finalize, create and send | Planned |
-| [v0.1 · Week 5](https://github.com/ILE-Labs/Sigsheet/milestone/3) | The Neuron connector, for the official Neuron | Planned |
+| [v0.1 · Week 3](https://github.com/ILE-Labs/Sigsheet/milestone/2) | The Rust library: read, check and show | Planned |
+| [v0.1 · Week 4](https://github.com/ILE-Labs/Sigsheet/milestone/11) | The Rust library: sign, merge, finalize, create and send | Planned |
+| [v0.1 · Week 5](https://github.com/ILE-Labs/Sigsheet/milestone/3) | The Sigsheet tool, with the official ckb-cli and Neuron | Planned |
 | [v0.1 · Week 6](https://github.com/ILE-Labs/Sigsheet/milestone/4) | A demo on testnet, with all three tools | Planned |
 | [v0.1 · Week 7](https://github.com/ILE-Labs/Sigsheet/milestone/5) | Specification v0.1, the documentation, the benchmarks re-run on the implementations, and the v0.1.0 release | Planned |
 | [v0.2](https://github.com/ILE-Labs/Sigsheet/milestone/6) | Neuron's screens, more locks and more ways to move a file | Later |
