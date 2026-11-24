@@ -20,6 +20,7 @@ Each signer checks the file offline, adds a signature and passes the file on, or
 ## Contents
 
 - [Why Sigsheet](#why-sigsheet)
+- [Questions](#questions)
 - [How it works](#how-it-works)
 - [The file](#the-file)
 - [What a reader checks](#what-a-reader-checks)
@@ -44,6 +45,55 @@ Sigsheet answers both:
 - **No collector.** Signatures are added and merged in any order, by anyone holding a copy.
 - **Checkable offline.** The file carries every previous transaction, each checked by hash against its out point, so a reader can check every input cell without trusting a node.
 - **Existing multisig.** It works with the multisig lock scripts and addresses already on chain. There's no new on-chain script.
+
+## Questions
+
+### Why won't a bridge solve it?
+
+A bridge converts a partly signed transaction from one wallet's format to another's. It has to know every format and follow every change to them, and each new wallet adds more pairs to convert. Someone still sits in the middle: gathering what each wallet produced, converting it and passing it on.
+
+Today's conversions also lose signatures. With Neuron v0.204.1's own code, importing a ckb-cli file that held two signatures gave `signatures: {}`, and CCC turns Neuron's exported witness into `0x` ([X1](https://github.com/ILE-Labs/Sigsheet/blob/e4896d399799786b8bf10dc9254c9b515aa48d18/experiments/X1/results.md#interoperability-findings)). Our earlier tool, [ckb-msig](https://github.com/ILE-Labs/ckb-msig), took the bridge approach: it checked, merged and converted signatures between ckb-cli, Neuron and CCC. The formats stayed different, and so did the person in the middle.
+
+### Why does Sigsheet solve it?
+
+There's nothing to convert. Sigsheet is one file and one set of rules that every tool follows ([the specification](spec/sigsheet.md)):
+- **One format.** Each wallet supports one format, not every other wallet's.
+- **No collector.** Signatures are kept per lock group and per signer, so anyone can merge copies, in any order, and get the same bytes. At design stage, that rule gave one result in 2,000 of 2,000 trials ([X3a](https://github.com/ILE-Labs/Sigsheet/blob/e4896d399799786b8bf10dc9254c9b515aa48d18/experiments/X3a/results.md#2-only-the-candidate-rule-gives-one-result-in-any-order-with-junk)).
+- **The same checks everywhere.** Every implementation uses one canonical form, the same reader checks and the same [44 test vectors](vectors/).
+
+### Why isn't the Sigsheet tool a bridge?
+
+A bridge carries signatures from one wallet's format to another's. With Sigsheet, no wallet talks to another: every signer adds a signature to the same standard file, and anyone can merge the copies. Wallets don't talk to each other through it. Every wallet writes to the same file.
+
+For a wallet that doesn't read Sigsheet yet, the tool gives that signer the transaction in the wallet's own export file, and puts the signature back into the Sigsheet. That step is for one signer, at the edge, and it goes away once the wallet supports Sigsheet itself.
+
+### Why one tool?
+
+Each signer uses one wallet, and a separate connector for each wallet would be friction. So there's one Sigsheet tool for every signer, to install once. It opens the file, checks it, shows what's being signed, and gets the signature from the signer's own wallet:
+- **In v0.1,** Neuron and ckb-cli sign through their own export files, so nothing in those wallets changes.
+- **Apps built on CCC don't need the tool.** They sign directly, with the TypeScript library.
+
+Two limits apply until the wallets change:
+- Neuron v0.204.1 leaves the witnesses beyond the inputs out of its signing message ([X1](https://github.com/ILE-Labs/Sigsheet/blob/e4896d399799786b8bf10dc9254c9b515aa48d18/experiments/X1/results.md#interoperability-findings)), so the tool holds such files back from Neuron signers;
+- ckb-cli and Neuron don't sign the 2024 deployment today ([design record, test 5](https://github.com/ILE-Labs/Sigsheet/blob/e4896d399799786b8bf10dc9254c9b515aa48d18/design-record.md#82-acceptance-tests)).
+
+### What is Sigsheet for wallet developers?
+
+Two libraries, one in TypeScript, on `@ckb-ccc/core`, and one in Rust ([Weeks 1 to 4](https://github.com/ILE-Labs/Sigsheet/milestone/1)). Each implements the whole specification:
+- read and check a file, and show what a signer is shown;
+- compute each lock's signing message, and add a signature;
+- merge and finalize;
+- create and send.
+
+Both must give every result in the vectors, byte for byte. A wallet that uses one of them reads and writes Sigsheet itself, and its users don't need the tool. See [Implementing Sigsheet](#implementing-sigsheet).
+
+### What does the community get?
+
+- **The wallet each signer already has.** A multisig group's members can use different wallets, and sign in any order.
+- **Nobody collecting.** Each signer passes the file on or posts a copy, and anyone can merge the copies and finalize.
+- **A check before signing.** Every signer can check the transaction offline, from the file alone, before signing it.
+- **All three multisig deployments,** genesis, 2024 and v2, plus the single-key lock, in one format.
+- **One standard to build on.** Wallets and tools get tested libraries and shared test vectors, instead of each inventing its own format. v1.0 is planned as a stable specification with a conformance suite, proposed as a CKB RFC ([v1.0](https://github.com/ILE-Labs/Sigsheet/milestone/7)).
 
 ## How it works
 
